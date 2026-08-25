@@ -1,0 +1,28 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import WheelPage from './pages/WheelPage';
+
+/**
+ * One route per surface. The wheel slug is a param (/wheel/accord) so every
+ * view is a URL — shareable, and a host site can iframe one wheel directly.
+ * Router basename keeps links correct if the app is served from a subpath
+ * (import.meta.env.BASE_URL === the `base` knob in vite.config.js).
+ */
+export default function App() {
+  return (
+    <Router
+      basename={import.meta.env.BASE_URL}
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/wheel" element={<Navigate to="/wheel/accord" replace />} />
+          <Route path="/wheel/:slug" element={<WheelPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+}
