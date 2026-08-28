@@ -14,5 +14,10 @@
     "rating",
     "url"
   ],
-  "partition": "alphabetically first note"
+  "partition": "alphabetically first note",
+  "noteIndex": {
+    "notes": 140,
+    "perNoteLimit": 100,
+    "exhaustive": true
+  }
 }

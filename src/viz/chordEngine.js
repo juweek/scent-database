@@ -16,11 +16,21 @@
 const TAU = 2 * Math.PI;
 const HALF = Math.PI / 2;
 
+// Fingertip forgiveness for ribbon picking, in CSS pixels around the tap.
+const TOUCH_PROBE_RINGS = [6, 12];
+const TOUCH_PROBE_SPOKES = 8;
+
 export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, buildThreshold = 0 }) {
   const { size, inner, bands, padAngle } = spec;
   const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
   const overlayCtx = overlay?.getContext('2d', { alpha: true, desynchronized: true });
-  const dpr = Math.min(maxPixelRatio, Math.max(1, window.devicePixelRatio || 1));
+  // Budget phones pair a 3x devicePixelRatio with little memory and a slow GPU,
+  // where a 2x bitmap of a 760px wheel costs ~9 MB on its own. Cap harder on
+  // small screens: at this display size the extra samples are not visible.
+  const ceiling = window.matchMedia('(max-width: 780px)').matches
+    ? Math.min(maxPixelRatio, 1.5)
+    : maxPixelRatio;
+  const dpr = Math.min(ceiling, Math.max(1, window.devicePixelRatio || 1));
 
   canvas.width = size * dpr;
   canvas.height = size * dpr;
@@ -285,7 +295,7 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
    * Radius decides WHAT was hit: inside `inner` is the ribbon field, each band
    * owns an annulus out to its `hitTo`. Returns { chord, <bandKey>: value }.
    */
-  function pick(clientX, clientY, state, pointerType = 'mouse') {
+  function pick(clientX, clientY, state, pointerType = 'mouse', tolerant = false) {
     const rect = canvas.getBoundingClientRect();
     if (!rect.width) return { chord: null };
     const fx = size / rect.width;
@@ -303,11 +313,29 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
       const py = (clientY - rect.top) * (canvas.height / rect.height);
       ctx.setTransform(1, 0, 0, 1, 0, 0); // hit paths are pre-transformed
       const filt = filtering(state);
-      for (let i = 0; i < chords.length; i++) {
-        const m = meta[i];
-        if (!m || m.value < state.minShared) continue;
-        if (filt && !visible(chords[i], state)) continue;
-        if (ctx.isPointInPath(m.hit, px, py)) return { ...empty, chord: i };
+
+      // A ribbon can be barely a CSS pixel wide once the wheel is scaled down
+      // to a phone, so an exact hit is not a fair target for a fingertip. On a
+      // tap (not a move) we retry on widening rings and take the nearest
+      // ribbon. Mouse picking stays exact — a cursor can be precise.
+      const probes = [[0, 0]];
+      if (tolerant && pointerType === 'touch') {
+        const devicePerCss = canvas.width / rect.width;
+        for (const ring of TOUCH_PROBE_RINGS) {
+          for (let k = 0; k < TOUCH_PROBE_SPOKES; k++) {
+            const a = (k / TOUCH_PROBE_SPOKES) * TAU;
+            probes.push([Math.cos(a) * ring * devicePerCss, Math.sin(a) * ring * devicePerCss]);
+          }
+        }
+      }
+
+      for (const [ox, oy] of probes) {
+        for (let i = 0; i < chords.length; i++) {
+          const m = meta[i];
+          if (!m || m.value < state.minShared) continue;
+          if (filt && !visible(chords[i], state)) continue;
+          if (ctx.isPointInPath(m.hit, px + ox, py + oy)) return { ...empty, chord: i };
+        }
       }
       return empty;
     }

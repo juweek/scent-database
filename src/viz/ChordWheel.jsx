@@ -35,6 +35,10 @@ export default function ChordWheel({
   const engineRef = useRef(null);
   const rafRef = useRef(null);
   const pulseRafRef = useRef(null);
+  // React's onClick is a SyntheticMouseEvent, which carries no `pointerType`.
+  // Without this the tap that selects would always fall back to 'mouse' and
+  // lose the 44px touch target that pointerdown had already applied.
+  const pointerTypeRef = useRef('mouse');
   const stateRef = useRef({
     hoveredChord: null,
     selectedChord: null,
@@ -46,6 +50,13 @@ export default function ChordWheel({
     note: null,
   });
   const [d3, setD3] = useState(null);
+
+  // The ambient pulse needs a second full-size canvas (~5 MB on a phone) and a
+  // timer that never stops, to draw a decorative dot. Not a phone's job.
+  const pulse =
+    ambientPulse &&
+    typeof window !== 'undefined' &&
+    !window.matchMedia('(max-width: 780px)').matches;
 
   useEffect(() => {
     let live = true;
@@ -124,7 +135,7 @@ export default function ChordWheel({
   }, [sticky, hovered, minShared, note, schedule]);
 
   useEffect(() => {
-    if (!ambientPulse || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!pulse || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return undefined;
     }
 
@@ -170,11 +181,12 @@ export default function ChordWheel({
       if (pulseRafRef.current) cancelAnimationFrame(pulseRafRef.current);
       pulseRafRef.current = null;
     };
-  }, [ambientPulse, d3, spec, view]);
+  }, [pulse, d3, spec, view]);
 
   function handleMove(event) {
     const engine = engineRef.current;
     if (!engine || !interactive) return;
+    if (event.pointerType) pointerTypeRef.current = event.pointerType;
     const hit = engine.pick(event.clientX, event.clientY, stateRef.current, event.pointerType);
     const state = stateRef.current;
     let changed = false;
@@ -206,7 +218,8 @@ export default function ChordWheel({
   function handleClick(event) {
     const engine = engineRef.current;
     if (!engine || !interactive) return;
-    const hit = engine.pick(event.clientX, event.clientY, stateRef.current, event.pointerType);
+    const pointerType = event.pointerType || pointerTypeRef.current;
+    const hit = engine.pick(event.clientX, event.clientY, stateRef.current, pointerType, true);
     const state = stateRef.current;
 
     if (hit.chord != null) {
@@ -234,9 +247,7 @@ export default function ChordWheel({
         onPointerCancel={handleLeave}
         onClick={handleClick}
       />
-      {ambientPulse && (
-        <canvas ref={pulseCanvasRef} className="wheelPulseCanvas" aria-hidden="true" />
-      )}
+      {pulse && <canvas ref={pulseCanvasRef} className="wheelPulseCanvas" aria-hidden="true" />}
     </>
   );
 }

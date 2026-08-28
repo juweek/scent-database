@@ -19,6 +19,10 @@
 html {
   scroll-behavior: smooth;
   background: var(--ground);
+  /* Android Chrome "font boosting" silently inflates text in wide blocks —
+     an auto-zoom the layout never asked for. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -342,7 +346,9 @@ a {
   width: min(100%, 760px) !important;
   height: auto !important;
   display: block;
-  touch-action: pan-y;
+  /* pan-y alone also suppresses pinch-zoom, which is the only way to read a
+     140-note wheel on a phone. Keep both; the wheel only needs taps. */
+  touch-action: pan-y pinch-zoom;
   user-select: none;
 }
 
@@ -787,6 +793,36 @@ a {
   font-size: 11px;
 }
 
+.noteScope {
+  margin: 4px 0 14px;
+  text-transform: capitalize;
+}
+
+.listCap {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+.showMore {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--chip);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.showMore:hover {
+  border-color: rgba(241, 242, 243, 0.4);
+}
+
 .wheelFooter {
   max-width: 92ch;
   margin: 70px auto 0;
@@ -819,6 +855,11 @@ a {
 }
 
 @media (max-width: 780px) {
+  html {
+    /* Programmatic scrolls jump instead of gliding — no surprise motion. */
+    scroll-behavior: auto;
+  }
+
   .wrap {
     width: 100%;
     padding: 0 20px 42px;
@@ -857,7 +898,7 @@ a {
     margin-left: -20px;
     padding: 24px 0 28px;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     scroll-padding-inline: 11vw;
     scrollbar-width: none;
     overscroll-behavior-inline: contain;
@@ -879,7 +920,10 @@ a {
   .previewOrbit {
     width: 100%;
     overflow: hidden;
-    animation-duration: 92s;
+    /* Three infinite drifts, each holding a promoted layer behind a canvas,
+       is battery a phone should not be spending on decoration. */
+    animation: none;
+    will-change: auto;
   }
 
   .previewOrbit .wheelCanvas {
@@ -988,8 +1032,11 @@ a {
 
   .stage .wheelCanvas,
   .stage .wheelPulseCanvas {
-    width: 124% !important;
-    max-width: none;
+    /* 124% crops the empty margin baked into the bitmap so the wheel fills the
+       screen — but never past the viewport, or the canvas hangs off both
+       sides and the document measures wider than 100%. */
+    width: min(124%, 100vw) !important;
+    max-width: 100vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1032,14 +1079,16 @@ a {
   }
 
   .familyBars {
-    margin-right: -20px;
-    padding-right: 20px;
+    /* Wrap rather than scroll sideways: all ten families stay on screen, and
+       nothing extends past the viewport. */
+    height: auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
 
   .familyBars button {
-    width: 44px;
     min-width: 44px;
-    flex: none;
+    flex: 1 1 calc(20% - 2px);
   }
 
   .pairMatches {

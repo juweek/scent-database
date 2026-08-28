@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { useAsync } from '../lib/useAsync';
 import { getSharedFragrances } from '../data/fragranceMatches';
+import { getNotePerfumes, getNotePerfumesRest } from '../data/noteMatches';
 import { getWheel, WHEELS, WHEEL_LIST } from '../data/wheels';
 import { Loading, ErrorState } from '../components/Status';
 import { Toggle, Slider, Search, FamilyBars } from '../components/Controls';
@@ -49,6 +50,9 @@ function Wheel({ spec, data }) {
   const sliderControl = spec.controls.find((control) => control.type === 'slider');
   const legendControl = spec.controls.find((control) => control.type === 'legend');
   const matches = useSharedFragrances(spec.slug, selectedPair);
+  const legendId = spec.controls.find((control) => control.type === 'legend')?.id;
+  const notePerfumes = useNotePerfumes(spec.slug, note);
+  const activeFamily = legendId ? sticky[legendId] : null;
 
   const onHover = useCallback((band, value) => {
     setHovered((current) =>
@@ -71,7 +75,8 @@ function Wheel({ spec, data }) {
           if (current[clicked] !== hit[clicked]) next[clicked] = hit[clicked];
           return next;
         });
-        setNote(null);
+        // The note stays: note AND band together read as "this note, inside
+        // this family", which is what the engine's visible() already draws.
         setSelectedPair(null);
         pulseHaptic();
       } else if (hit.chord == null) {
@@ -181,13 +186,16 @@ function Wheel({ spec, data }) {
                 setSticky((current) =>
                   current[legendControl.id] === value ? {} : { [legendControl.id]: value },
                 );
-                setNote(null);
                 setSelectedPair(null);
               }}
             />
           )}
 
-          <PairMatches pair={selectedPair} matches={matches} isFamily={spec.slug === 'family'} />
+          {note && !selectedPair ? (
+            <NotePerfumes note={note} family={activeFamily} state={notePerfumes} />
+          ) : (
+            <PairMatches pair={selectedPair} matches={matches} isFamily={spec.slug === 'family'} />
+          )}
         </aside>
       </div>
 
@@ -216,6 +224,157 @@ function useSharedFragrances(slug, pair) {
   }, [slug, pair]);
 
   return state;
+}
+
+/**
+ * Perfumes containing the searched note. Page 1 arrives with the search; the
+ * long tail is fetched only if the reader opens a list.
+ */
+function useNotePerfumes(slug, note) {
+  const [state, setState] = useState({ status: 'idle', data: null, rest: null });
+
+  useEffect(() => {
+    if (!note || slug === 'family') {
+      setState({ status: 'idle', data: null, rest: null });
+      return undefined;
+    }
+    const controller = new AbortController();
+    setState({ status: 'loading', data: null, rest: null });
+    getNotePerfumes(note, controller.signal)
+      .then((data) => setState({ status: data ? 'done' : 'empty', data, rest: null }))
+      .catch((error) => {
+        if (error.name !== 'AbortError') setState({ status: 'error', data: null, rest: null });
+      });
+    return () => controller.abort();
+  }, [slug, note]);
+
+  const loadRest = useCallback(() => {
+    setState((current) => {
+      if (current.status !== 'done' || current.rest) return current;
+      getNotePerfumesRest(note).then((rest) =>
+        setState((latest) => (latest.data?.note === note ? { ...latest, rest } : latest)),
+      );
+      return current;
+    });
+  }, [note]);
+
+  return { ...state, loadRest };
+}
+
+function MatchList({ items }) {
+  return (
+    <ol className="matchList">
+      {items.map((item) => (
+        <li key={item.url}>
+          <a href={item.url} target="_blank" rel="noreferrer">
+            <span>
+              <strong>{item.name}</strong>
+              <small>{item.brand}</small>
+            </span>
+            <span className="rating">{item.rating ? item.rating.toFixed(1) : '\u2014'}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/**
+ * Two readings of one note: every perfume that carries it, or — once a family
+ * bar is selected — only those that also carry a note from that family.
+ */
+function NotePerfumes({ note, family, state }) {
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => setExpanded(false), [note, family]);
+
+  if (state.status === 'loading') {
+    return (
+      <section className="pairMatches" aria-live="polite">
+        <div className="pairMatchesHeader">
+          <p className="fieldLabel">Perfumes with {note}</p>
+        </div>
+        <p className="emptyPrompt">Loading examples…</p>
+      </section>
+    );
+  }
+  if (state.status === 'error') {
+    return (
+      <section className="pairMatches" aria-live="polite">
+        <div className="pairMatchesHeader">
+          <p className="fieldLabel">Perfumes with {note}</p>
+        </div>
+        <p className="emptyPrompt">The fragrance index could not be loaded.</p>
+      </section>
+    );
+  }
+  if (state.status !== 'done' || !state.data) {
+    return (
+      <section className="pairMatches" aria-live="polite">
+        <div className="pairMatchesHeader">
+          <p className="fieldLabel">Perfumes with {note}</p>
+        </div>
+        <p className="emptyPrompt">No record-level examples are indexed for this note yet.</p>
+      </section>
+    );
+  }
+
+  const { data, rest } = state;
+  const bucket = family ? data.families[family] : null;
+  const head = family ? (bucket?.items ?? []) : data.all;
+  const tail = (family ? rest?.families?.[family] : rest?.all) ?? [];
+  // `total` is how many perfumes exist; `held` is how many the index keeps.
+  // The button may only promise what page 2 can actually deliver.
+  const total = family ? (bucket?.total ?? 0) : data.total;
+  const held = family ? (bucket?.held ?? head.length) : (data.held ?? data.all.length);
+  const items = expanded ? [...head, ...tail] : head;
+  const more = Math.max(0, Math.min(held, total) - items.length);
+  const capped = total > items.length && more === 0;
+
+  return (
+    <section className="pairMatches" aria-live="polite">
+      <div className="pairMatchesHeader">
+        <p className="fieldLabel">
+          {family ? `${note} \u00d7 ${family}` : `Perfumes with ${note}`}
+        </p>
+        <span>{total.toLocaleString()}</span>
+      </div>
+
+      {family && (
+        <p className="emptyPrompt noteScope">
+          Carrying {note} and a {family} note.
+        </p>
+      )}
+
+      {items.length === 0 ? (
+        <p className="emptyPrompt">
+          Nothing in the index pairs {note} with a {family} note.
+        </p>
+      ) : (
+        <>
+          <MatchList items={items} />
+          {more > 0 && (
+            <button
+              type="button"
+              className="showMore"
+              onClick={() => {
+                state.loadRest();
+                setExpanded(true);
+              }}
+            >
+              Show {more.toLocaleString()} more
+            </button>
+          )}
+          {capped && (
+            <p className="emptyPrompt listCap">
+              Showing the top {items.length.toLocaleString()} of {total.toLocaleString()}, by rating
+              and review count.
+            </p>
+          )}
+        </>
+      )}
+    </section>
+  );
 }
 
 function PairMatches({ pair, matches, isFamily }) {
