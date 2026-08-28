@@ -187,7 +187,13 @@ export default function ChordWheel({
     const engine = engineRef.current;
     if (!engine || !interactive) return;
     if (event.pointerType) pointerTypeRef.current = event.pointerType;
-    const hit = engine.pick(event.clientX, event.clientY, stateRef.current, event.pointerType);
+    const hit = engine.pick(
+      event.clientX,
+      event.clientY,
+      stateRef.current,
+      event.pointerType,
+      true,
+    );
     const state = stateRef.current;
     let changed = false;
 

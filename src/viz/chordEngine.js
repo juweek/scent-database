@@ -16,9 +16,12 @@
 const TAU = 2 * Math.PI;
 const HALF = Math.PI / 2;
 
-// Fingertip forgiveness for ribbon picking, in CSS pixels around the tap.
+// Forgiveness for ribbon picking, as radii in CSS pixels around the pointer.
+// A ribbon is often barely a pixel wide, so an exact hit is a poor target even
+// for a cursor — it just needs less slack than a fingertip.
 const TOUCH_PROBE_RINGS = [6, 12];
-const TOUCH_PROBE_SPOKES = 8;
+const MOUSE_PROBE_RINGS = [2.5, 5];
+const PROBE_SPOKES = 8;
 
 export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, buildThreshold = 0 }) {
   const { size, inner, bands, padAngle } = spec;
@@ -144,7 +147,8 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
         Math.sin(ta) * inner,
         -Math.cos(ta) * inner,
       );
-      g.addColorStop(0, v.colorOf(names[d.source.index]));
+      const homeColor = v.colorOf(names[d.source.index]);
+      g.addColorStop(0, homeColor);
       g.addColorStop(1, v.colorOf(names[d.target.index]));
 
       const path = new Path2D();
@@ -154,6 +158,7 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
 
       return {
         grad: g,
+        homeColor, // the source end's note colour — what the pulse travels as
         value,
         path,
         hit,
@@ -260,10 +265,13 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
     if (!item || item.value < state.minShared) return;
     if (filtering(state) && !visible(chords[state.pulseChord], state)) return;
 
+    // Ride the ribbon's own colour rather than the cream ink, and stay small:
+    // a spark tracing the thread, not a bulb crossing the wheel.
+    const color = item.homeColor || spec.ink;
     overlayCtx.save();
     overlayCtx.globalCompositeOperation = 'lighter';
-    overlayCtx.shadowColor = spec.ink;
-    overlayCtx.shadowBlur = 10;
+    overlayCtx.shadowColor = color;
+    overlayCtx.shadowBlur = 4;
     for (let tail = 0; tail < 5; tail++) {
       const t = state.pulseProgress - tail * 0.026;
       if (t < 0 || t > 1) continue;
@@ -271,9 +279,9 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
       const x = u * u * item.source.x + t * t * item.target.x;
       const y = u * u * item.source.y + t * t * item.target.y;
       overlayCtx.beginPath();
-      overlayCtx.arc(x, y, Math.max(1.2, 3.2 - tail * 0.45), 0, TAU);
-      overlayCtx.fillStyle = spec.ink;
-      overlayCtx.globalAlpha = 0.86 - tail * 0.15;
+      overlayCtx.arc(x, y, Math.max(0.55, 1.7 - tail * 0.26), 0, TAU);
+      overlayCtx.fillStyle = color;
+      overlayCtx.globalAlpha = 0.62 - tail * 0.12;
       overlayCtx.fill();
     }
     overlayCtx.restore();
@@ -314,16 +322,16 @@ export function createEngine({ canvas, overlay, d3, spec, maxPixelRatio = 2, bui
       ctx.setTransform(1, 0, 0, 1, 0, 0); // hit paths are pre-transformed
       const filt = filtering(state);
 
-      // A ribbon can be barely a CSS pixel wide once the wheel is scaled down
-      // to a phone, so an exact hit is not a fair target for a fingertip. On a
-      // tap (not a move) we retry on widening rings and take the nearest
-      // ribbon. Mouse picking stays exact — a cursor can be precise.
+      // Try the exact point, then widening rings around it, so the nearest
+      // ribbon wins. Without this a cursor sitting in the hairline gap between
+      // two ribbons reports nothing, which reads as hover being broken.
       const probes = [[0, 0]];
-      if (tolerant && pointerType === 'touch') {
+      if (tolerant) {
         const devicePerCss = canvas.width / rect.width;
-        for (const ring of TOUCH_PROBE_RINGS) {
-          for (let k = 0; k < TOUCH_PROBE_SPOKES; k++) {
-            const a = (k / TOUCH_PROBE_SPOKES) * TAU;
+        const rings = pointerType === 'touch' ? TOUCH_PROBE_RINGS : MOUSE_PROBE_RINGS;
+        for (const ring of rings) {
+          for (let k = 0; k < PROBE_SPOKES; k++) {
+            const a = (k / PROBE_SPOKES) * TAU;
             probes.push([Math.cos(a) * ring * devicePerCss, Math.sin(a) * ring * devicePerCss]);
           }
         }
