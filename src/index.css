@@ -787,6 +787,570 @@ a {
   color: var(--ink);
 }
 
+/* ── Perfume explorer ───────────────────────────────────────── */
+.perfumeSearchRow {
+  max-width: 520px;
+  margin-bottom: 34px;
+}
+
+.perfumeHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px 28px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.perfumeHead h2 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 450;
+  letter-spacing: -0.025em;
+  text-transform: capitalize;
+}
+
+.perfumeBrand {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.perfumeStats {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.perfumeStats > span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.perfumeStats strong {
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.perfumeStats small,
+.perfumeSource {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.perfumeSource {
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+
+.perfumeSource:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.perfumeControls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  margin-bottom: 12px;
+}
+
+.perfumeMode {
+  width: 300px;
+  margin: 0;
+}
+
+.chordBandLabel {
+  fill: #0b0d0d;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* The tier ring is the outermost and the widest, so it can carry real type. */
+.chordBand--tier .chordBandLabel {
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+}
+
+.perfumeStage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+ * The chord is SVG, not the canvas engine — at most 24 notes, so the DOM cost
+ * that forced canvas on the 140-note wheels never arises here.
+ */
+.perfumeChord {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.perfumeRibbon,
+.chordArc {
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    fill 160ms ease;
+}
+
+/* Catches clicks that miss every mark, so tapping empty space clears. */
+.chordGround {
+  fill: transparent;
+}
+
+.perfumeLabels text {
+  fill: var(--ink);
+  font-family: var(--sans);
+  font-size: 10.5px;
+  text-transform: capitalize;
+  transition: opacity 160ms ease;
+  pointer-events: none;
+}
+
+.chordCentreDisc {
+  fill: var(--ground);
+  opacity: 0.82;
+  pointer-events: none;
+  transition: r 200ms ease;
+}
+
+.chordCentre text {
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.chordCentrePair {
+  fill: var(--ink);
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+.chordCentreLead {
+  fill: var(--ink);
+  font-size: 19px;
+}
+
+.chordCentreTimes {
+  fill: var(--quiet);
+  font-size: 13px;
+}
+
+.chordCentreSub {
+  fill: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+}
+
+.tierLegend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tierLegend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tierLegend span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+/* Pyramid */
+.pyramidTiers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pyramidTierHead {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.pyramidDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.pyramidTierName {
+  flex: 1;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pyramidTierCount {
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pyramidNotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pyramidNotes li {
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 999px;
+  background: var(--chip);
+  font-size: 12.5px;
+  text-transform: capitalize;
+  opacity: 0.92;
+}
+
+.pyramidNote,
+.accordNote,
+.smellsNote {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--quiet);
+}
+
+/* Accord bars */
+.accordList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.accordBar {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 6px;
+  min-width: 96px;
+}
+
+.accordName {
+  color: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/*
+ * Fragrantica's accord vocabulary includes "gasoline", "industrial glue" and
+ * "brown scotch tape", which belong to none of our ten families. Those get an
+ * outline rather than an invented colour — see src/data/accordFamily.js.
+ */
+.accordBar[data-unclassified='true'] {
+  border: 1px dashed var(--line);
+}
+
+/* Smells like */
+.smellsLike .matchList button {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.smellsLike .matchList strong,
+.smellsLike .matchList small {
+  display: block;
+}
+
+.smellsLike .matchList strong {
+  font-size: 14px;
+  font-weight: 480;
+  text-transform: capitalize;
+}
+
+.smellsLike .matchList small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.smellsLike .rating {
+  flex: none;
+  text-align: right;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.smellsLike .rating small {
+  display: block;
+  margin-top: 1px;
+  color: var(--quiet);
+  font-size: 10px;
+  text-transform: none;
+}
+
+.smellsLikeSub {
+  margin-top: 26px;
+}
+
+/* Featured */
+.featured {
+  margin-top: 8px;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featuredGrid button {
+  width: 100%;
+  min-height: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 12px 15px;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--ground-raised);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 140ms ease;
+}
+
+.featuredGrid button:hover {
+  border-color: rgba(241, 242, 243, 0.4);
+}
+
+.featuredGrid strong {
+  font-size: 14px;
+  font-weight: 480;
+  text-transform: capitalize;
+}
+
+.featuredGrid small {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.perfumeMissing {
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .perfumeHead {
+    align-items: flex-start;
+  }
+}
+
+/* Ranked partners for a focused note */
+.notePairings {
+  padding-top: 23px;
+  border-top: 1px solid var(--line);
+}
+
+.notePairings .fieldLabel {
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.pairRank {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0 14px;
+}
+
+.pairRank button {
+  min-height: 32px;
+  flex: 1;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease;
+}
+
+/* Fingers need the same 44px the rest of the site gives them. */
+@media (pointer: coarse) {
+  .pairRank button {
+    min-height: 44px;
+  }
+}
+
+.pairRank button:hover {
+  color: var(--ink);
+  border-color: rgba(241, 242, 243, 0.32);
+}
+
+.pairRank button[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--ground);
+}
+
+.pairingList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pairingList li + li {
+  margin-top: 2px;
+}
+
+/*
+ * The bar is a background layer, not a flex child: it sits behind the label so
+ * a long note name never gets squeezed by its own measurement.
+ */
+.pairingList button {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 10px;
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.pairingBar {
+  position: absolute;
+  inset: 4px auto 4px 0;
+  z-index: 0;
+  border-radius: 6px;
+  background: var(--chip);
+  transition: width 260ms ease;
+}
+
+.pairingList button:hover .pairingBar,
+.pairingList button[aria-pressed='true'] .pairingBar {
+  background: rgba(241, 242, 243, 0.13);
+}
+
+.pairingName,
+.pairingMetric {
+  position: relative;
+  z-index: 1;
+}
+
+.pairingName {
+  font-size: 14px;
+  font-weight: 480;
+  text-transform: capitalize;
+}
+
+.pairingList button[aria-pressed='true'] .pairingName {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pairingMetric {
+  flex: none;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.pairingMetric small {
+  display: block;
+  margin-top: 1px;
+  color: var(--quiet);
+  font-size: 10px;
+}
+
+.pairingCaveat {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--quiet);
+}
+
+.pairingAlias {
+  margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pairingBar {
+    transition: none;
+  }
+}
+
 /* Selected-pair records */
 .pairMatches {
   padding-top: 23px;

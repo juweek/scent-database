@@ -1,0 +1,118 @@
+{
+  "source": "olgagmiufana1/fragrantica-com-fragrance-dataset",
+  "sourceVersion": "3",
+  "sourceFile": "fra_cleaned.csv",
+  "sourceSha256": "6cfc07226db77f94528d02a9e8cce2825fd0a14fff89b918a8ecc40d933a4d6f",
+  "license": "CC BY-NC-SA 4.0",
+  "perfumes": 24050,
+  "distinctNotes": 1668,
+  "distinctPairs": 106350,
+  "recordShards": 256,
+  "searchShards": 27,
+  "minNotes": 3,
+  "maxNotes": 24,
+  "notesPerPerfume": {
+    "min": 3,
+    "median": 9,
+    "max": 24
+  },
+  "accordColumns": [
+    "mainaccord1",
+    "mainaccord2",
+    "mainaccord3",
+    "mainaccord4",
+    "mainaccord5"
+  ],
+  "perfumerColumns": [
+    "Perfumer1",
+    "Perfumer2"
+  ],
+  "featured": [
+    [
+      "707",
+      "Alien",
+      "Mugler",
+      2005
+    ],
+    [
+      "704",
+      "Angel",
+      "Mugler",
+      1992
+    ],
+    [
+      "485",
+      "Light Blue",
+      "Dolce Gabbana",
+      2001
+    ],
+    [
+      "611",
+      "Coco Mademoiselle",
+      "Chanel",
+      2001
+    ],
+    [
+      "14982",
+      "La Vie Est Belle",
+      "Lancome",
+      2012
+    ],
+    [
+      "1018",
+      "Black Orchid",
+      "Tom Ford",
+      2006
+    ],
+    [
+      "25324",
+      "Black Opium",
+      "Yves Saint Laurent",
+      2014
+    ],
+    [
+      "219",
+      "Hypnotic Poison",
+      "Dior",
+      1998
+    ],
+    [
+      "210",
+      "J Adore",
+      "Dior",
+      1999
+    ],
+    [
+      "31861",
+      "Sauvage",
+      "Dior",
+      2015
+    ],
+    [
+      "1825",
+      "Tobacco Vanille",
+      "Tom Ford",
+      2007
+    ],
+    [
+      "17",
+      "Terre D Hermes",
+      "Hermes",
+      2006
+    ]
+  ],
+  "recordSchema": {
+    "notes": "source order: top, then heart, then base, deduped",
+    "tier": "0 top, 1 heart, 2 base \u2014 the tier a note was FIRST listed under",
+    "total": "catalogue-wide count of perfumes carrying notes[i]",
+    "pairs": "upper triangle of catalogue-wide co-occurrence over notes, row-major",
+    "similar": "[id, name, brand, jaccard, sharedNotes, isConcentrationVariant]"
+  },
+  "similar": {
+    "perPerfume": 8,
+    "variantsPerPerfume": 5,
+    "metric": "jaccard over note sets",
+    "blocking": "3 rarest notes",
+    "exhaustive": false
+  }
+}

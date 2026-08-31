@@ -1,7 +1,13 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import WheelPage from './pages/WheelPage';
+import { Loading } from './components/Status';
+
+// The perfume explorer carries d3-chord and its own data layer, and most
+// visitors never open it. Split so the three wheels do not pay for it.
+const PerfumePage = lazy(() => import('./pages/PerfumePage'));
 
 /**
  * One route per surface. The wheel slug is a param (/wheel/accord) so every
@@ -20,6 +26,22 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/wheel" element={<Navigate to="/wheel/accord" replace />} />
           <Route path="/wheel/:slug" element={<WheelPage />} />
+          <Route
+            path="/perfume"
+            element={
+              <Suspense fallback={<Loading />}>
+                <PerfumePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/perfume/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <PerfumePage />
+              </Suspense>
+            }
+          />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Layout>

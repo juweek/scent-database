@@ -11,6 +11,7 @@ const load = {
   accord: () => Promise.all([import('./wheels/accord.json'), import('../wheels/accord')]),
   family: () => Promise.all([import('./wheels/family.json'), import('../wheels/family')]),
   pyramid: () => Promise.all([import('./wheels/pyramid.json'), import('../wheels/pyramid')]),
+  accords: () => Promise.all([import('./wheels/accords.json'), import('../wheels/accords')]),
 };
 
 export const WHEELS = {
@@ -29,6 +30,14 @@ export const WHEELS = {
     blurb: 'The ten scent families, and how much each bridges to the others.',
     stat: '10 families · 55 bridges',
     previewThreshold: 0,
+  },
+  accords: {
+    slug: 'accords',
+    label: 'Accords',
+    title: 'Accords wheel',
+    blurb: "Fragrantica's own vocabulary — aquatic, mossy, animalic — and what pairs with what.",
+    stat: '56 accords · 1.7k pairings',
+    previewThreshold: 600,
   },
   pyramid: {
     slug: 'pyramid',

@@ -1,12 +1,14 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { useAsync } from '../lib/useAsync';
 import { getSharedFragrances } from '../data/fragranceMatches';
 import { getNotePerfumes, getNotePerfumesRest } from '../data/noteMatches';
-import { getWheel, WHEELS, WHEEL_LIST } from '../data/wheels';
+import { getWheel, WHEELS } from '../data/wheels';
+import { rankPairings, aliasesOf, describeLift, MIN_SUPPORT, TOP_N } from '../data/notePairings';
 import { Loading, ErrorState } from '../components/Status';
 import { Toggle, Slider, Search, FamilyBars } from '../components/Controls';
 import ChordWheel from '../viz/ChordWheel';
+import WheelTabs from '../components/WheelTabs';
 
 export default function WheelPage() {
   const { slug } = useParams();
@@ -48,6 +50,25 @@ function Wheel({ spec, data }) {
   const toggleControls = spec.controls.filter((control) => control.type === 'toggle');
   const searchControl = spec.controls.find((control) => control.type === 'search');
   const sliderControl = spec.controls.find((control) => control.type === 'slider');
+  // A spec may size its threshold from the current view: the accords wheel's
+  // two matrices peak at 5,034 and 2,182, so a fixed range would open one mode
+  // filtered down to nothing. Wheels without `slider()` keep their static one.
+  // Null when a wheel has no threshold at all — the family wheel does not.
+  const sliderRange = useMemo(() => {
+    if (!sliderControl) return null;
+    return spec.slider ? { ...sliderControl, ...spec.slider(view) } : sliderControl;
+  }, [spec, sliderControl, view]);
+
+  // Snap the threshold when the view changes its range, so switching matrices
+  // lands on that mode's sensible default rather than a stale number. Declared
+  // after sliderRange: its dependency array is evaluated during render, so a
+  // reference above the definition is a temporal-dead-zone crash, not a warning.
+  useEffect(() => {
+    if (!spec.slider || !sliderRange) return;
+    setMinShared((current) =>
+      current >= sliderRange.min && current <= sliderRange.max ? current : sliderRange.value,
+    );
+  }, [spec, sliderRange?.min, sliderRange?.max, sliderRange?.value]);
   const legendControl = spec.controls.find((control) => control.type === 'legend');
   const matches = useSharedFragrances(spec.slug, selectedPair);
   const legendId = spec.controls.find((control) => control.type === 'legend')?.id;
@@ -148,26 +169,16 @@ function Wheel({ spec, data }) {
             <p className="stageHint">Tap a ribbon · tap again to clear</p>
           </div>
 
-          <nav className="wheelTabs" aria-label="Fragrance views">
-            {WHEEL_LIST.map((wheel) => (
-              <Link
-                key={wheel.slug}
-                to={`/wheel/${wheel.slug}`}
-                aria-current={wheel.slug === spec.slug ? 'page' : undefined}
-              >
-                {wheel.label}
-              </Link>
-            ))}
-          </nav>
+          <WheelTabs />
         </section>
 
         <aside className="insightPanel" aria-label="Wheel controls and pairing details">
-          {sliderControl && (
+          {sliderRange && (
             <Slider
-              label={sliderControl.label}
-              min={sliderControl.min}
-              max={sliderControl.max}
-              step={sliderControl.step}
+              label={sliderRange.label}
+              min={sliderRange.min}
+              max={sliderRange.max}
+              step={sliderRange.step}
               value={minShared}
               onChange={(value) => {
                 setMinShared(value);
@@ -188,6 +199,17 @@ function Wheel({ spec, data }) {
                 );
                 setSelectedPair(null);
               }}
+            />
+          )}
+
+          {note && spec.slug !== 'family' && (
+            <NotePairings
+              data={data}
+              note={note}
+              set={settings.set}
+              family={activeFamily}
+              selected={selectedPair}
+              onPick={setSelectedPair}
             />
           )}
 
@@ -259,6 +281,135 @@ function useNotePerfumes(slug, note) {
   }, [note]);
 
   return { ...state, loadRest };
+}
+
+/**
+ * A focused note's partners, ranked. Pure arithmetic on the matrix already in
+ * memory (see src/data/notePairings.js), so this renders in the same frame as
+ * the search — no fetch, no spinner.
+ *
+ * Two rankings, because they disagree and the disagreement is the point. "Most
+ * often" is the honest headline and is mostly musk and jasmine, which are in
+ * everything. "Most distinctive" divides that by how common each note is on
+ * its own, which is what turns rose from `musk, jasmine, sandalwood` into
+ * `carnation, aldehydes, orris root` — the vintage rose chypre.
+ *
+ * Picking a row pins the pair, which hands the existing PairMatches panel
+ * below its `source`/`target`/`value` and loads the record-level perfumes.
+ */
+function NotePairings({ data, note, set, family, selected, onPick }) {
+  const [by, setBy] = useState('often');
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [note, family, by]);
+
+  const ranked = useMemo(() => {
+    const all = rankPairings(data, note, set, by);
+    return family ? all.filter((pairing) => pairing.family === family) : all;
+  }, [data, note, set, by, family]);
+
+  // Other spellings of this same material still on the wheel. Their existence
+  // skews everything below, so the panel says so rather than quietly ranking
+  // one spelling's records as if they were the whole picture.
+  const aliases = [...aliasesOf(data, note)].filter((name) => data.totals?.[name]);
+
+  if (!data.totals) return null;
+
+  const items = expanded ? ranked : ranked.slice(0, TOP_N);
+  const scale = by === 'distinctive' ? 'lift' : 'share';
+  const peak = Math.max(...items.map((pairing) => pairing[scale]), scale === 'lift' ? 1 : 0.01);
+
+  return (
+    <section className="notePairings" aria-live="polite">
+      <div className="pairMatchesHeader">
+        <p className="fieldLabel">{family ? `${note} × ${family}` : `Pairs with ${note}`}</p>
+        <span>{ranked.length.toLocaleString()}</span>
+      </div>
+
+      <div className="pairRank" role="group" aria-label="Rank pairings by">
+        <button type="button" aria-pressed={by === 'often'} onClick={() => setBy('often')}>
+          most often
+        </button>
+        <button
+          type="button"
+          aria-pressed={by === 'distinctive'}
+          onClick={() => setBy('distinctive')}
+        >
+          most distinctive
+        </button>
+      </div>
+
+      {ranked.length === 0 ? (
+        <p className="emptyPrompt">
+          Nothing pairs {note} with a {family} note often enough to rank.
+        </p>
+      ) : (
+        <>
+          <ol className="pairingList">
+            {items.map((pairing) => {
+              const pinned =
+                selected &&
+                [selected.source, selected.target].includes(note) &&
+                [selected.source, selected.target].includes(pairing.note);
+              return (
+                <li key={pairing.note}>
+                  <button
+                    type="button"
+                    aria-pressed={Boolean(pinned)}
+                    onClick={() =>
+                      onPick(
+                        pinned
+                          ? null
+                          : { source: note, target: pairing.note, value: pairing.count },
+                      )
+                    }
+                  >
+                    <span
+                      className="pairingBar"
+                      style={{ width: `${Math.max(3, (pairing[scale] / peak) * 100)}%` }}
+                      aria-hidden="true"
+                    />
+                    <span className="pairingName">{pairing.note}</span>
+                    <span className="pairingMetric">
+                      {by === 'distinctive'
+                        ? `${pairing.lift.toFixed(1)}×`
+                        : `${Math.round(pairing.share * 100)}%`}
+                      <small>{pairing.count.toLocaleString()}</small>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+
+          {ranked.length > items.length && (
+            <button type="button" className="showMore" onClick={() => setExpanded(true)}>
+              Show {(ranked.length - items.length).toLocaleString()} more
+            </button>
+          )}
+
+          <p className="emptyPrompt pairingCaveat">
+            {by === 'distinctive'
+              ? `Share of ${note} perfumes, against how often the pair would meet by chance — ${describeLift(items[0].lift)} for ${items[0].note}. Ranked among partners appearing together at least ${MIN_SUPPORT} times.`
+              : `Share of the ${data.totals[note].toLocaleString()} perfumes carrying ${note}. Common notes lead every list; switch to most distinctive to divide that out.`}
+          </p>
+
+          {aliases.length > 0 && (
+            <p className="emptyPrompt pairingCaveat pairingAlias">
+              Also on this wheel as{' '}
+              {aliases
+                .map((name) => `“${name}” (${data.totals[name].toLocaleString()})`)
+                .join(', ')}
+              . A record uses one spelling or the other, almost never both, so these ranks describe
+              the “{note}” records alone.
+            </p>
+          )}
+        </>
+      )}
+    </section>
+  );
 }
 
 function MatchList({ items }) {
