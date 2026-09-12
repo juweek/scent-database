@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getBuilderIndex, intersect, suggestions, getCards } from '../data/builderIndex';
 import { builderUnlocked, unlockBuilder } from '../lib/engagement';
 import WheelTabs from '../components/WheelTabs';
-import { useNarrow } from '../lib/useNarrow';
 import SubscribeGate from '../components/SubscribeGate';
 import { Loading, ErrorState } from '../components/Status';
 import site from '../site.config';
@@ -24,7 +23,6 @@ const PAGE = 24;
  * and that list is rebuilt from the matched set rather than from the catalogue.
  */
 export default function BuilderPage() {
-  const narrow = useNarrow();
   const [index, setIndex] = useState(null);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState([]);
@@ -111,6 +109,8 @@ export default function BuilderPage() {
 
   return (
     <main className="explorerPage builderPage">
+      <WheelTabs lead />
+
       <header className="explorerHeader">
         <div>
           <h1>Note builder</h1>
@@ -121,8 +121,6 @@ export default function BuilderPage() {
           </p>
         </div>
       </header>
-
-      {narrow && <WheelTabs lead />}
 
       {!index ? (
         <Loading />
@@ -231,8 +229,6 @@ export default function BuilderPage() {
           </div>
         </>
       )}
-
-      {!narrow && <WheelTabs />}
 
       <footer className="wheelFooter">
         Built from the Fragrantica fragrance dataset (24,050 perfumes with note lists). A perfume

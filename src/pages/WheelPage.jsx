@@ -140,6 +140,8 @@ function Wheel({ spec, data }) {
 
   return (
     <main className="explorerPage">
+      <WheelTabs lead />
+
       <header className="explorerHeader">
         <div>
           <h1>{WHEELS[spec.slug].title}</h1>
@@ -147,8 +149,6 @@ function Wheel({ spec, data }) {
         </div>
         {!narrow && toggles}
       </header>
-
-      {narrow && <WheelTabs lead />}
 
       <div className="explorerGrid">
         <section className="wheelWorkspace" aria-label={`${WHEELS[spec.slug].title} explorer`}>
@@ -186,7 +186,7 @@ function Wheel({ spec, data }) {
             <p className="stageHint">Tap a ribbon · tap again to clear</p>
           </div>
 
-          {narrow ? toggles : <WheelTabs />}
+          {narrow && toggles}
         </section>
 
         <aside className="insightPanel" aria-label="Wheel controls and pairing details">

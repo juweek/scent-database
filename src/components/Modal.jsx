@@ -24,6 +24,16 @@ export function isModalOpen() {
 export default function Modal({ label, onClose, children, tone = 'default' }) {
   const panelRef = useRef(null);
   const returnTo = useRef(null);
+  // Held in a ref so the setup effect below can depend on NOTHING. Every caller
+  // passes an inline arrow, so `onClose` is a new function on every render —
+  // as an effect dependency it re-ran the whole setup on each keystroke, and
+  // the panel.focus() inside stole focus back from whatever input was being
+  // typed into. On a phone that closed the keyboard after every character.
+  const closeRef = useRef(onClose);
+
+  useEffect(() => {
+    closeRef.current = onClose;
+  });
 
   useEffect(() => {
     openModals += 1;
@@ -32,7 +42,7 @@ export default function Modal({ label, onClose, children, tone = 'default' }) {
 
     const onKeyDown = (event) => {
       if (event.key === 'Escape') {
-        onClose();
+        closeRef.current();
         return;
       }
       if (event.key !== 'Tab') return;
@@ -65,7 +75,8 @@ export default function Modal({ label, onClose, children, tone = 'default' }) {
       // down — otherwise we would yank it off whatever the user just clicked.
       if (panelRef.current?.contains(document.activeElement)) returnTo.current?.focus?.();
     };
-  }, [onClose]);
+    // Deliberately empty: this runs once per mount. See closeRef above.
+  }, []);
 
   return (
     <div

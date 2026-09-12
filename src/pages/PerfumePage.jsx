@@ -5,7 +5,6 @@ import { familyOfAccord } from '../data/accordFamily';
 import { getTaxonomy } from '../data/noteTaxonomy';
 import PerfumeChord, { TIER_COLOR, TIER_NAME } from '../viz/PerfumeChord';
 import WheelTabs from '../components/WheelTabs';
-import { useNarrow } from '../lib/useNarrow';
 import { Loading, ErrorState } from '../components/Status';
 import {
   recordSearch,
@@ -25,7 +24,6 @@ import site from '../site.config';
  * Everything on the page comes from ONE record fetch — see src/data/perfumeIndex.js.
  */
 export default function PerfumePage() {
-  const narrow = useNarrow();
   const { id } = useParams();
   const navigate = useNavigate();
   const [meta, setMeta] = useState(null);
@@ -94,10 +92,11 @@ export default function PerfumePage() {
 
   return (
     <main className="explorerPage">
+      <WheelTabs lead />
+
       <header className="explorerHeader">
         <div>
-          <p className="eyebrow">Fragrantica · one bottle</p>
-          <h1>Perfume</h1>
+          <h1>Perfume search</h1>
           <p className="lede">
             Search any of the {meta ? meta.perfumes.toLocaleString() : '24,000'} perfumes in the
             dataset to see its notes drawn as a chord — where the ribbons are weighted not by this
@@ -106,8 +105,6 @@ export default function PerfumePage() {
           </p>
         </div>
       </header>
-
-      {narrow && <WheelTabs lead />}
 
       <div className="perfumeSearchRow">
         <PerfumeSearch onPick={search} />
@@ -134,8 +131,6 @@ export default function PerfumePage() {
           onPick={open}
         />
       )}
-
-      {!narrow && <WheelTabs />}
 
       {blockedSearch != null && (
         <SubscribeGate

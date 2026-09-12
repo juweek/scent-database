@@ -537,6 +537,14 @@ a {
   display: none;
 }
 
+/* Lead position — above the page title, so it reads as navigation rather than
+   as a footer. Left-aligned to line up with the h1 underneath it; the centred
+   default was for when this sat under the wheel. */
+.wheelTabs--lead {
+  margin: 2px 0 26px;
+  justify-content: flex-start;
+}
+
 .wheelTabs a {
   min-width: 104px;
   min-height: 46px;
@@ -1901,7 +1909,10 @@ a {
   border-radius: 999px;
   background: var(--chip);
   color: var(--ink);
-  font-size: 15px; /* under 16px, iOS Safari zooms the whole page on focus */
+  /* Exactly 16px, not a pixel less. iOS Safari zooms the whole page in when a
+     focused input's text is under 16px, and the zoom does not come back out —
+     which is what made typing here feel like the layout lurched sideways. */
+  font-size: 16px;
 }
 
 .gateForm input::placeholder {
@@ -2431,9 +2442,10 @@ a {
     padding-inline: 18px;
   }
 
-  /* At the top of the page on a phone, so it needs its own breathing room. */
+  /* Above the title on a phone too, and full-bleed, so the block margins are
+     set here while the inline ones stay negative to break out of the padding. */
   .wheelTabs--lead {
-    margin-block: 18px 2px;
+    margin-block: 2px 20px;
   }
 
   .insightPanel {
@@ -2932,82 +2944,6 @@ a {
 }
 
 .recommendedMore:hover {
-  color: var(--ink);
-}
-
-/* The builder gate's email capture. */
-.gateForm {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.gateForm input {
-  flex: 1 1 220px;
-  min-width: 0;
-  min-height: 46px;
-  padding: 0 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--chip);
-  color: var(--ink);
-  font-size: 15px; /* under 16px, iOS Safari zooms the whole page on focus */
-}
-
-.gateForm input::placeholder {
-  color: var(--quiet);
-}
-
-.gateForm input[aria-invalid='true'] {
-  border-color: #d6452e;
-}
-
-.gateForm input:disabled {
-  opacity: 0.5;
-}
-
-.gateForm .promoAction {
-  flex: 0 0 auto;
-  cursor: pointer;
-}
-
-.gateNote {
-  margin: 12px 0 0;
-  font-size: 12px;
-}
-
-.gateNote--bad {
-  color: #e0857a;
-}
-
-.gateFooter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.gateFooter a,
-.gateFooter button {
-  padding: 0;
-  appearance: none;
-  border: 0;
-  background: none;
-  color: var(--quiet);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.gateFooter a:hover,
-.gateFooter button:hover {
   color: var(--ink);
 }
 

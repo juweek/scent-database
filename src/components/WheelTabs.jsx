@@ -46,7 +46,10 @@ export default function WheelTabs({ lead = false }) {
       aria-label="Fragrance views"
     >
       {tabs.map((tab) => {
-        const current = pathname === tab.to;
+        // Prefix match, not equality: /perfume/219 and /wheel/accord are both
+        // "on" their tab, and exact matching left the strip with nothing lit
+        // the moment you opened an actual perfume.
+        const current = pathname === tab.to || pathname.startsWith(`${tab.to}/`);
         return (
           <Link
             key={tab.to}
