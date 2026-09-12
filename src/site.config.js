@@ -158,7 +158,7 @@ const site = {
    * The Note Builder's free allowance.
    *
    * `freeNotes` is how many notes may be stacked before the prompt appears —
-   * 2 means the third note is the ask. 0 turns the gate off entirely.
+   * 3 means the fourth note is the ask. 0 turns the gate off entirely.
    *
    * `hardStop` true keeps the reader at the free width if they decline, and is
    * what makes this a gate rather than a nag. Two things it is NOT: proof of
@@ -175,7 +175,7 @@ const site = {
    * >>> which is a different and much larger piece of work.
    */
   builder: {
-    freeNotes: 2,
+    freeNotes: 3,
     hardStop: true,
   },
 

@@ -1,5 +1,5 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { Navigate, useParams, useSearchParams } from 'react-router-dom';
 import { useAsync } from '../lib/useAsync';
 import { useNarrow } from '../lib/useNarrow';
 import { getSharedFragrances } from '../data/fragranceMatches';
@@ -44,23 +44,72 @@ function Wheel({ spec, data }) {
   const narrow = useNarrow();
   const [settings, setSettings] = useState(spec.defaults);
   const [minShared, setMinShared] = useState(spec.defaults.minShared ?? 0);
-  const [note, setNote] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sticky, setSticky] = useState({});
   const [hovered, setHovered] = useState({});
   const [readout, setReadout] = useState(null);
   const [selectedPair, setSelectedPair] = useState(null);
 
-  useEffect(() => {
-    setSticky({});
-    setHovered({});
-    setNote(null);
-    setSelectedPair(null);
-  }, [settings]);
-
   const view = useMemo(() => ({ data, ...settings }), [data, settings]);
   const options = useMemo(() => spec.options(data), [spec, data]);
   const legendItems = useMemo(() => spec.legend(data, view), [spec, data, view]);
   const searchItems = useMemo(() => (spec.searchable ? spec.searchable(data) : []), [spec, data]);
+
+  /**
+   * The focused note lives in the URL, so a wheel view is a link — shareable,
+   * and something an email or a post can point at directly.
+   *
+   * Read back through this wheel's own vocabulary rather than trusted: a note
+   * from another wheel, or a typo, resolves to no selection instead of a
+   * half-focused wheel with a chip for something that is not on it.
+   */
+  const note = useMemo(() => {
+    const raw = searchParams.get('note');
+    if (!raw) return null;
+    return searchItems.some((item) => item.value === raw) ? raw : null;
+  }, [searchParams, searchItems]);
+
+  /**
+   * REPLACE, never push. Selecting notes is refining one view, not travelling
+   * between views — pushing would turn the back button into "undo my last ten
+   * clicks" and bury the thing people actually want back: the wheel or page
+   * they came from. Back and forward stay reserved for the top-level tabs.
+   */
+  const setNote = useCallback(
+    (value) => {
+      setSearchParams(
+        (params) => {
+          const next = new URLSearchParams(params);
+          if (value) next.set('note', value);
+          else next.delete('note');
+          return next;
+        },
+        { replace: true },
+      );
+    },
+    [setSearchParams],
+  );
+
+  /**
+   * Changing a control changes the matrix underneath, so the selection made
+   * against the old one is no longer meaningful. Must NOT fire on mount, or
+   * arriving at /wheel/accord?note=vanilla clears the very note the link was for.
+   *
+   * Compares the settings OBJECT rather than counting runs. A "skip the first
+   * invocation" flag looks equivalent and is not: StrictMode double-invokes
+   * effects in development, so the first run trips the flag and the second run
+   * sails through and wipes the deep link. Identity survives that, because
+   * `set` always builds a new object and mount always sees the same one.
+   */
+  const lastSettings = useRef(settings);
+  useEffect(() => {
+    if (lastSettings.current === settings) return;
+    lastSettings.current = settings;
+    setSticky({});
+    setHovered({});
+    setNote(null);
+    setSelectedPair(null);
+  }, [settings, setNote]);
   const toggleControls = spec.controls.filter((control) => control.type === 'toggle');
   const searchControl = spec.controls.find((control) => control.type === 'search');
   const sliderControl = spec.controls.find((control) => control.type === 'slider');

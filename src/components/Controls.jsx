@@ -65,6 +65,17 @@ export function Search({ label, placeholder, items, value, onChange }) {
     return () => document.removeEventListener('click', close);
   }, []);
 
+  // A note can now arrive from the URL rather than from this box, so mirror it
+  // into the field. Guarded by a ref so it only fires when `value` genuinely
+  // changed from outside — a blanket sync would fight the user mid-keystroke.
+  const lastValue = useRef(value);
+  useEffect(() => {
+    if (value !== lastValue.current) {
+      lastValue.current = value;
+      setQuery(value || '');
+    }
+  }, [value]);
+
   const q = query.trim().toLowerCase();
   const hits = useMemo(
     () => items.filter((it) => it.value.toLowerCase().includes(q)).slice(0, 40),
