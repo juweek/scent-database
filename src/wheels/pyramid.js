@@ -11,7 +11,6 @@ const INK = '#EFE7DA';
 
 const pyramid = {
   slug: 'pyramid',
-  eyebrow: 'Fragrantica · the perfume pyramid',
   title: ['The Pyramid ', 'Wheels', ''],
   lede: 'A separate wheel for each layer of the pyramid — the top notes that open, the heart that emerges, the base that lingers. Three rings: ribbons join notes that share fragrances, the middle band groups them by Fragrantica main accord, and the outer band groups accords into twelve families.',
   footer:

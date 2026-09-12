@@ -9,6 +9,10 @@ import { Loading } from './components/Status';
 // visitors never open it. Split so the three wheels do not pay for it.
 const PerfumePage = lazy(() => import('./pages/PerfumePage'));
 
+// The builder carries a 210 KB inverted index of its own and is a deliberate
+// destination, never the landing page. Split so nobody pays for it by accident.
+const BuilderPage = lazy(() => import('./pages/BuilderPage'));
+
 /**
  * One route per surface. The wheel slug is a param (/wheel/accord) so every
  * view is a URL — shareable, and a host site can iframe one wheel directly.
@@ -39,6 +43,14 @@ export default function App() {
             element={
               <Suspense fallback={<Loading />}>
                 <PerfumePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/builder"
+            element={
+              <Suspense fallback={<Loading />}>
+                <BuilderPage />
               </Suspense>
             }
           />

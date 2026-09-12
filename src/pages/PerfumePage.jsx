@@ -5,7 +5,16 @@ import { familyOfAccord } from '../data/accordFamily';
 import { getTaxonomy } from '../data/noteTaxonomy';
 import PerfumeChord, { TIER_COLOR, TIER_NAME } from '../viz/PerfumeChord';
 import WheelTabs from '../components/WheelTabs';
+import { useNarrow } from '../lib/useNarrow';
 import { Loading, ErrorState } from '../components/Status';
+import {
+  recordSearch,
+  builderUnlocked,
+  perfumeSearchesToday,
+  recordPerfumeSearch,
+} from '../lib/engagement';
+import SubscribeGate from '../components/SubscribeGate';
+import site from '../site.config';
 
 /**
  * One perfume, four readings: the chord (how its notes relate across the whole
@@ -16,6 +25,7 @@ import { Loading, ErrorState } from '../components/Status';
  * Everything on the page comes from ONE record fetch — see src/data/perfumeIndex.js.
  */
 export default function PerfumePage() {
+  const narrow = useNarrow();
   const { id } = useParams();
   const navigate = useNavigate();
   const [meta, setMeta] = useState(null);
@@ -23,7 +33,6 @@ export default function PerfumePage() {
   const [record, setRecord] = useState(null);
   const [status, setStatus] = useState('idle');
   const [mode, setMode] = useState('conventional');
-  const [arrange, setArrange] = useState('tier');
   const [selected, setSelected] = useState(null);
   const [taxonomy, setTaxonomy] = useState(null);
 
@@ -60,6 +69,27 @@ export default function PerfumePage() {
 
   const open = useCallback((nextId) => navigate(`/perfume/${nextId}`), [navigate]);
 
+  // The daily allowance applies to SEARCHES, not to navigation: following a
+  // "smells like this" link or a featured tile is reading, not searching, and
+  // charging for it would make the page feel like a turnstile.
+  const [blockedSearch, setBlockedSearch] = useState(null);
+
+  const search = useCallback(
+    (nextId) => {
+      const limit = site.perfume.freeSearchesPerDay;
+      if (limit > 0 && !builderUnlocked() && perfumeSearchesToday() >= limit) {
+        setBlockedSearch(nextId);
+        return;
+      }
+      recordPerfumeSearch();
+      // Counted here, not in the type-ahead: a refused search is not a search,
+      // and ticking the interstitial for one would punish the reader twice.
+      recordSearch();
+      open(nextId);
+    },
+    [open],
+  );
+
   if (metaError) return <ErrorState message="The perfume index could not be loaded." />;
 
   return (
@@ -77,8 +107,10 @@ export default function PerfumePage() {
         </div>
       </header>
 
+      {narrow && <WheelTabs lead />}
+
       <div className="perfumeSearchRow">
-        <PerfumeSearch onPick={open} />
+        <PerfumeSearch onPick={search} />
       </div>
 
       {!id && <Featured meta={meta} onPick={open} />}
@@ -97,15 +129,23 @@ export default function PerfumePage() {
           taxonomy={taxonomy}
           mode={mode}
           setMode={setMode}
-          arrange={arrange}
-          setArrange={setArrange}
           selected={selected}
           setSelected={setSelected}
           onPick={open}
         />
       )}
 
-      <WheelTabs />
+      {!narrow && <WheelTabs />}
+
+      {blockedSearch != null && (
+        <SubscribeGate
+          onClose={(unlocked) => {
+            const wanted = blockedSearch;
+            setBlockedSearch(null);
+            if (unlocked) open(wanted);
+          }}
+        />
+      )}
 
       <footer className="wheelFooter">
         Note lists, accords and tiers as published on Fragrantica, which are community-edited from
@@ -117,18 +157,7 @@ export default function PerfumePage() {
   );
 }
 
-function PerfumeDetail({
-  record,
-  meta,
-  taxonomy,
-  mode,
-  setMode,
-  arrange,
-  setArrange,
-  selected,
-  setSelected,
-  onPick,
-}) {
+function PerfumeDetail({ record, meta, taxonomy, mode, setMode, selected, setSelected, onPick }) {
   const { variants, lookalikes } = useMemo(() => {
     const all = record.similar || [];
     return {
@@ -182,22 +211,6 @@ function PerfumeDetail({
                 distinctive
               </button>
             </div>
-            <div className="pairRank perfumeMode" role="group" aria-label="Arrange notes by">
-              <button
-                type="button"
-                aria-pressed={arrange === 'tier'}
-                onClick={() => setArrange('tier')}
-              >
-                by tier
-              </button>
-              <button
-                type="button"
-                aria-pressed={arrange === 'family'}
-                onClick={() => setArrange('family')}
-              >
-                by family
-              </button>
-            </div>
           </div>
 
           <div className="stage perfumeStage">
@@ -206,7 +219,7 @@ function PerfumeDetail({
               taxonomy={taxonomy}
               population={meta.perfumes}
               mode={mode}
-              arrange={arrange}
+              arrange="tier"
               selected={selected}
               onPick={setSelected}
             />
@@ -214,7 +227,7 @@ function PerfumeDetail({
               {mode === 'conventional'
                 ? 'Thicker ribbon · more perfumes pair those two notes'
                 : 'Brighter ribbon · that pair beats chance by more'}
-              {' — rings, outward: note · family · tier'}
+              {' — rings, outward: tier · family · note'}
             </p>
             <p className="stageHint">Tap a ribbon or an arc · tap empty space to clear</p>
           </div>
@@ -475,6 +488,7 @@ function PerfumeSearch({ onPick }) {
   const choose = (row) => {
     setQuery(`${row.name} — ${row.brand}`);
     setOpen(false);
+    // onPick counts it — and may refuse, in which case nothing is counted.
     onPick(row.id);
   };
 

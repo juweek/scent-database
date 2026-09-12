@@ -83,23 +83,22 @@ a {
   gap: 28px;
 }
 
+/* The studio wordmark, matching drinkwithdata.com: one word, Georgia, the
+   weight change carrying the split rather than a space or a colour change.
+   Georgia is a system face everywhere this ships, so it costs no webfont. */
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
+  display: inline-block;
   color: var(--ink);
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
 }
 
-.wordmarkMark {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #f6c53a;
-  box-shadow: 0 0 18px rgba(246, 197, 58, 0.5);
+.wordmark span {
+  font-weight: 400;
 }
 
 .siteNav nav {
@@ -122,7 +121,9 @@ a {
   color: var(--ink);
 }
 
-/* Support menu: hover-opened on desktop, tap-opened on touch. */
+/* Support menu: the only nav item, so it carries its own weight as a pill
+   rather than sitting as one uppercase link among several. Hover-opened on
+   desktop, tap-opened on touch. */
 .navMenu {
   position: relative;
   display: flex;
@@ -132,22 +133,26 @@ a {
 .navMenuButton {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--muted);
+  gap: 9px;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 160ms ease;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .navMenu:hover .navMenuButton,
 .navMenuButton[aria-expanded='true'] {
-  color: var(--ink);
+  border-color: rgba(246, 197, 58, 0.55);
+  background: rgba(246, 197, 58, 0.12);
 }
 
 .navMenuCaret {
@@ -169,10 +174,10 @@ a {
   z-index: 20;
   display: flex;
   flex-direction: column;
-  min-width: 132px;
+  min-width: 148px;
   /* Bridges the gap under the button so the pointer can travel into the panel
      without tripping mouseleave. */
-  margin-top: 10px;
+  margin-top: 8px;
   padding: 7px 0;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -257,6 +262,9 @@ a {
 
 .previewRail {
   display: grid;
+  /* Six cards, deliberately 3x2 rather than auto-fit: four-up leaves the
+     second row half empty, and one row of six shrinks every wheel to a token.
+     Below 720px this becomes a swipeable rail — see the narrow-screen block. */
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 56px);
   align-items: start;
@@ -292,6 +300,20 @@ a {
   animation-duration: 76s;
 }
 
+.previewCard--4 .previewOrbit {
+  animation-duration: 94s;
+  animation-direction: reverse;
+}
+
+.previewCard--5 .previewOrbit {
+  animation-duration: 82s;
+}
+
+.previewCard--6 .previewOrbit {
+  animation-duration: 100s;
+  animation-direction: reverse;
+}
+
 .previewCard:hover .previewOrbit,
 .previewCard:focus-visible .previewOrbit {
   animation-play-state: paused;
@@ -308,6 +330,23 @@ a {
 .previewCard:hover .wheelCanvas,
 .previewCard:focus-visible .wheelCanvas {
   filter: brightness(1.18);
+  transform: scale(1.018);
+}
+
+/* Drawn marks for Perfume and Builder — the two cards with no wheel behind
+   them. Sized like a wheel so the rail keeps one rhythm. */
+.toolMark {
+  width: 83%;
+  height: auto;
+  overflow: visible;
+  transition:
+    filter 240ms ease,
+    transform 240ms ease;
+}
+
+.previewCard:hover .toolMark,
+.previewCard:focus-visible .toolMark {
+  filter: brightness(1.3);
   transform: scale(1.018);
 }
 
@@ -343,20 +382,6 @@ a {
 
 .carouselDots {
   display: none;
-}
-
-.homeMethod {
-  width: min(100%, 540px);
-  margin: 5vh auto 0;
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
-  text-align: center;
-}
-
-.homeMethod > p:last-child {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 14px;
 }
 
 @keyframes wheelDrift {
@@ -428,6 +453,9 @@ a {
      140-note wheel on a phone. Keep both; the wheel only needs taps. */
   touch-action: pan-y pinch-zoom;
   user-select: none;
+  /* Without this a long press on iOS opens the Save Image sheet over the
+     wheel — a tap-and-hold on a ribbon should do nothing but read it. */
+  -webkit-touch-callout: none;
 }
 
 .wheelPulseCanvas {
@@ -790,6 +818,9 @@ a {
 /* ── Perfume explorer ───────────────────────────────────────── */
 .perfumeSearchRow {
   max-width: 520px;
+  /* Space off the header above it — on mobile that is the tab strip, which
+     otherwise sits right on top of the field. */
+  margin-top: 28px;
   margin-bottom: 34px;
 }
 
@@ -1237,6 +1268,14 @@ a {
   margin: 12px 0 14px;
 }
 
+/* Four rankings will not sit in one row at this width — "most distinctive"
+   alone eats a quarter of the panel. Two by two instead of a squeeze. */
+.pairRank--wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
 .pairRank button {
   min-height: 32px;
   flex: 1;
@@ -1364,6 +1403,604 @@ a {
   margin-top: 8px;
 }
 
+/* ── Overlays ──────────────────────────────────────────────────────────────
+   Two of them share this shell: the once-ever signup offer and the every-Nth
+   -search interstitial. Both sit above everything, both leave on a click. */
+.modalScrim {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 5, 5, 0.82);
+  backdrop-filter: blur(6px);
+  animation: modalFade 200ms ease both;
+}
+
+.modalPanel {
+  position: relative;
+  width: min(100%, 476px);
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  padding: 38px 36px 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--ground-raised);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.62);
+  animation: modalRise 240ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+/* The panel takes focus on open so the keyboard lands inside it. That is
+   programmatic, not a user tabbing to it, and the global focus ring around the
+   whole dialog reads as an error state rather than a cue. Everything focusable
+   INSIDE it keeps its ring. */
+.modalPanel:focus,
+.modalPanel:focus-visible {
+  outline: none;
+}
+
+.modalScrim[data-tone='interstitial'] .modalPanel {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.modalScrim[data-tone='interstitial'] .modalPanel:has(.offerList) {
+  width: min(100%, 600px);
+}
+
+/* Wide enough that the three actions sit on one row rather than breaking 2+1,
+   which reads as two real choices and an afterthought. Below 720px they stack
+   on purpose — see the narrow-screen block. */
+.modalScrim[data-tone='interstitial'] .modalPanel:has(.promoActions) {
+  width: min(100%, 648px);
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--quiet);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background 150ms ease;
+}
+
+.modalClose:hover {
+  color: var(--ink);
+  background: var(--chip);
+}
+
+.modalHeading {
+  margin: 12px 0 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.modalBlurb {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Substack's form is theirs — it arrives as a white card on our dark ground,
+   so it gets a frame and a little breathing room rather than a pretence that
+   it is ours. */
+.substackFrame {
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.substackFrame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.modalDismiss {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.modalDismiss:hover {
+  color: var(--ink);
+}
+
+.promoActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 26px;
+}
+
+.promoAction {
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  /* Explicit, because this class is worn by both <a> and <button>. An anchor
+     has no background of its own; a button inherits the UA's grey one. */
+  background: none;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.promoAction:hover {
+  border-color: var(--muted);
+  background: var(--chip);
+}
+
+/* The way out. Same shape as its neighbours so it is genuinely easy to hit,
+   quieter ink so it does not compete with the ask. */
+.promoAction--quiet {
+  border-color: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.promoAction--quiet:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.promoAction--primary {
+  border-color: rgba(246, 197, 58, 0.55);
+  background: rgba(246, 197, 58, 0.13);
+}
+
+.promoAction--primary:hover {
+  border-color: #f6c53a;
+  background: rgba(246, 197, 58, 0.22);
+}
+
+/* Deliberately not --quiet. A disclosure has to be legible to do its job, and
+   --quiet lands at 2.6:1 against this panel — under the 4.5:1 AA floor, and
+   under what "clear and conspicuous" is supposed to mean. --muted is 4.9:1. */
+.modalDisclosure {
+  max-width: 46ch;
+  margin: 14px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Offers are left-aligned inside the otherwise centred interstitial: five
+   stacked cards read as a list, and centred list text is hard to scan. */
+.offerList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.offerList li + li {
+  margin-top: 8px;
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--chip);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.offerCard:hover {
+  border-color: rgba(246, 197, 58, 0.5);
+  background: rgba(246, 197, 58, 0.09);
+}
+
+.offerTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.offerTop strong {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.offerTag {
+  flex: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.offerHook {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.interstitialAd {
+  min-height: 250px;
+  margin-top: 18px;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modalRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+
+@media (max-width: 720px) {
+  .modalScrim {
+    padding: 16px;
+  }
+
+  .modalPanel {
+    padding: 32px 22px 26px;
+  }
+
+  .modalHeading {
+    font-size: 21px;
+  }
+
+  .promoActions {
+    flex-direction: column;
+  }
+}
+
+/* ── Note builder ──────────────────────────────────────────────────────────
+   Search over the picker, chips for what is pinned, results left and the
+   "also in these" panel right — the same two-column grid the wheels use. */
+.builderPicker {
+  max-width: 520px;
+  margin-top: 26px;
+}
+
+.builderQuick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.builderQuick button {
+  padding: 8px 13px;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.builderQuick button:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+
+.builderChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.builderChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 0 14px;
+  appearance: none;
+  border: 1px solid rgba(246, 197, 58, 0.5);
+  border-radius: 999px;
+  background: rgba(246, 197, 58, 0.12);
+  color: var(--ink);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.builderChip:hover {
+  background: rgba(246, 197, 58, 0.22);
+}
+
+.builderChip span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.builderClear {
+  padding: 0 6px;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.builderClear:hover {
+  color: var(--ink);
+}
+
+.builderGrid {
+  margin-top: 26px;
+}
+
+/* Recommended notes. Sits between the pinned chips and the results, because it
+   is what the reader acts on next. */
+.recommended {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.recommendedHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 13px;
+}
+
+.recommendedHead span {
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notePills button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  padding: 0 14px;
+  overflow: hidden;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.notePills button:hover {
+  border-color: rgba(246, 197, 58, 0.6);
+}
+
+/* The share, as a fill behind the label rather than beside it — the pill IS
+   the bar, so the row of them reads as a distribution. */
+.notePillFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: rgba(246, 197, 58, 0.16);
+  transition: width 220ms ease;
+}
+
+.notePills button:hover .notePillFill {
+  background: rgba(246, 197, 58, 0.26);
+}
+
+.notePillName {
+  position: relative;
+  font-size: 13px;
+}
+
+.notePillShare {
+  position: relative;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.recommendedMore {
+  margin-top: 12px;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.recommendedMore:hover {
+  color: var(--ink);
+}
+
+/* The builder gate's email capture. */
+.gateForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.gateForm input {
+  flex: 1 1 220px;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink);
+  font-size: 15px; /* under 16px, iOS Safari zooms the whole page on focus */
+}
+
+.gateForm input::placeholder {
+  color: var(--quiet);
+}
+
+.gateForm input[aria-invalid='true'] {
+  border-color: #d6452e;
+}
+
+.gateForm input:disabled {
+  opacity: 0.5;
+}
+
+.gateForm .promoAction {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.gateNote {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.gateNote--bad {
+  color: #e0857a;
+}
+
+.gateFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.gateFooter a,
+.gateFooter button {
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.gateFooter a:hover,
+.gateFooter button:hover {
+  color: var(--ink);
+}
+
+.builderListControls {
+  display: flex;
+  gap: 8px;
+}
+
+.builderListControls .showMore {
+  margin-top: 12px;
+}
+
+.showMore--quiet {
+  flex: none;
+  width: auto;
+  padding: 0 18px;
+  border-color: transparent;
+  color: var(--quiet);
+}
+
+.showMore--quiet:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+/* The results column is a plain list, not a canvas — it has no stage to hold
+   its own width, so it needs one. */
+.builderResults {
+  min-width: 0;
+}
+
+.builderList a {
+  color: inherit;
+}
+
+@media (max-width: 720px) {
+  .builderPicker {
+    margin-top: 18px;
+  }
+
+  .builderChips {
+    margin-top: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pairingBar {
     transition: none;
@@ -1449,9 +2086,21 @@ a {
 }
 
 .matchList .rating {
+  flex: none;
+  text-align: right;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.matchList .rating small {
+  display: block;
+  margin-top: 2px;
+  color: var(--quiet);
+  font-size: 9.5px;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 .noteScope {
@@ -1540,11 +2189,8 @@ a {
     font-size: 9px;
   }
 
-  .siteNav nav > a:first-child {
-    display: none;
-  }
-
   .navMenuButton {
+    padding: 8px 15px;
     font-size: 9px;
   }
 
@@ -1647,10 +2293,6 @@ a {
     background: var(--ink);
   }
 
-  .homeMethod {
-    margin-top: 46px;
-  }
-
   .explorerPage {
     padding-top: 24px;
   }
@@ -1672,6 +2314,7 @@ a {
   .viewControls {
     justify-content: stretch;
     overflow-x: auto;
+    margin-top: 18px;
   }
 
   .viewControls .toggleField {
@@ -1712,7 +2355,46 @@ a {
     transform: translate(-50%, -50%);
   }
 
+  /* Was display:none. A phone has no hover, so the tap affordance is invisible
+     until someone guesses it — this is the one platform that needs telling.
+     Moved out from under the wheel, which is full-bleed here, to sit beneath
+     it where it cannot land on top of the ribbons. */
   .stageHint {
+    position: static;
+    transform: none;
+    margin-top: 6px;
+    font-size: 10px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* The WHEEL stage centres its canvas absolutely and overscales it to 124%,
+     so an in-flow hint lands under the ribbons. Pin this one below the stage
+     box, past the ~12px the canvas overhangs by. The perfume stage keeps its
+     canvas in flow and needs none of this. */
+  .stage:not(.perfumeStage) {
+    /* The hint now sits outside this box, and overflow:hidden would clip it.
+       Safe to open up: the canvas inside is capped at 100vw and centred, so it
+       can reach the screen edges but never widen the document. */
+    overflow: visible;
+    margin-bottom: 40px;
+  }
+
+  .stage:not(.perfumeStage) .stageHint {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    /* Shrink-to-fit would wrap it onto two lines and push it into the controls
+       below; max-content keeps it on one and the stage reserves room for one. */
+    width: max-content;
+    max-width: 100%;
+    margin-top: 16px;
+    transform: translateX(-50%);
+  }
+
+  /* The second hint on the perfume page repeats what the first one says once
+     the ribbons are tappable; one line is enough on a small screen. */
+  .perfumeStage .stageHint + .stageHint {
     display: none;
   }
 
@@ -1728,17 +2410,30 @@ a {
     font-size: 8px;
   }
 
+  /* Full-bleed and swipeable rather than six pills crushed into 375px. The
+     negative margins break out of the page padding so the strip runs edge to
+     edge, with the padding put back inside so the first and last pill still
+     clear the screen edge. */
   .wheelTabs {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    max-width: none;
+    justify-content: flex-start;
     gap: 8px;
-    margin-top: 8px;
+    margin: 0 -20px;
+    padding: 0 20px;
+    scroll-padding-inline: 20px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .wheelTabs a {
-    min-width: 0;
-    flex: 1;
-    padding-inline: 13px;
+    flex: 0 0 auto;
+    min-width: 96px;
+    padding-inline: 18px;
+  }
+
+  /* At the top of the page on a phone, so it needs its own breathing room. */
+  .wheelTabs--lead {
+    margin-block: 18px 2px;
   }
 
   .insightPanel {
@@ -1766,6 +2461,595 @@ a {
 
   .wheelFooter {
     margin-top: 48px;
+  }
+}
+
+/* ── Overlays ──────────────────────────────────────────────────────────────
+   Two of them share this shell: the once-ever signup offer and the every-Nth
+   -search interstitial. Both sit above everything, both leave on a click. */
+.modalScrim {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 5, 5, 0.82);
+  backdrop-filter: blur(6px);
+  animation: modalFade 200ms ease both;
+}
+
+.modalPanel {
+  position: relative;
+  width: min(100%, 476px);
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  padding: 38px 36px 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--ground-raised);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.62);
+  animation: modalRise 240ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+.modalScrim[data-tone='interstitial'] .modalPanel {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.modalScrim[data-tone='interstitial'] .modalPanel:has(.offerList) {
+  width: min(100%, 600px);
+}
+
+/* Wide enough that the three actions sit on one row rather than breaking 2+1,
+   which reads as two real choices and an afterthought. Below 720px they stack
+   on purpose — see the narrow-screen block. */
+.modalScrim[data-tone='interstitial'] .modalPanel:has(.promoActions) {
+  width: min(100%, 648px);
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--quiet);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background 150ms ease;
+}
+
+.modalClose:hover {
+  color: var(--ink);
+  background: var(--chip);
+}
+
+.modalHeading {
+  margin: 12px 0 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.modalBlurb {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Substack's form is theirs — it arrives as a white card on our dark ground,
+   so it gets a frame and a little breathing room rather than a pretence that
+   it is ours. */
+.substackFrame {
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.substackFrame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.modalDismiss {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.modalDismiss:hover {
+  color: var(--ink);
+}
+
+.promoActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 26px;
+}
+
+.promoAction {
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  /* Explicit, because this class is worn by both <a> and <button>. An anchor
+     has no background of its own; a button inherits the UA's grey one. */
+  background: none;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.promoAction:hover {
+  border-color: var(--muted);
+  background: var(--chip);
+}
+
+/* The way out. Same shape as its neighbours so it is genuinely easy to hit,
+   quieter ink so it does not compete with the ask. */
+.promoAction--quiet {
+  border-color: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.promoAction--quiet:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.promoAction--primary {
+  border-color: rgba(246, 197, 58, 0.55);
+  background: rgba(246, 197, 58, 0.13);
+}
+
+.promoAction--primary:hover {
+  border-color: #f6c53a;
+  background: rgba(246, 197, 58, 0.22);
+}
+
+/* Deliberately not --quiet. A disclosure has to be legible to do its job, and
+   --quiet lands at 2.6:1 against this panel — under the 4.5:1 AA floor, and
+   under what "clear and conspicuous" is supposed to mean. --muted is 4.9:1. */
+.modalDisclosure {
+  max-width: 46ch;
+  margin: 14px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Offers are left-aligned inside the otherwise centred interstitial: five
+   stacked cards read as a list, and centred list text is hard to scan. */
+.offerList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.offerList li + li {
+  margin-top: 8px;
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--chip);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.offerCard:hover {
+  border-color: rgba(246, 197, 58, 0.5);
+  background: rgba(246, 197, 58, 0.09);
+}
+
+.offerTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.offerTop strong {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.offerTag {
+  flex: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.offerHook {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.interstitialAd {
+  min-height: 250px;
+  margin-top: 18px;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modalRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+
+@media (max-width: 720px) {
+  .modalScrim {
+    padding: 16px;
+  }
+
+  .modalPanel {
+    padding: 32px 22px 26px;
+  }
+
+  .modalHeading {
+    font-size: 21px;
+  }
+
+  .promoActions {
+    flex-direction: column;
+  }
+}
+
+/* ── Note builder ──────────────────────────────────────────────────────────
+   Search over the picker, chips for what is pinned, results left and the
+   "also in these" panel right — the same two-column grid the wheels use. */
+.builderPicker {
+  max-width: 520px;
+  margin-top: 26px;
+}
+
+.builderQuick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.builderQuick button {
+  padding: 8px 13px;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.builderQuick button:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+
+.builderChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.builderChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 0 14px;
+  appearance: none;
+  border: 1px solid rgba(246, 197, 58, 0.5);
+  border-radius: 999px;
+  background: rgba(246, 197, 58, 0.12);
+  color: var(--ink);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.builderChip:hover {
+  background: rgba(246, 197, 58, 0.22);
+}
+
+.builderChip span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.builderClear {
+  padding: 0 6px;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.builderClear:hover {
+  color: var(--ink);
+}
+
+.builderGrid {
+  margin-top: 26px;
+}
+
+/* Recommended notes. Sits between the pinned chips and the results, because it
+   is what the reader acts on next. */
+.recommended {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.recommendedHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 13px;
+}
+
+.recommendedHead span {
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.notePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notePills button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  padding: 0 14px;
+  overflow: hidden;
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.notePills button:hover {
+  border-color: rgba(246, 197, 58, 0.6);
+}
+
+/* The share, as a fill behind the label rather than beside it — the pill IS
+   the bar, so the row of them reads as a distribution. */
+.notePillFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: rgba(246, 197, 58, 0.16);
+  transition: width 220ms ease;
+}
+
+.notePills button:hover .notePillFill {
+  background: rgba(246, 197, 58, 0.26);
+}
+
+.notePillName {
+  position: relative;
+  font-size: 13px;
+}
+
+.notePillShare {
+  position: relative;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.recommendedMore {
+  margin-top: 12px;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.recommendedMore:hover {
+  color: var(--ink);
+}
+
+/* The builder gate's email capture. */
+.gateForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.gateForm input {
+  flex: 1 1 220px;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink);
+  font-size: 15px; /* under 16px, iOS Safari zooms the whole page on focus */
+}
+
+.gateForm input::placeholder {
+  color: var(--quiet);
+}
+
+.gateForm input[aria-invalid='true'] {
+  border-color: #d6452e;
+}
+
+.gateForm input:disabled {
+  opacity: 0.5;
+}
+
+.gateForm .promoAction {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.gateNote {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+
+.gateNote--bad {
+  color: #e0857a;
+}
+
+.gateFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.gateFooter a,
+.gateFooter button {
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--quiet);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.gateFooter a:hover,
+.gateFooter button:hover {
+  color: var(--ink);
+}
+
+.builderListControls {
+  display: flex;
+  gap: 8px;
+}
+
+.builderListControls .showMore {
+  margin-top: 12px;
+}
+
+.showMore--quiet {
+  flex: none;
+  width: auto;
+  padding: 0 18px;
+  border-color: transparent;
+  color: var(--quiet);
+}
+
+.showMore--quiet:hover {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+/* The results column is a plain list, not a canvas — it has no stage to hold
+   its own width, so it needs one. */
+.builderResults {
+  min-width: 0;
+}
+
+.builderList a {
+  color: inherit;
+}
+
+@media (max-width: 720px) {
+  .builderPicker {
+    margin-top: 18px;
+  }
+
+  .builderChips {
+    margin-top: 16px;
   }
 }
 

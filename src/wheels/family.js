@@ -7,7 +7,6 @@ const INK = '#EFE7DA';
 
 const family = {
   slug: 'family',
-  eyebrow: 'Fragrantica · family bridges',
   title: ['The ', 'Family', ' Wheel'],
   lede: 'The same pairings, lifted one level up: the ten scent families, and how much each one bridges to the others. Hover a ribbon for the bridge, or isolate a family to see only what it touches.',
   footer:

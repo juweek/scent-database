@@ -18,7 +18,6 @@ const INK = '#EFE7DA';
 
 const accords = {
   slug: 'accords',
-  eyebrow: 'Fragrantica · main accords',
   title: ['The ', 'Accords', ' Wheel'],
   lede: 'The vocabulary Fragrantica itself uses — aquatic, mossy, animalic, gourmand — and which of them get bottled together. Switch to "beyond chance" to strip out the pairings that are common only because both halves are common.',
   footer:

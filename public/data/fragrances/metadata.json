@@ -1,6 +1,6 @@
 {
   "source": "olgagmiufana1/fragrantica-com-fragrance-dataset",
-  "sourceVersion": "3",
+  "sourceVersion": "unknown",
   "sourceFile": "fra_cleaned.csv",
   "sourceSha256": "6cfc07226db77f94528d02a9e8cce2825fd0a14fff89b918a8ecc40d933a4d6f",
   "license": "CC BY-NC-SA 4.0",
@@ -12,7 +12,8 @@
     "name",
     "brand",
     "rating",
-    "url"
+    "url",
+    "ratings"
   ],
   "partition": "alphabetically first note",
   "noteIndex": {

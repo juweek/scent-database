@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterModal from './NewsletterModal';
+import SearchInterstitial from './SearchInterstitial';
 import site from '../site.config';
 
-const SUPPORT_LINKS = [
-  { label: 'Donate', href: 'https://ko-fi.com/gourmetmedia' },
-  { label: 'Follow', href: 'https://juweek.studio/' },
-];
-
 /**
- * "Support" nav item: a two-link menu that opens on hover where a pointer can
+ * The only nav item: a Support menu that opens on hover where a pointer can
  * hover, and on tap/click everywhere else. Kept as a button so keyboards and
  * screen readers get the same menu the mouse does.
  */
@@ -66,7 +63,7 @@ function SupportMenu() {
         <span className="navMenuCaret" aria-hidden="true" />
       </button>
       <div className="navMenuPanel" hidden={!open}>
-        {SUPPORT_LINKS.map((link) => (
+        {site.support.map((link) => (
           <a
             key={link.href}
             className="navMenuItem"
@@ -84,26 +81,24 @@ function SupportMenu() {
 }
 
 /**
- * Page chrome: a thin nav over whatever the route renders. Each wheel supplies
+ * Page chrome: a thin nav over whatever the route renders, plus the two
+ * overlays, which live here so any route can raise them. Each wheel supplies
  * its own header and footer, so this stays deliberately bare.
  */
 export default function Layout({ children }) {
   return (
     <div className="wrap">
       <header className="siteNav">
-        <Link className="wordmark" to="/" aria-label={`${site.title}, home`}>
-          <span className="wordmarkMark" aria-hidden="true" />
-          Scent chords
+        <Link className="wordmark" to="/" aria-label={`${site.brand}, home`}>
+          gourmet<span>data</span>
         </Link>
         <nav aria-label="Site navigation">
-          <Link to="/">Wheels</Link>
-          <a href={site.attribution.sourceUrl} target="_blank" rel="noreferrer">
-            Data
-          </a>
           <SupportMenu />
         </nav>
       </header>
       {children}
+      <NewsletterModal />
+      <SearchInterstitial />
     </div>
   );
 }

@@ -172,7 +172,9 @@ def main():
             rating_count = parse_int(row.get("Rating Count"))
             quality = (rating or 0) * math.log10(rating_count + 10)
             # Compact positional rows keep 27k lazy pair indexes deployable:
-            # [display name, brand, rating, source URL].
+            # [display name, brand, rating, source URL, rating count].
+            # Rating count is last because it was added after the first bake —
+            # appending leaves every existing positional reader working.
             if not row.get("url"):
                 continue
             record = [
@@ -180,6 +182,7 @@ def main():
                 display_name(row.get("Brand")),
                 round(rating, 2) if rating is not None else None,
                 row.get("url"),
+                rating_count,
             ]
             record_count += 1
 
@@ -227,7 +230,7 @@ def main():
         "notesIndexed": len(vocabulary),
         "pairsIndexed": len(heaps),
         "examplesPerPair": args.limit,
-        "recordSchema": ["name", "brand", "rating", "url"],
+        "recordSchema": ["name", "brand", "rating", "url", "ratings"],
         "partition": "alphabetically first note",
         "noteIndex": {
             "notes": notes_indexed,

@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect, useId, useMemo } from 'react';
+import { recordSearch } from '../lib/engagement';
 
 /** Segmented button group. Each option may carry a small sub-label. */
 export function Toggle({ label, options, value, onChange }) {
   return (
     <div className="toggleField">
-      <p className="fieldLabel">{label}</p>
+      {/* The label is carried by aria-label alone: the options say what they
+          are ("All fragrances" / "Best-rated"), and the caps line above them
+          was repeating that in a quieter voice. */}
       <div className="toggle" role="group" aria-label={label}>
         {options.map((o) => (
           <button
@@ -72,6 +75,7 @@ export function Search({ label, placeholder, items, value, onChange }) {
     onChange(v);
     setQuery(v);
     setOpen(false);
+    recordSearch();
   };
 
   return (

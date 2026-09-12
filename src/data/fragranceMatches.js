@@ -27,11 +27,14 @@ export async function getSharedFragrances(source, target, signal) {
   if (!response.ok) throw new Error(`Fragrance index returned ${response.status}`);
 
   const partners = await response.json();
-  const matches = (partners[second] || []).map(([name, brand, rating, url]) => ({
+  // `ratings` is the 5th field, appended in a later bake — older files simply
+  // do not have it, and undefined is what the list renders as "no count".
+  const matches = (partners[second] || []).map(([name, brand, rating, url, ratings]) => ({
     name,
     brand,
     rating,
     url,
+    ratings,
   }));
   cache.set(cacheKey, matches);
   return matches;

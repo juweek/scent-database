@@ -20,8 +20,9 @@ import { UNCLASSIFIED } from '../data/noteTaxonomy';
  *   distinctive  — how far that pair beats chance (lift). One bright ribbon in
  *                  a quiet wheel is the unusual thing the perfumer did.
  *
- * THE BANDS, reading outward: the note itself, its family, and the tier the
- * brand declared it in. Only the band you arrange by merges into big clean
+ * THE BANDS, reading outward: the tier the brand declared it in, its family,
+ * then the note itself — coarsest group at the centre, finest at the rim, the
+ * way a sunburst reads. Only the band you arrange by merges into big clean
  * arcs — the other stays segmented, which is honest about a note having one
  * position and two overlapping memberships.
  */
@@ -29,7 +30,11 @@ import { UNCLASSIFIED } from '../data/noteTaxonomy';
 const SIZE = 620;
 
 /*
- * Three rings: the note, its family, and the tier the brand declared it in.
+ * Three rings: the tier the brand declared it in, its family, then the note.
+ *
+ * Ordered coarse-to-fine from the centre out. Three tiers merge into three big
+ * arcs at the tightest radius where they still label cleanly; the notes sit at
+ * the rim, one arc each, next to their own text.
  *
  * A fourth — the note's accord — was built and removed. At 84 accords the ring
  * fragmented into segments too narrow to label on anything but a six-note
@@ -41,11 +46,13 @@ const SIZE = 620;
  * bigger. Retune it here.
  */
 const RIBBON_R = 142;
-const NOTE_BAND = { inner: 148, width: 12 };
+// Listed inner to outer, with a 4px gutter between rings. The outer edge stays
+// at 195 so the note labels at LABEL_R do not need moving.
 const BANDS = [
-  { key: 'family', inner: 164, width: 12, minLabel: 0.14 },
-  { key: 'tier', inner: 180, width: 15, minLabel: 0.11 },
+  { key: 'tier', inner: 148, width: 15, minLabel: 0.11 },
+  { key: 'family', inner: 167, width: 12, minLabel: 0.14 },
 ];
+const NOTE_BAND = { inner: 183, width: 12 };
 const LABEL_R = 203;
 
 /**

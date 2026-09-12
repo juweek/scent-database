@@ -6,7 +6,6 @@ const INK = '#EFE7DA';
 
 const accord = {
   slug: 'accord',
-  eyebrow: 'Fragrantica · co-occurrence',
   title: ['The ', 'Accord', ' Wheel'],
   lede: 'Every ribbon links two scent notes that appear together in the same fragrance. Thicker, brighter ribbons are pairings perfumers reach for again and again. Search a note, hover a family, or follow a ribbon to read the accord.',
   footer:

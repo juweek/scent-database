@@ -16,7 +16,13 @@ import { fileKey } from './fragranceMatches';
 const pages = new Map();
 
 function rows(list = []) {
-  return list.map(([name, brand, rating, url]) => ({ name, brand, rating, url }));
+  return list.map(([name, brand, rating, url, ratings]) => ({
+    name,
+    brand,
+    rating,
+    url,
+    ratings,
+  }));
 }
 
 async function fetchPage(note, suffix, signal) {
