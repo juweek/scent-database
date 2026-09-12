@@ -163,7 +163,7 @@ function PerfumeDetail({
         </div>
       </div>
 
-      <div className="explorerGrid">
+      <div className="explorerGrid perfumeGrid">
         <section className="wheelWorkspace" aria-label={`${record.name} note chord`}>
           <div className="perfumeControls">
             <div className="pairRank perfumeMode" role="group" aria-label="Weight ribbons by">

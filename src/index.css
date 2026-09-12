@@ -987,6 +987,25 @@ a {
   border-radius: 50%;
 }
 
+/*
+ * Keep the chord in view while the pyramid, accords and lookalikes scroll past
+ * it. The left column's natural height is ~660px, so this is gated on a
+ * viewport tall enough to hold it whole — below that it returns to normal flow
+ * rather than sticking with its bottom clipped off. Gated on width too: under
+ * 781px the grid is a single column and there is nothing to scroll alongside.
+ *
+ * `align-self: start` is load-bearing. Grid items stretch to the row by
+ * default, which makes a sticky child exactly as tall as its scroll container
+ * and so it never sticks.
+ */
+@media (min-width: 781px) and (min-height: 720px) {
+  .perfumeGrid .wheelWorkspace {
+    position: sticky;
+    top: 18px;
+    align-self: start;
+  }
+}
+
 /* Pyramid */
 .pyramidTiers {
   display: flex;

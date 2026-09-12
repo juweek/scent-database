@@ -1,0 +1,6 @@
+# Baked data. These are written minified by scripts/pipeline/*.py, and
+# formatting them inflates accord.json by 50% and pyramid.json by 70% — files
+# that ship to every visitor. Regenerate them with the bakers, never by hand.
+src/data/wheels/*.json
+public/data/
+dist/
