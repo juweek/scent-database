@@ -21,8 +21,16 @@ export default function SearchInterstitial() {
     const every = site.interstitial.everyNSearches;
     if (!every || every < 1) return undefined;
     return subscribeToSearches((count) => {
+      if (count % every !== 0) return;
       // Never on top of a wall the reader is already looking at.
-      if (count % every === 0 && !isModalOpen()) setOpen(true);
+      if (isModalOpen()) return;
+      // The house promo IS the subscribe ask, and someone who has already
+      // given an address has answered it. Putting it back in front of them
+      // every seventh search is exactly the nagging the unlock flag exists to
+      // prevent, so for them this never opens at all. Ads and affiliate
+      // offers are a different bargain and still run — see fill() below.
+      if (fill() === 'promo' && builderUnlocked()) return;
+      setOpen(true);
     });
   }, []);
 
@@ -62,25 +70,40 @@ function DismissLink({ onClose }) {
 /** Offers with nowhere to point are worse than no offers, so they never render. */
 const liveOffers = () => site.interstitial.offers.filter((offer) => offer.href);
 
-function Body({ onClose, onSubscribe }) {
+/**
+ * Which of the three faces this would wear, decided OUTSIDE the component.
+ *
+ * Whether a reader may be interrupted at all now depends on which one it is —
+ * a subscriber is spared the promo but not the ads — and that question has to
+ * be answerable before anything mounts. A half-configured mode falls through
+ * to the promo, so an unconfigured build is never a blank takeover.
+ */
+function fill() {
   const { mode, adSlot } = site.interstitial;
-  if (mode === 'ad' && adSlot) {
-    return (
-      <>
-        <AdUnit slot={adSlot} />
-        <DismissLink onClose={onClose} />
-      </>
-    );
+  if (mode === 'ad' && adSlot) return 'ad';
+  if (mode === 'offers' && liveOffers().length) return 'offers';
+  return 'promo';
+}
+
+function Body({ onClose, onSubscribe }) {
+  switch (fill()) {
+    case 'ad':
+      return (
+        <>
+          <AdUnit slot={site.interstitial.adSlot} />
+          <DismissLink onClose={onClose} />
+        </>
+      );
+    case 'offers':
+      return (
+        <>
+          <Offers />
+          <DismissLink onClose={onClose} />
+        </>
+      );
+    default:
+      return <HousePromo onClose={onClose} onSubscribe={onSubscribe} />;
   }
-  if (mode === 'offers' && liveOffers().length) {
-    return (
-      <>
-        <Offers />
-        <DismissLink onClose={onClose} />
-      </>
-    );
-  }
-  return <HousePromo onClose={onClose} onSubscribe={onSubscribe} />;
 }
 
 /**
@@ -145,12 +168,11 @@ function shuffle(list) {
  * most people came to press and burying it is the trick that makes these feel
  * like a trap.
  *
- * Someone already subscribed is not asked again; they just get the thanks and
- * the tip jar.
+ * Only ever seen by someone who has NOT subscribed — the interstitial does not
+ * open for anyone who has — so there is no "already on the list" branch here
+ * to keep in step with the copy.
  */
 function HousePromo({ onClose, onSubscribe }) {
-  const subscribed = builderUnlocked();
-
   useEffect(() => {
     track('interstitial_shown', { mode: 'promo' });
   }, []);
@@ -159,23 +181,19 @@ function HousePromo({ onClose, onSubscribe }) {
     <>
       <h2 className="modalHeading">Scent chords is made by one person</h2>
       <p className="modalBlurb">
-        {subscribed
-          ? 'Thanks for following along — it genuinely is what keeps this going.'
-          : 'If the wheels have been useful, consider following for updates and more apps like this one.'}
+        If the wheels have been useful, consider following for updates and more apps like this one.
       </p>
       <div className="promoActions">
-        {!subscribed && (
-          <button
-            type="button"
-            className="promoAction promoAction--primary"
-            onClick={() => {
-              track('promo_click', { action: 'subscribe' });
-              onSubscribe();
-            }}
-          >
-            Subscribe
-          </button>
-        )}
+        <button
+          type="button"
+          className="promoAction promoAction--primary"
+          onClick={() => {
+            track('promo_click', { action: 'subscribe' });
+            onSubscribe();
+          }}
+        >
+          Subscribe
+        </button>
         <a
           className="promoAction"
           href="https://ko-fi.com/gourmetmedia"

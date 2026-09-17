@@ -12,12 +12,42 @@
  */
 const KEY = 'scentchords:seen';
 
+/**
+ * The record is kept twice: localStorage for the durable copy, and `memory`
+ * for the one that still works when the durable copy does not.
+ *
+ * This is not belt and braces. localStorage throws on every call in Safari's
+ * private mode and under "block site data", and a wheel embedded in another
+ * site is third-party storage that Safari and Firefox partition or refuse
+ * outright. With only the durable copy, an address typed into the gate bought
+ * exactly one note before the wall went straight back up: the reader had paid
+ * and was still standing outside, with no way through short of subscribing
+ * again. Memory carries the unlock to the end of the tab, which is what the
+ * gate has always claimed to do.
+ *
+ * Memory wins on read. It takes every write, so it is never the staler of the
+ * two.
+ */
+let memory = {};
+
 function readSeen() {
   try {
     const raw = window.localStorage.getItem(KEY);
-    return raw ? JSON.parse(raw) : {};
+    return { ...(raw ? JSON.parse(raw) : {}), ...memory };
   } catch {
-    return {};
+    // Unreadable, or corrupt JSON left by an older build. Either way memory is
+    // the whole of what we know.
+    return { ...memory };
+  }
+}
+
+/** Merge `patch` into the record. Memory always takes it; storage if it can. */
+function writeSeen(patch) {
+  memory = { ...readSeen(), ...patch };
+  try {
+    window.localStorage.setItem(KEY, JSON.stringify(memory));
+  } catch {
+    /* private mode, or a partitioned iframe — memory carries it for this tab */
   }
 }
 
@@ -32,6 +62,12 @@ function readSeen() {
 const EMAIL_PROMPTS = ['newsletter', 'builderGate'];
 
 export function emailAlreadyAsked() {
+  // Having subscribed counts as having been asked, whichever prompt took the
+  // address. This is the site's one rule about email: nothing asks again once
+  // an address has been given. It is stated here rather than left to depend on
+  // 'builderGate' staying in the list above, because that list is about which
+  // prompts have FIRED and this is about whether the reader has answered.
+  if (builderUnlocked()) return true;
   const seen = readSeen();
   return EMAIL_PROMPTS.some((flag) => seen[flag]);
 }
@@ -50,17 +86,17 @@ export function emailAlreadyAsked() {
  * intended behaviour rather than a hole in it.
  */
 export function unlockBuilder(email) {
-  markSeen('builderGate');
-  try {
-    window.localStorage.setItem(
-      KEY,
-      JSON.stringify({ ...readSeen(), builderUnlocked: Date.now(), email: email || true }),
-    );
-  } catch {
-    /* private mode — the unlock lasts as long as the tab does */
-  }
+  // One write, not two: the "has been asked" flag and the unlock must never
+  // end up on opposite sides of a storage failure.
+  writeSeen({ builderGate: Date.now(), builderUnlocked: Date.now(), email: email || true });
 }
 
+/**
+ * Has this reader already handed over an address? Every gate on the site asks
+ * this before it goes up — the builder's third note, the wheel's "show more",
+ * the perfume search's daily allowance — so that paying once pays for all of
+ * them.
+ */
 export function builderUnlocked() {
   return Boolean(readSeen().builderUnlocked);
 }
@@ -70,13 +106,9 @@ export function hasSeen(flag) {
   return Boolean(readSeen()[flag]);
 }
 
-/** Remember that `flag` has been shown. Silently a no-op if storage is closed. */
+/** Remember that `flag` has been shown. */
 export function markSeen(flag) {
-  try {
-    window.localStorage.setItem(KEY, JSON.stringify({ ...readSeen(), [flag]: Date.now() }));
-  } catch {
-    /* private mode — the prompt just reappears next visit */
-  }
+  writeSeen({ [flag]: Date.now() });
 }
 
 /**
@@ -102,14 +134,7 @@ export function perfumeSearchesToday() {
 
 export function recordPerfumeSearch() {
   const used = perfumeSearchesToday() + 1;
-  try {
-    window.localStorage.setItem(
-      KEY,
-      JSON.stringify({ ...readSeen(), searchDay: localDay(), searchCount: used }),
-    );
-  } catch {
-    /* private mode — the allowance resets with the tab */
-  }
+  writeSeen({ searchDay: localDay(), searchCount: used });
   return used;
 }
 

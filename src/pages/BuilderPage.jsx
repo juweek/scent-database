@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getBuilderIndex, intersect, suggestions, getCards } from '../data/builderIndex';
-import { builderUnlocked, unlockBuilder } from '../lib/engagement';
+import { builderUnlocked } from '../lib/engagement';
 import WheelTabs from '../components/WheelTabs';
 import SubscribeGate from '../components/SubscribeGate';
 import { Loading, ErrorState } from '../components/Status';
