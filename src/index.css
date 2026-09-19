@@ -2999,3 +2999,121 @@ a {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Static prose and site footer.
+
+   These live in index.html, outside #root, so they are in the page source
+   without JavaScript. React never renders them, so nothing here can be styled
+   from a component: this is the only place their look is defined.
+   ────────────────────────────────────────────────────────────────────────── */
+.pageProse,
+.siteFooter {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  font-family: var(--sans);
+  color: var(--ink);
+}
+.pageProse {
+  padding-top: 40px;
+  padding-bottom: 8px;
+}
+.proseSection {
+  border-bottom: 1px solid var(--line-soft);
+  max-width: 78ch;
+}
+.proseSection:first-of-type {
+  border-top: 1px solid var(--line-soft);
+}
+.proseSection > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+}
+.proseSection > summary::-webkit-details-marker {
+  display: none;
+}
+.proseSection > summary::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--quiet);
+}
+.proseSection[open] > summary::after {
+  content: '−';
+}
+.proseSection > summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.proseSection > summary h2 {
+  display: inline;
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.proseSection > summary:hover h2 {
+  color: #f6c53a;
+}
+.proseBody {
+  padding-bottom: 14px;
+}
+.proseBody p {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.proseBody p:last-child {
+  margin-bottom: 0;
+}
+.proseBody a,
+.siteFooter a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+.siteFooter {
+  border-top: 1px solid var(--line-soft);
+  margin-top: 40px;
+  padding-top: 22px;
+  padding-bottom: 48px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--quiet);
+}
+.siteFooter nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+.siteFooter p {
+  margin: 0 0 6px;
+  max-width: 78ch;
+}
+/* The sibling projects. Set apart from the attribution above it, which is a
+   requirement rather than a suggestion. */
+.siteFooterMore {
+  margin-top: 12px;
+}
+@media (max-width: 760px) {
+  .pageProse,
+  .siteFooter {
+    padding: 0 18px;
+  }
+  .pageProse {
+    padding-top: 28px;
+  }
+  .proseSection > summary h2 {
+    font-size: 18px;
+  }
+  .proseBody p {
+    font-size: 15px;
+  }
+}

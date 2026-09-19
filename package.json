@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The Accord Wheel — perfume note pairings drawn as chord diagrams, on the Gourmet Data template.",
+  "description": "The Accord Wheel \u2014 perfume note pairings drawn as chord diagrams, on the Gourmet Data template.",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -12,7 +12,9 @@
     "bake:perfumes": "python3 scripts/pipeline/perfume_index.py",
     "bake:accords": "python3 scripts/pipeline/accord_wheel.py",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fetch:fragella": "python3 scripts/pipeline/fragella.py",
+    "test:fragella": "python3 -m unittest discover -s scripts/pipeline -p test_fragella.py"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

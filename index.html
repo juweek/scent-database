@@ -7,8 +7,16 @@
     <meta name="theme-color" content="#080a0a" />
     <meta
       name="description"
-      content="What goes with what in perfume — every pairing between the most common notes, drawn from 24,059 fragrances."
+      content="What goes with what in perfume. Every pairing between the {{notes}} most common notes, drawn from {{fragrances}} fragrances, with the pairings that beat chance picked out."
     />
+    <link rel="canonical" href="{{site}}/" />
+    <meta property="og:title" content="Scent chords" />
+    <meta
+      property="og:description"
+      content="Every pairing between the {{notes}} most common perfume notes, drawn from {{fragrances}} fragrances."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{site}}/" />
     <title>Scent chords — explore perfume pairings</title>
     <script
       async
@@ -18,6 +26,147 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Static prose, deliberately outside #root so React never touches it and it is present
+      without JavaScript. This is one HTML file serving every route, so what is written here
+      is about the project as a whole rather than any single wheel.
+    -->
+    <article class="pageProse" id="about">
+      <details class="proseSection" open>
+        <summary><h2>How to read the wheel</h2></summary>
+        <div class="proseBody">
+          <p>
+            Every wheel here is a chord diagram. The notes sit around the rim as short coloured
+            arcs, grouped into {{families}} families: citrus, fresh, herbal, floral, fruity, sweet,
+            spicy, amber, woody and musky. The ribbons crossing the middle are the pairings. A
+            ribbon between two arcs means those two notes appear in the same perfume, and the
+            thicker it is, the more perfumes they share.
+          </p>
+          <p>
+            There are {{pairings}} such pairings between the {{notes}} notes on the accord wheel.
+            Drawn all at once that is a texture rather than a chart, which is why the controls let
+            you keep only the strongest, and why selecting a single note is usually the faster route
+            to an answer. Hold one note and the wheel fades everything that does not touch it.
+          </p>
+          <p>
+            Families are our grouping, not the industry's. Perfumery has no single agreed taxonomy
+            of notes, so the {{families}} families here are an editorial call made to give the rim
+            some structure at a glance. The floral family alone carries {{biggestFamilyNotes}} of
+            the {{notes}} notes, which tells you something about both perfume and the limits of any
+            such grouping.
+          </p>
+        </div>
+      </details>
+      <details class="proseSection">
+        <summary><h2>Nearly half of all perfume contains musk</h2></summary>
+        <div class="proseBody">
+          <p>
+            {{topNote}} appears in {{topNoteShare}}% of the {{fragrances}} fragrances in this
+            collection. Not a plurality. Nearly half. After it come {{secondNote}} at
+            {{secondNoteShare}}% and {{thirdNote}} at {{thirdNoteShare}}%, and the pattern holds a
+            long way down: a small number of notes do an enormous amount of the work.
+          </p>
+          <p>
+            This is why the raw pairing counts are less interesting than they look. The ten heaviest
+            ribbons on the wheel are almost all something plus {{topNote}}, which tells you only
+            that {{topNote}} is everywhere. Popularity crowds out everything else, the same way the
+            most common word in any book is "the".
+          </p>
+          <p>
+            The accords tell a related story from another angle. {{leadAccord}} is the accord most
+            likely to lead a composition, heading the list in {{leadAccordShare}}% of the perfumes
+            it appears in, while others almost never lead at all. Woody appears in more perfumes
+            than any other accord and still leads only a quarter of the time. Some things are
+            written to be the subject and some are written to hold the rest up.
+          </p>
+        </div>
+      </details>
+      <details class="proseSection">
+        <summary><h2>The pairings that beat chance</h2></summary>
+        <div class="proseBody">
+          <p>
+            A more useful question than "which notes appear together most" is "which notes appear
+            together more than they should". If {{topNote}} is in half of everything, it will share
+            a perfume with almost anything by accident. So compare each pairing against what you
+            would expect if the two notes were thrown together at random, and the accidents fall
+            away.
+          </p>
+          <p>
+            Do that and something satisfying happens: the list that comes back is a list of real
+            perfumery. {{topLiftPair}} lead it, appearing together {{topLift}} times more often than
+            chance predicts across {{topLiftCount}} fragrances. Sage and lavender follow. Then
+            lavender and geranium, which is the spine of the fougère, a structure named in 1882.
+            Then saffron and leather. Then cardamom and nutmeg.
+          </p>
+          <p>
+            Nobody encoded any of that. It falls out of arithmetic over {{fragrances}} ingredient
+            lists, and it recovers accords that perfumers named and taught each other by hand over a
+            century and a half. {{liftedPairs}} pairings clear the bar of appearing together at
+            least 300 times, which is the floor below which this measure starts reporting
+            coincidence as insight.
+          </p>
+        </div>
+      </details>
+      <details class="proseSection">
+        <summary><h2>What this cannot tell you</h2></summary>
+        <div class="proseBody">
+          <p>
+            It cannot tell you what smells good. A thick ribbon means two notes were listed together
+            by whoever catalogued the perfume, which is a record of convention, marketing and habit
+            as much as of chemistry. Nothing here has smelled anything.
+          </p>
+          <p>
+            Listed notes are also not a formula. A perfume's published note list is a description
+            written for the person buying it, not the brief the perfumer worked from. Quantities are
+            absent, and a note named in the pyramid may be present in a trace or may be most of what
+            you smell. Every chart here treats presence and absence, never dose.
+          </p>
+          <p>
+            The catalogue has its own shape too. It skews toward what gets released, reviewed and
+            entered into a database, which means recent mainstream releases are represented far
+            better than older or obscure ones. Read it as what these {{fragrances}} listings
+            contain, which is exactly what it is, rather than as what perfume is.
+          </p>
+        </div>
+      </details>
+      <details class="proseSection">
+        <summary><h2>Where the data comes from</h2></summary>
+        <div class="proseBody">
+          <p>
+            {{fragrances}} fragrances from a public Fragrantica dataset, published on
+            <a href="{{sourceUrl}}">Kaggle</a> under the {{license}} licence. The aggregation into
+            pairings, and the grouping of notes into {{families}} families, are ours. Notes
+            appearing in fewer than a handful of perfumes are dropped, because a pairing seen twice
+            is not a pattern.
+          </p>
+          <p>
+            The wheels are baked ahead of time rather than computed in the browser: a Python
+            pipeline reads the raw dataset and writes the matrices this page loads, so nothing you
+            do here sends a request anywhere or waits on one.
+          </p>
+        </div>
+      </details>
+    </article>
+    <footer class="siteFooter">
+      <nav aria-label="Site">
+        <a href="/">Wheels</a>
+        <a href="/perfume">Perfume</a>
+        <a href="/builder">Builder</a>
+        <a href="#about">About the data</a>
+      </nav>
+      <p>
+        {{fragrances}} fragrances, {{notes}} notes and {{pairings}} pairings, aggregated by Gourmet
+        Data from a <a href="{{sourceUrl}}">public Fragrantica dataset</a> licensed {{license}}.
+        Note groupings are our own.
+      </p>
+      <p class="siteFooterMore">
+        More from Gourmet Data:
+        <a href="https://drinkwithdata.com/">Cocktail chords</a>,
+        <a href="https://dessert-database.vercel.app">the dessert database</a>,
+        <a href="https://gourmetdata.substack.com/">the newsletter</a>, and
+        <a href="https://juweek.studio">juweek.studio</a>.
+      </p>
+    </footer>
     <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
