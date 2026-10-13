@@ -12,6 +12,7 @@ const PerfumePage = lazy(() => import('./pages/PerfumePage'));
 // The builder carries a 210 KB inverted index of its own and is a deliberate
 // destination, never the landing page. Split so nobody pays for it by accident.
 const BuilderPage = lazy(() => import('./pages/BuilderPage'));
+const CoffeePage = lazy(() => import('./pages/CoffeePage'));
 
 /**
  * One route per surface. The wheel slug is a param (/wheel/accord) so every
@@ -27,6 +28,14 @@ export default function App() {
     >
       <Layout>
         <Routes>
+          <Route
+            path="/coffee"
+            element={
+              <Suspense fallback={<Loading />}>
+                <CoffeePage />
+              </Suspense>
+            }
+          />
           <Route path="/" element={<HomePage />} />
           <Route path="/wheel" element={<Navigate to="/wheel/accord" replace />} />
           <Route path="/wheel/:slug" element={<WheelPage />} />

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NewsletterModal from './NewsletterModal';
 import SearchInterstitial from './SearchInterstitial';
 import site from '../site.config';
@@ -9,7 +9,7 @@ import site from '../site.config';
  * hover, and on tap/click everywhere else. Kept as a button so keyboards and
  * screen readers get the same menu the mouse does.
  */
-function SupportMenu() {
+function SupportMenu({ dataHref }) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef(null);
 
@@ -67,7 +67,7 @@ function SupportMenu() {
           <a
             key={link.href}
             className="navMenuItem"
-            href={link.href}
+            href={link.label === 'Data' && dataHref ? dataHref : link.href}
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}
@@ -86,6 +86,7 @@ function SupportMenu() {
  * its own header and footer, so this stays deliberately bare.
  */
 export default function Layout({ children }) {
+  const coffeeDraft = useLocation().pathname === '/coffee';
   return (
     <div className="wrap">
       <header className="siteNav">
@@ -93,12 +94,14 @@ export default function Layout({ children }) {
           gourmet<span>data</span>
         </Link>
         <nav aria-label="Site navigation">
-          <SupportMenu />
+          <SupportMenu
+            dataHref={coffeeDraft ? 'https://github.com/datascopeanalytics/coffee-blog' : undefined}
+          />
         </nav>
       </header>
       {children}
-      <NewsletterModal />
-      <SearchInterstitial />
+      {!coffeeDraft && <NewsletterModal />}
+      {!coffeeDraft && <SearchInterstitial />}
     </div>
   );
 }
