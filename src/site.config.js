@@ -205,7 +205,7 @@ const site = {
   },
 
   adsense: {
-    client: 'ca-pub-9549800800543777',
+    client: 'ca-pub-7499516838534633',
   },
 };
 
