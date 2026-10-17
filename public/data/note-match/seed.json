@@ -1,256 +1,214 @@
 {
-  "source": "note_match_seed",
+  "source": "wikidata_only",
   "license": "CC0 1.0 Universal",
-  "created_at": "2026-10-17T13:09:27.544020Z",
-  "description": "Seed dataset for Note Match demo, combining manual curation and Wikidata CC0 data",
-  "count": 129,
-  "note_count": 340,
+  "created_at": "2026-10-17T14:22:38.708183Z",
+  "description": "Perfume dataset sourced exclusively from Wikidata for full CC0 provenance. Each record includes source_url and retrieved_date.",
+  "count": 117,
+  "note_count": 274,
   "fragrances": [
     {
-      "id": "seed-001",
-      "name": "Chanel No. 5",
-      "brand": "Chanel",
+      "id": "wd:Q132801819",
+      "name": "Dewberry",
+      "brand": "",
       "notes": [
-        "aldehydes",
-        "neroli",
-        "ylang ylang",
-        "jasmine",
-        "rose",
-        "lily of the valley",
-        "iris",
-        "vetiver",
-        "sandalwood",
-        "vanilla",
-        "amber",
-        "patchouli"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Classic perfume with well-documented composition"
-    },
-    {
-      "id": "seed-002",
-      "name": "Shalimar",
-      "brand": "Guerlain",
-      "notes": [
-        "bergamot",
-        "lemon",
-        "mandarin",
-        "iris",
-        "jasmine",
-        "rose",
-        "vanilla",
-        "tonka bean",
-        "incense",
-        "opoponax",
-        "patchouli",
-        "leather"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Historic oriental perfume"
-    },
-    {
-      "id": "seed-003",
-      "name": "Diorissimo",
-      "brand": "Dior",
-      "notes": [
-        "lily of the valley",
-        "bergamot",
-        "amaryllis",
-        "jasmine",
-        "lily",
-        "ylang ylang",
-        "sandalwood",
-        "civet"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Classic floral perfume"
-    },
-    {
-      "id": "seed-004",
-      "name": "Acqua di Gio",
-      "brand": "Giorgio Armani",
-      "notes": [
-        "lime",
-        "lemon",
-        "bergamot",
-        "jasmine",
-        "orange",
-        "mandarin orange",
-        "rosemary",
-        "freesia",
-        "calone",
-        "persimmon",
-        "white musk",
-        "cedar",
-        "oak moss",
-        "patchouli",
-        "amber"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Modern aquatic fragrance"
-    },
-    {
-      "id": "seed-005",
-      "name": "Light Blue",
-      "brand": "Dolce & Gabbana",
-      "notes": [
-        "sicilian lemon",
-        "apple",
-        "cedar",
-        "bellflower",
-        "jasmine",
-        "white rose",
-        "bamboo",
-        "amber",
-        "musk"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Contemporary fresh fragrance"
-    },
-    {
-      "id": "seed-006",
-      "name": "Angel",
-      "brand": "Thierry Mugler",
-      "notes": [
-        "melon",
-        "coconut",
-        "mandarin orange",
-        "cassia",
-        "jasmine",
-        "honey",
-        "bergamot",
-        "cotton candy",
-        "chocolate",
-        "caramel",
-        "vanilla",
-        "tonka bean",
-        "patchouli",
-        "musk"
-      ],
-      "source": "public_domain_notes",
-      "source_description": "Iconic gourmand fragrance"
-    },
-    {
-      "id": "seed-007",
-      "name": "Cool Water",
-      "brand": "Davidoff",
-      "notes": [
-        "mint",
-        "lavender",
-        "coriander",
-        "rosemary",
-        "geranium",
-        "neroli",
-        "jasmine",
-        "sandalwood",
-        "cedar",
-        "oak moss",
+        "blackcurrant smell",
         "musk",
-        "tobacco",
-        "amber"
+        "smell of apples",
+        "smell of apricot fruit",
+        "smell of cedarwood",
+        "smell of freesia",
+        "smell of grapefruit",
+        "smell of jasmine",
+        "smell of lilies",
+        "smell of peach fruit",
+        "smell of pear",
+        "smell of rose"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Classic aromatic aquatic"
+      "source": "wikidata",
+      "source_id": "Q132801819",
+      "source_url": "http://www.wikidata.org/entity/Q132801819",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "seed-008",
-      "name": "CK One",
-      "brand": "Calvin Klein",
+      "id": "wd:Q136649304",
+      "name": "Red Door",
+      "brand": "",
       "notes": [
-        "lemon",
-        "bergamot",
-        "cardamom",
-        "pineapple",
-        "papaya",
-        "jasmine",
-        "violet",
-        "rose",
-        "nutmeg",
-        "lily of the valley",
         "amber",
+        "anise fragrance",
+        "carnation smell",
+        "lily-of-the-valley scent",
         "musk",
-        "cedar",
-        "sandalwood",
-        "oak moss",
-        "green tea"
+        "orange blossom scent",
+        "orchid fragrance",
+        "plum smell",
+        "sandalwood scent",
+        "smell of benzoin",
+        "smell of cedarwood",
+        "smell of cherries",
+        "smell of freesia",
+        "smell of jasmine",
+        "smell of peach fruit",
+        "smell of vetiver",
+        "smell of violets",
+        "tuberose scent"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Unisex citrus fragrance"
+      "source": "wikidata",
+      "source_id": "Q136649304",
+      "source_url": "http://www.wikidata.org/entity/Q136649304",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "seed-009",
-      "name": "Flowerbomb",
-      "brand": "Viktor & Rolf",
+      "id": "wd:Q136646856",
+      "name": "Hugo",
+      "brand": "",
       "notes": [
-        "tea",
-        "bergamot",
-        "osmanthus",
-        "freesia",
-        "jasmine",
-        "orchid",
-        "rose",
+        "fragrance of geranium",
+        "patchouli smell",
+        "smell of apples",
+        "smell of basil",
+        "smell of grapefruit",
+        "smell of jasmine",
+        "smell of lavender",
+        "smell of pennyroyal",
+        "smell of pine resin",
+        "smell of sage",
+        "smell of sawdust"
+      ],
+      "source": "wikidata",
+      "source_id": "Q136646856",
+      "source_url": "http://www.wikidata.org/entity/Q136646856",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q132735959",
+      "name": "Giorgio Beverly Hills",
+      "brand": "",
+      "notes": [
+        "ambergris scent",
+        "green notes",
+        "moss perfume note",
+        "musk",
+        "orange blossom scent",
+        "orchid fragrance",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of cedarwood",
+        "smell of gardenia",
+        "tuberose scent"
+      ],
+      "source": "wikidata",
+      "source_id": "Q132735959",
+      "source_url": "http://www.wikidata.org/entity/Q132735959",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q136645269",
+      "name": "Earthworm",
+      "brand": "",
+      "notes": [
+        "earth tincture",
+        "musk",
+        "petrichor",
+        "smell of autumnal leaves",
+        "smell of freshly cut grass"
+      ],
+      "source": "wikidata",
+      "source_id": "Q136645269",
+      "source_url": "http://www.wikidata.org/entity/Q136645269",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q136646423",
+      "name": "Happy",
+      "brand": "",
+      "notes": [
         "amber",
+        "lily-of-the-valley scent",
+        "mandarin orange smell",
+        "mimosa aroma",
         "musk",
-        "patchouli"
+        "orchid fragrance",
+        "plum smell",
+        "scent of bergamot",
+        "smell of blackberry fruit",
+        "smell of clementine",
+        "smell of freesia",
+        "smell of grapefruit",
+        "smell of magnolia flowers",
+        "smell of rose"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Modern floral bomb"
+      "source": "wikidata",
+      "source_id": "Q136646423",
+      "source_url": "http://www.wikidata.org/entity/Q136646423",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "seed-010",
-      "name": "Black Opium",
-      "brand": "Yves Saint Laurent",
+      "id": "wd:Q136649128",
+      "name": "Original Musk",
+      "brand": "",
       "notes": [
-        "pink pepper",
-        "orange blossom",
-        "pear",
-        "coffee",
-        "jasmine",
-        "bitter almond",
-        "licorice",
-        "vanilla",
-        "patchouli",
-        "cedar",
-        "cashmere wood"
+        "coumarin",
+        "musk",
+        "orange blossom scent",
+        "patchouli smell",
+        "scent of bergamot",
+        "smell of lilies",
+        "smell of neroli",
+        "smell of rose"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Contemporary gourmand"
+      "source": "wikidata",
+      "source_id": "Q136649128",
+      "source_url": "http://www.wikidata.org/entity/Q136649128",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "seed-011",
-      "name": "Terre d'Hermes",
-      "brand": "Hermes",
+      "id": "wd:Q137182953",
+      "name": "Tom Ford for Men",
+      "brand": "",
       "notes": [
-        "orange",
-        "grapefruit",
-        "pepper",
-        "pelargonium",
-        "flint",
-        "vetiver",
-        "cedar",
-        "benzoin",
-        "patchouli"
+        "amber smell",
+        "grapefruit blossom scent",
+        "leather smell",
+        "mandarin orange smell",
+        "orange blossom scent",
+        "patchouli smell",
+        "pepper smell",
+        "scent of bergamot",
+        "smell of basil",
+        "smell of cedarwood",
+        "smell of ginger",
+        "smell of lemon leaf oil",
+        "smell of nagarmotha",
+        "smell of oakmoss",
+        "smell of vetiver",
+        "tobacco smell",
+        "violet leaf fragrance"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Modern woody spicy"
+      "source": "wikidata",
+      "source_id": "Q137182953",
+      "source_url": "http://www.wikidata.org/entity/Q137182953",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "seed-012",
-      "name": "La Vie Est Belle",
-      "brand": "Lancome",
+      "id": "wd:Q110263664",
+      "name": "Daisy",
+      "brand": "",
       "notes": [
-        "black currant",
-        "pear",
-        "iris",
-        "jasmine",
-        "orange blossom",
-        "praline",
-        "vanilla",
-        "tonka bean",
-        "patchouli"
+        "scent of vanilla",
+        "smell of blood grapefruit",
+        "smell of gardenia",
+        "smell of jasmine",
+        "smell of musk",
+        "smell of violets",
+        "strawberry scent",
+        "violet leaf fragrance",
+        "woody smell"
       ],
-      "source": "public_domain_notes",
-      "source_description": "Sweet floral gourmand"
+      "source": "wikidata",
+      "source_id": "Q110263664",
+      "source_url": "http://www.wikidata.org/entity/Q110263664",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140298435",
@@ -267,7 +225,9 @@
         "smell of tonka bean absolute"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140298435"
+      "source_id": "Q140298435",
+      "source_url": "http://www.wikidata.org/entity/Q140298435",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140084520",
@@ -292,7 +252,9 @@
         "tea scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140084520"
+      "source_id": "Q140084520",
+      "source_url": "http://www.wikidata.org/entity/Q140084520",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140266694",
@@ -317,7 +279,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140266694"
+      "source_id": "Q140266694",
+      "source_url": "http://www.wikidata.org/entity/Q140266694",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140101602",
@@ -337,7 +301,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140101602"
+      "source_id": "Q140101602",
+      "source_url": "http://www.wikidata.org/entity/Q140101602",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140453489",
@@ -355,7 +321,9 @@
         "smell of transparent woods"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140453489"
+      "source_id": "Q140453489",
+      "source_url": "http://www.wikidata.org/entity/Q140453489",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140083800",
@@ -370,7 +338,9 @@
         "spicy smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140083800"
+      "source_id": "Q140083800",
+      "source_url": "http://www.wikidata.org/entity/Q140083800",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140084447",
@@ -385,7 +355,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140084447"
+      "source_id": "Q140084447",
+      "source_url": "http://www.wikidata.org/entity/Q140084447",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140080065",
@@ -398,7 +370,9 @@
         "smell of juniper"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140080065"
+      "source_id": "Q140080065",
+      "source_url": "http://www.wikidata.org/entity/Q140080065",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140079365",
@@ -411,7 +385,9 @@
         "smell of syringa"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140079365"
+      "source_id": "Q140079365",
+      "source_url": "http://www.wikidata.org/entity/Q140079365",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140084488",
@@ -425,7 +401,9 @@
         "smell of ginger"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140084488"
+      "source_id": "Q140084488",
+      "source_url": "http://www.wikidata.org/entity/Q140084488",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140237028",
@@ -443,7 +421,9 @@
         "smell of orcanox"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140237028"
+      "source_id": "Q140237028",
+      "source_url": "http://www.wikidata.org/entity/Q140237028",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140406909",
@@ -461,7 +441,208 @@
         "solar notes"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140406909"
+      "source_id": "Q140406909",
+      "source_url": "http://www.wikidata.org/entity/Q140406909",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137183849",
+      "name": "Bianco Latte",
+      "brand": "",
+      "notes": [
+        "caramel",
+        "coumarin",
+        "honey",
+        "vanilla",
+        "white musk"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137183849",
+      "source_url": "http://www.wikidata.org/entity/Q137183849",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137213178",
+      "name": "Tonka Cola",
+      "brand": "",
+      "notes": [
+        "black cherry",
+        "cola smell",
+        "labdanum",
+        "nutmeg smell",
+        "orange blossom scent",
+        "patchouli smell",
+        "scent of vanilla",
+        "sicilian lemon",
+        "smell of benzoin",
+        "smell of cinnamon",
+        "tonka bean aroma"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137213178",
+      "source_url": "http://www.wikidata.org/entity/Q137213178",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137386796",
+      "name": "God Bless Cola",
+      "brand": "",
+      "notes": [
+        "caramel smell",
+        "cola smell",
+        "gourmand accord",
+        "peanut smell",
+        "scent of vanilla",
+        "smell of butter",
+        "smell of popcorn",
+        "sweet smell",
+        "woody smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137386796",
+      "source_url": "http://www.wikidata.org/entity/Q137386796",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137183811",
+      "name": "Counterplay",
+      "brand": "",
+      "notes": [
+        "aroma of osmanthus",
+        "banana scent",
+        "guava scent",
+        "orange blossom scent",
+        "patchouli smell",
+        "pink pepper smell",
+        "sandalwood scent",
+        "scent of ylang-ylang",
+        "smell of melon"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137183811",
+      "source_url": "http://www.wikidata.org/entity/Q137183811",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137527355",
+      "name": "Zelen",
+      "brand": "",
+      "notes": [
+        "pink pepper smell",
+        "scent of bergamot",
+        "smell of beeswax",
+        "smell of cardamom",
+        "smell of haitian vetiver",
+        "smell of lime",
+        "smell of mysore sandalwood",
+        "smell of virginia cedarwood",
+        "smell of yuzu"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137527355",
+      "source_url": "http://www.wikidata.org/entity/Q137527355",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137184064",
+      "name": "1969",
+      "brand": "",
+      "notes": [
+        "patchouli smell",
+        "smell of cardamom",
+        "smell of cloves",
+        "smell of coffee",
+        "smell of dark chocolate",
+        "smell of musk",
+        "smell of peach fruit",
+        "smell of rose",
+        "smell of white flowers"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137184064",
+      "source_url": "http://www.wikidata.org/entity/Q137184064",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137337051",
+      "name": "BOSS ALIVE",
+      "brand": "",
+      "notes": [
+        "blackcurrant smell",
+        "cedar wood (generic)",
+        "smell of apples",
+        "smell of jasminum sambac"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137337051",
+      "source_url": "http://www.wikidata.org/entity/Q137337051",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137361933",
+      "name": "Cuir InfraRouge",
+      "brand": "",
+      "notes": [
+        "aroma of osmanthus",
+        "leather smell",
+        "patchouli smell",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of cedarwood",
+        "smell of cinnamon",
+        "smell of orris root",
+        "smell of oud",
+        "smell of raspberry"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137361933",
+      "source_url": "http://www.wikidata.org/entity/Q137361933",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137454537",
+      "name": "Patchouli Sublime",
+      "brand": "",
+      "notes": [
+        "amber smell",
+        "coriander smell",
+        "fragrance of geranium",
+        "patchouli smell",
+        "smell of cloves",
+        "smell of incense",
+        "smell of lavender",
+        "smell of musk",
+        "smell of peppermint",
+        "smell of rose",
+        "tobacco smell",
+        "tonka bean aroma"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137454537",
+      "source_url": "http://www.wikidata.org/entity/Q137454537",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137825310",
+      "name": "Ganymede",
+      "brand": "",
+      "notes": [
+        "aroma of osmanthus",
+        "mandarin orange smell",
+        "mineral smell",
+        "patchouli smell",
+        "saffron smell",
+        "smell of akigalawood",
+        "smell of cedarwood",
+        "smell of immortelle",
+        "smell of musk",
+        "smell of suede",
+        "violet leaf fragrance"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137825310",
+      "source_url": "http://www.wikidata.org/entity/Q137825310",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141442739",
@@ -477,7 +658,9 @@
         "smell of rose"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141442739"
+      "source_id": "Q141442739",
+      "source_url": "http://www.wikidata.org/entity/Q141442739",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141099579",
@@ -497,7 +680,9 @@
         "white vanilla scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141099579"
+      "source_id": "Q141099579",
+      "source_url": "http://www.wikidata.org/entity/Q141099579",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141467058",
@@ -512,7 +697,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141467058"
+      "source_id": "Q141467058",
+      "source_url": "http://www.wikidata.org/entity/Q141467058",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141490815",
@@ -536,7 +723,9 @@
         "violet leaf fragrance"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141490815"
+      "source_id": "Q141490815",
+      "source_url": "http://www.wikidata.org/entity/Q141490815",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140611048",
@@ -552,7 +741,9 @@
         "smell of turmeric"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140611048"
+      "source_id": "Q140611048",
+      "source_url": "http://www.wikidata.org/entity/Q140611048",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140825999",
@@ -566,7 +757,9 @@
         "smell of white flowers"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140825999"
+      "source_id": "Q140825999",
+      "source_url": "http://www.wikidata.org/entity/Q140825999",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141641013",
@@ -582,7 +775,9 @@
         "smell of vanilla absolute"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141641013"
+      "source_id": "Q141641013",
+      "source_url": "http://www.wikidata.org/entity/Q141641013",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141099119",
@@ -597,7 +792,9 @@
         "scent of vanilla"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141099119"
+      "source_id": "Q141099119",
+      "source_url": "http://www.wikidata.org/entity/Q141099119",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140499690",
@@ -619,7 +816,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140499690"
+      "source_id": "Q140499690",
+      "source_url": "http://www.wikidata.org/entity/Q140499690",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141467134",
@@ -637,7 +836,9 @@
         "tobacco smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141467134"
+      "source_id": "Q141467134",
+      "source_url": "http://www.wikidata.org/entity/Q141467134",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141098533",
@@ -650,7 +851,379 @@
         "smell of musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141098533"
+      "source_id": "Q141098533",
+      "source_url": "http://www.wikidata.org/entity/Q141098533",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138605631",
+      "name": "Tobacco Honey",
+      "brand": "",
+      "notes": [
+        "sandalwood scent",
+        "scent of vanilla",
+        "smell of anise seed",
+        "smell of cloves",
+        "smell of honey",
+        "smell of oud",
+        "smell of sesame",
+        "tobacco smell",
+        "tonka bean aroma"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138605631",
+      "source_url": "http://www.wikidata.org/entity/Q138605631",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138754545",
+      "name": "Black Flower Mexican Vanilla",
+      "brand": "",
+      "notes": [
+        "caramel smell",
+        "nutmeg smell",
+        "patchouli smell",
+        "sandalwood scent",
+        "scent of vanilla",
+        "smell of gardenia",
+        "smell of grapefruit",
+        "smell of jasmine",
+        "smell of lemon",
+        "smell of musk",
+        "smell of vetiver",
+        "tonka bean aroma"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138754545",
+      "source_url": "http://www.wikidata.org/entity/Q138754545",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138034992",
+      "name": "Zephyr",
+      "brand": "",
+      "notes": [
+        "amber smell",
+        "honeysuckle scent",
+        "sandalwood scent",
+        "smell of casablanca lily",
+        "smell of musk",
+        "smell of papaya fruit",
+        "smell of tangerine",
+        "white tea fragrance"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138034992",
+      "source_url": "http://www.wikidata.org/entity/Q138034992",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137912111",
+      "name": "Winter 26",
+      "brand": "",
+      "notes": [
+        "abies balsamea",
+        "acacia dealbata",
+        "algal smell",
+        "citrus sinensis",
+        "eucalyptus scent",
+        "juniperus virginiana",
+        "marjoram",
+        "patchouli smell",
+        "sandalwood scent",
+        "scent of bergamot",
+        "sichuan pepper smell",
+        "smell of basil",
+        "smell of cardamom",
+        "smell of cloves",
+        "smell of jasminum sambac",
+        "smell of lavender",
+        "smell of lemon",
+        "smell of oakmoss",
+        "smell of peppermint",
+        "smell of vetiver",
+        "violet leaf fragrance"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137912111",
+      "source_url": "http://www.wikidata.org/entity/Q137912111",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q137971189",
+      "name": "Autumn 25",
+      "brand": "",
+      "notes": [
+        "abelmoschus moschatus",
+        "camphorwood",
+        "cognac",
+        "juniperus virginiana",
+        "matricaria chamomilla",
+        "pink pepper smell",
+        "scent of bergamot",
+        "scent of ylang-ylang",
+        "smell of apples",
+        "smell of benzoin",
+        "smell of frankincense",
+        "smell of ginger",
+        "smell of jasmine",
+        "smell of lemon",
+        "smell of neroli",
+        "smell of oakmoss",
+        "smell of pear",
+        "smell of peppermint",
+        "smell of petitgrain",
+        "smell of rose",
+        "tuberose scent"
+      ],
+      "source": "wikidata",
+      "source_id": "Q137971189",
+      "source_url": "http://www.wikidata.org/entity/Q137971189",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138297662",
+      "name": "Solar Canopy",
+      "brand": "",
+      "notes": [
+        "pink pepper smell",
+        "pistachio scent",
+        "red currant scent",
+        "scent of bergamot",
+        "smell of ambroxan",
+        "smell of lychee",
+        "smell of magnolia flowers",
+        "smell of turkish rose",
+        "smell of vetiver",
+        "sugar smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138297662",
+      "source_url": "http://www.wikidata.org/entity/Q138297662",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138313741",
+      "name": "Because I'm Free",
+      "brand": "",
+      "notes": [
+        "amber smell",
+        "caramel smell",
+        "scent of vanilla",
+        "smell of almond blossom",
+        "smell of banana blossom",
+        "smell of candied fruit",
+        "smell of jasmine",
+        "smell of petitgrain",
+        "tuberose scent"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138313741",
+      "source_url": "http://www.wikidata.org/entity/Q138313741",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138576966",
+      "name": "Wūlóng Chá X",
+      "brand": "",
+      "notes": [
+        "aroma of green tea",
+        "fig smell",
+        "mandarin orange smell",
+        "scent of bergamot",
+        "smell of litsea cubeba",
+        "smell of magnolia flowers",
+        "smell of musk",
+        "smell of thyme oil",
+        "smell of yuzu"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138576966",
+      "source_url": "http://www.wikidata.org/entity/Q138576966",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138766540",
+      "name": "Opulent Dubai",
+      "brand": "",
+      "notes": [
+        "ambergris scent",
+        "mango smell",
+        "smell of benzoin",
+        "smell of cedarwood",
+        "smell of ginger",
+        "smell of grapefruit",
+        "smell of jasmine",
+        "smell of lemon",
+        "smell of oakmoss",
+        "smell of violets",
+        "woody smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138766540",
+      "source_url": "http://www.wikidata.org/entity/Q138766540",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138795798",
+      "name": "Deep Viola",
+      "brand": "",
+      "notes": [
+        "leather smell",
+        "saffron smell",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of angelica",
+        "smell of frankincense",
+        "smell of iris",
+        "smell of oud",
+        "smell of violets"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138795798",
+      "source_url": "http://www.wikidata.org/entity/Q138795798",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138867078",
+      "name": "Pear Jam",
+      "brand": "",
+      "notes": [
+        "aroma of osmanthus",
+        "blackcurrant smell",
+        "calabrian bergamot smell",
+        "koji pear note",
+        "patchouli smell",
+        "smell of akigalawood",
+        "smell of ambrette seed",
+        "smell of jasminum sambac",
+        "smell of raspberry",
+        "smell of rose water",
+        "smell of white peach"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138867078",
+      "source_url": "http://www.wikidata.org/entity/Q138867078",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139903229",
+      "name": "Bijou Zafran",
+      "brand": "",
+      "notes": [
+        "patchouli smell",
+        "saffron smell",
+        "sandalwood scent",
+        "smell of ambroxan",
+        "smell of benzoin",
+        "smell of iris",
+        "smell of musk",
+        "smell of nagarmotha",
+        "smell of pear"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139903229",
+      "source_url": "http://www.wikidata.org/entity/Q139903229",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139250750",
+      "name": "Jasmin Gyokuro",
+      "brand": "",
+      "notes": [
+        "aroma of angelica root",
+        "aroma of green tea",
+        "calabrian bergamot smell",
+        "smell of haitian vetiver",
+        "smell of jasmine",
+        "smell of musk",
+        "smell of tiaré",
+        "smell of williams pear",
+        "tuberose scent"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139250750",
+      "source_url": "http://www.wikidata.org/entity/Q139250750",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139901743",
+      "name": "Spring 26",
+      "brand": "",
+      "notes": [
+        "camphorwood",
+        "cognac",
+        "cytisus scoparius",
+        "matricaria chamomilla",
+        "orange blossom scent",
+        "pepper smell",
+        "rosa × centifolia",
+        "scent of bergamot",
+        "smell of bigarade",
+        "smell of cedarwood",
+        "smell of elemi",
+        "smell of ginger",
+        "smell of lemon",
+        "smell of neroli",
+        "smell of petitgrain",
+        "tuberose scent",
+        "valeriana officinalis",
+        "zanthoxylum armatum"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139901743",
+      "source_url": "http://www.wikidata.org/entity/Q139901743",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q138773649",
+      "name": "Virtus",
+      "brand": "",
+      "notes": [
+        "ambergris scent",
+        "mango smell",
+        "nutmeg smell",
+        "patchouli smell",
+        "saffron smell",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of beeswax absolute",
+        "smell of benzoin",
+        "smell of cardamom",
+        "smell of cinnamon",
+        "smell of clary sage",
+        "smell of davana",
+        "smell of driftwood",
+        "smell of fig milk",
+        "smell of honey",
+        "smell of labdanum absolute",
+        "smell of musk",
+        "tobacco smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q138773649",
+      "source_url": "http://www.wikidata.org/entity/Q138773649",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139265288",
+      "name": "Take Me to the River",
+      "brand": "",
+      "notes": [
+        "amber smell",
+        "aroma of wine",
+        "leather smell",
+        "patchouli smell",
+        "smell of beeswax",
+        "smell of musk",
+        "smell of rose",
+        "smell of rum",
+        "tobacco smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139265288",
+      "source_url": "http://www.wikidata.org/entity/Q139265288",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q7337010",
@@ -670,7 +1243,9 @@
         "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q7337010"
+      "source_id": "Q7337010",
+      "source_url": "http://www.wikidata.org/entity/Q7337010",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q96387097",
@@ -691,7 +1266,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q96387097"
+      "source_id": "Q96387097",
+      "source_url": "http://www.wikidata.org/entity/Q96387097",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q21233661",
@@ -709,7 +1286,9 @@
         "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q21233661"
+      "source_id": "Q21233661",
+      "source_url": "http://www.wikidata.org/entity/Q21233661",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q17105080",
@@ -733,7 +1312,9 @@
         "smell of spanish broom flowers"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q17105080"
+      "source_id": "Q17105080",
+      "source_url": "http://www.wikidata.org/entity/Q17105080",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q17126301",
@@ -756,7 +1337,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q17126301"
+      "source_id": "Q17126301",
+      "source_url": "http://www.wikidata.org/entity/Q17126301",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q24886336",
@@ -774,7 +1357,9 @@
         "smell of musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q24886336"
+      "source_id": "Q24886336",
+      "source_url": "http://www.wikidata.org/entity/Q24886336",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q17560895",
@@ -808,7 +1393,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q17560895"
+      "source_id": "Q17560895",
+      "source_url": "http://www.wikidata.org/entity/Q17560895",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q104876384",
@@ -825,7 +1412,9 @@
         "spicy smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q104876384"
+      "source_id": "Q104876384",
+      "source_url": "http://www.wikidata.org/entity/Q104876384",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3393810",
@@ -853,7 +1442,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3393810"
+      "source_id": "Q3393810",
+      "source_url": "http://www.wikidata.org/entity/Q3393810",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3648777",
@@ -876,7 +1467,9 @@
         "smell of violets"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3648777"
+      "source_id": "Q3648777",
+      "source_url": "http://www.wikidata.org/entity/Q3648777",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3646092",
@@ -899,7 +1492,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3646092"
+      "source_id": "Q3646092",
+      "source_url": "http://www.wikidata.org/entity/Q3646092",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3211555",
@@ -915,7 +1510,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3211555"
+      "source_id": "Q3211555",
+      "source_url": "http://www.wikidata.org/entity/Q3211555",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3541314",
@@ -936,7 +1533,9 @@
         "smell of rose"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3541314"
+      "source_id": "Q3541314",
+      "source_url": "http://www.wikidata.org/entity/Q3541314",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q2849335",
@@ -962,7 +1561,9 @@
         "tonka bean aroma"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q2849335"
+      "source_id": "Q2849335",
+      "source_url": "http://www.wikidata.org/entity/Q2849335",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3274544",
@@ -979,7 +1580,9 @@
         "smell of rose"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3274544"
+      "source_id": "Q3274544",
+      "source_url": "http://www.wikidata.org/entity/Q3274544",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3689944",
@@ -1004,7 +1607,9 @@
         "tobacco smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3689944"
+      "source_id": "Q3689944",
+      "source_url": "http://www.wikidata.org/entity/Q3689944",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3880627",
@@ -1033,7 +1638,9 @@
         "spicy smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3880627"
+      "source_id": "Q3880627",
+      "source_url": "http://www.wikidata.org/entity/Q3880627",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q3733683",
@@ -1058,551 +1665,259 @@
         "smell of violets"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q3733683"
+      "source_id": "Q3733683",
+      "source_url": "http://www.wikidata.org/entity/Q3733683",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q132801819",
-      "name": "Dewberry",
+      "id": "wd:Q139990264",
+      "name": "Boudoir",
       "brand": "",
       "notes": [
-        "blackcurrant smell",
-        "musk",
-        "smell of apples",
-        "smell of apricot fruit",
-        "smell of cedarwood",
-        "smell of freesia",
-        "smell of grapefruit",
-        "smell of jasmine",
-        "smell of lilies",
-        "smell of peach fruit",
-        "smell of pear",
-        "smell of rose"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q132801819"
-    },
-    {
-      "id": "wd:Q136649304",
-      "name": "Red Door",
-      "brand": "",
-      "notes": [
-        "amber",
-        "anise fragrance",
         "carnation smell",
-        "lily-of-the-valley scent",
-        "musk",
-        "orange blossom scent",
-        "orchid fragrance",
-        "plum smell",
-        "sandalwood scent",
-        "smell of benzoin",
-        "smell of cedarwood",
-        "smell of cherries",
-        "smell of freesia",
-        "smell of jasmine",
-        "smell of peach fruit",
-        "smell of vetiver",
-        "smell of violets",
-        "tuberose scent"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q136649304"
-    },
-    {
-      "id": "wd:Q136646856",
-      "name": "Hugo",
-      "brand": "",
-      "notes": [
-        "fragrance of geranium",
-        "patchouli smell",
-        "smell of apples",
-        "smell of basil",
-        "smell of grapefruit",
-        "smell of jasmine",
-        "smell of lavender",
-        "smell of pennyroyal",
-        "smell of pine resin",
-        "smell of sage",
-        "smell of sawdust"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q136646856"
-    },
-    {
-      "id": "wd:Q132735959",
-      "name": "Giorgio Beverly Hills",
-      "brand": "",
-      "notes": [
-        "ambergris scent",
-        "green notes",
-        "moss perfume note",
-        "musk",
-        "orange blossom scent",
-        "orchid fragrance",
-        "scent of bergamot",
-        "scent of vanilla",
-        "smell of cedarwood",
-        "smell of gardenia",
-        "tuberose scent"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q132735959"
-    },
-    {
-      "id": "wd:Q136645269",
-      "name": "Earthworm",
-      "brand": "",
-      "notes": [
-        "earth tincture",
-        "musk",
-        "petrichor",
-        "smell of autumnal leaves",
-        "smell of freshly cut grass"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q136645269"
-    },
-    {
-      "id": "wd:Q136646423",
-      "name": "Happy",
-      "brand": "",
-      "notes": [
-        "amber",
-        "lily-of-the-valley scent",
-        "mandarin orange smell",
-        "mimosa aroma",
-        "musk",
-        "orchid fragrance",
-        "plum smell",
-        "scent of bergamot",
-        "smell of blackberry fruit",
-        "smell of clementine",
-        "smell of freesia",
-        "smell of grapefruit",
-        "smell of magnolia flowers",
-        "smell of rose"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q136646423"
-    },
-    {
-      "id": "wd:Q136649128",
-      "name": "Original Musk",
-      "brand": "",
-      "notes": [
-        "coumarin",
-        "musk",
+        "coriander smell",
         "orange blossom scent",
         "patchouli smell",
-        "scent of bergamot",
-        "smell of lilies",
-        "smell of neroli",
-        "smell of rose"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q136649128"
-    },
-    {
-      "id": "wd:Q137182953",
-      "name": "Tom Ford for Men",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "grapefruit blossom scent",
-        "leather smell",
-        "mandarin orange smell",
-        "orange blossom scent",
-        "patchouli smell",
-        "pepper smell",
-        "scent of bergamot",
-        "smell of basil",
-        "smell of cedarwood",
-        "smell of ginger",
-        "smell of lemon leaf oil",
-        "smell of nagarmotha",
-        "smell of oakmoss",
-        "smell of vetiver",
-        "tobacco smell",
-        "violet leaf fragrance"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137182953"
-    },
-    {
-      "id": "wd:Q110263664",
-      "name": "Daisy",
-      "brand": "",
-      "notes": [
-        "scent of vanilla",
-        "smell of blood grapefruit",
-        "smell of gardenia",
-        "smell of jasmine",
-        "smell of musk",
-        "smell of violets",
-        "strawberry scent",
-        "violet leaf fragrance",
-        "woody smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q110263664"
-    },
-    {
-      "id": "wd:Q138605631",
-      "name": "Tobacco Honey",
-      "brand": "",
-      "notes": [
-        "sandalwood scent",
-        "scent of vanilla",
-        "smell of anise seed",
-        "smell of cloves",
-        "smell of honey",
-        "smell of oud",
-        "smell of sesame",
-        "tobacco smell",
-        "tonka bean aroma"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138605631"
-    },
-    {
-      "id": "wd:Q138754545",
-      "name": "Black Flower Mexican Vanilla",
-      "brand": "",
-      "notes": [
-        "caramel smell",
-        "nutmeg smell",
-        "patchouli smell",
-        "sandalwood scent",
-        "scent of vanilla",
-        "smell of gardenia",
-        "smell of grapefruit",
-        "smell of jasmine",
-        "smell of lemon",
-        "smell of musk",
-        "smell of vetiver",
-        "tonka bean aroma"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138754545"
-    },
-    {
-      "id": "wd:Q138034992",
-      "name": "Zephyr",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "honeysuckle scent",
-        "sandalwood scent",
-        "smell of casablanca lily",
-        "smell of musk",
-        "smell of papaya fruit",
-        "smell of tangerine",
-        "white tea fragrance"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138034992"
-    },
-    {
-      "id": "wd:Q137912111",
-      "name": "Winter 26",
-      "brand": "",
-      "notes": [
-        "abies balsamea",
-        "acacia dealbata",
-        "algal smell",
-        "citrus sinensis",
-        "eucalyptus scent",
-        "juniperus virginiana",
-        "marjoram",
-        "patchouli smell",
         "sandalwood scent",
         "scent of bergamot",
-        "sichuan pepper smell",
-        "smell of basil",
+        "scent of hyacinth flowers",
+        "scent of vanilla",
+        "smell of aldehydes",
         "smell of cardamom",
-        "smell of cloves",
-        "smell of jasminum sambac",
-        "smell of lavender",
-        "smell of lemon",
-        "smell of oakmoss",
-        "smell of peppermint",
-        "smell of vetiver",
-        "violet leaf fragrance"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137912111"
-    },
-    {
-      "id": "wd:Q137971189",
-      "name": "Autumn 25",
-      "brand": "",
-      "notes": [
-        "abelmoschus moschatus",
-        "camphorwood",
-        "cognac",
-        "juniperus virginiana",
-        "matricaria chamomilla",
-        "pink pepper smell",
-        "scent of bergamot",
-        "scent of ylang-ylang",
-        "smell of apples",
-        "smell of benzoin",
-        "smell of frankincense",
-        "smell of ginger",
+        "smell of cinnamon",
         "smell of jasmine",
-        "smell of lemon",
-        "smell of neroli",
-        "smell of oakmoss",
-        "smell of pear",
-        "smell of peppermint",
-        "smell of petitgrain",
+        "smell of narcissus flowers",
+        "smell of orris root",
         "smell of rose",
-        "tuberose scent"
+        "tobacco smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q137971189"
+      "source_id": "Q139990264",
+      "source_url": "http://www.wikidata.org/entity/Q139990264",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q137825310",
-      "name": "Ganymede",
-      "brand": "",
-      "notes": [
-        "aroma of osmanthus",
-        "mandarin orange smell",
-        "mineral smell",
-        "patchouli smell",
-        "saffron smell",
-        "smell of akigalawood",
-        "smell of cedarwood",
-        "smell of immortelle",
-        "smell of musk",
-        "smell of suede",
-        "violet leaf fragrance"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137825310"
-    },
-    {
-      "id": "wd:Q138297662",
-      "name": "Solar Canopy",
-      "brand": "",
-      "notes": [
-        "pink pepper smell",
-        "pistachio scent",
-        "red currant scent",
-        "scent of bergamot",
-        "smell of ambroxan",
-        "smell of lychee",
-        "smell of magnolia flowers",
-        "smell of turkish rose",
-        "smell of vetiver",
-        "sugar smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138297662"
-    },
-    {
-      "id": "wd:Q138313741",
-      "name": "Because I'm Free",
+      "id": "wd:Q139991574",
+      "name": "Sunny Alice",
       "brand": "",
       "notes": [
         "amber smell",
-        "caramel smell",
+        "pink pepper smell",
+        "sandalwood scent",
         "scent of vanilla",
-        "smell of almond blossom",
-        "smell of banana blossom",
-        "smell of candied fruit",
-        "smell of jasmine",
-        "smell of petitgrain",
-        "tuberose scent"
+        "smell of jasminum sambac",
+        "smell of sea"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q138313741"
+      "source_id": "Q139991574",
+      "source_url": "http://www.wikidata.org/entity/Q139991574",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q138576966",
-      "name": "Wūlóng Chá X",
+      "id": "wd:Q139990105",
+      "name": "Angel Elixir",
       "brand": "",
       "notes": [
+        "amber smell",
+        "orange blossom scent",
+        "pink pepper smell",
+        "sandalwood scent",
+        "scent of vanilla",
+        "scent of ylang-ylang",
+        "smell of jasmine"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139990105",
+      "source_url": "http://www.wikidata.org/entity/Q139990105",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139990340",
+      "name": "Anglomania",
+      "brand": "",
+      "notes": [
+        "amber smell",
         "aroma of green tea",
-        "fig smell",
-        "mandarin orange smell",
-        "scent of bergamot",
-        "smell of litsea cubeba",
-        "smell of magnolia flowers",
-        "smell of musk",
-        "smell of thyme oil",
-        "smell of yuzu"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138576966"
-    },
-    {
-      "id": "wd:Q138766540",
-      "name": "Opulent Dubai",
-      "brand": "",
-      "notes": [
-        "ambergris scent",
-        "mango smell",
-        "smell of benzoin",
-        "smell of cedarwood",
-        "smell of ginger",
-        "smell of grapefruit",
-        "smell of jasmine",
-        "smell of lemon",
-        "smell of oakmoss",
-        "smell of violets",
-        "woody smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138766540"
-    },
-    {
-      "id": "wd:Q138795798",
-      "name": "Deep Viola",
-      "brand": "",
-      "notes": [
+        "coriander smell",
         "leather smell",
-        "saffron smell",
-        "scent of bergamot",
+        "nutmeg smell",
         "scent of vanilla",
-        "smell of angelica",
-        "smell of frankincense",
-        "smell of iris",
-        "smell of oud",
+        "smell of cardamom",
+        "smell of rose",
         "smell of violets"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q138795798"
+      "source_id": "Q139990340",
+      "source_url": "http://www.wikidata.org/entity/Q139990340",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q138867078",
-      "name": "Pear Jam",
+      "id": "wd:Q139980849",
+      "name": "Angel Muse",
       "brand": "",
       "notes": [
-        "aroma of osmanthus",
-        "blackcurrant smell",
-        "calabrian bergamot smell",
-        "koji pear note",
-        "patchouli smell",
+        "caramel smell",
+        "mandarin orange smell",
+        "passionfruit smell",
         "smell of akigalawood",
-        "smell of ambrette seed",
-        "smell of jasminum sambac",
-        "smell of raspberry",
-        "smell of rose water",
-        "smell of white peach"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q138867078"
-    },
-    {
-      "id": "wd:Q139903229",
-      "name": "Bijou Zafran",
-      "brand": "",
-      "notes": [
-        "patchouli smell",
-        "saffron smell",
-        "sandalwood scent",
-        "smell of ambroxan",
-        "smell of benzoin",
-        "smell of iris",
-        "smell of musk",
-        "smell of nagarmotha",
-        "smell of pear"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139903229"
-    },
-    {
-      "id": "wd:Q139250750",
-      "name": "Jasmin Gyokuro",
-      "brand": "",
-      "notes": [
-        "aroma of angelica root",
-        "aroma of green tea",
-        "calabrian bergamot smell",
-        "smell of haitian vetiver",
-        "smell of jasmine",
-        "smell of musk",
-        "smell of tiaré",
-        "smell of williams pear",
-        "tuberose scent"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139250750"
-    },
-    {
-      "id": "wd:Q139901743",
-      "name": "Spring 26",
-      "brand": "",
-      "notes": [
-        "camphorwood",
-        "cognac",
-        "cytisus scoparius",
-        "matricaria chamomilla",
-        "orange blossom scent",
-        "pepper smell",
-        "rosa × centifolia",
-        "scent of bergamot",
-        "smell of bigarade",
-        "smell of cedarwood",
-        "smell of elemi",
-        "smell of ginger",
+        "smell of chocolate",
         "smell of lemon",
-        "smell of neroli",
-        "smell of petitgrain",
-        "tuberose scent",
-        "valeriana officinalis",
-        "zanthoxylum armatum"
+        "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q139901743"
+      "source_id": "Q139980849",
+      "source_url": "http://www.wikidata.org/entity/Q139980849",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q138773649",
-      "name": "Virtus",
+      "id": "wd:Q139980194",
+      "name": "Angel Nova",
       "brand": "",
       "notes": [
-        "ambergris scent",
-        "mango smell",
-        "nutmeg smell",
-        "patchouli smell",
-        "saffron smell",
-        "scent of bergamot",
-        "scent of vanilla",
-        "smell of beeswax absolute",
+        "smell of akigalawood",
         "smell of benzoin",
-        "smell of cardamom",
-        "smell of cinnamon",
-        "smell of clary sage",
-        "smell of davana",
-        "smell of driftwood",
-        "smell of fig milk",
-        "smell of honey",
-        "smell of labdanum absolute",
-        "smell of musk",
-        "tobacco smell"
+        "smell of lychee",
+        "smell of raspberry",
+        "smell of rose"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q138773649"
+      "source_id": "Q139980194",
+      "source_url": "http://www.wikidata.org/entity/Q139980194",
+      "retrieved_date": "2026-10-17"
     },
     {
-      "id": "wd:Q139265288",
-      "name": "Take Me to the River",
+      "id": "wd:Q139980332",
+      "name": "Angel Nova",
+      "brand": "",
+      "notes": [
+        "scent of bergamot",
+        "smell of lychee",
+        "smell of magnolia flowers",
+        "smell of musk",
+        "smell of rose",
+        "smell of virginia cedarwood"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139980332",
+      "source_url": "http://www.wikidata.org/entity/Q139980332",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139980728",
+      "name": "Angel Muse",
+      "brand": "",
+      "notes": [
+        "patchouli smell",
+        "pink pepper smell",
+        "smell of grapefruit",
+        "smell of vetiver"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139980728",
+      "source_url": "http://www.wikidata.org/entity/Q139980728",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139989992",
+      "name": "Angel Fantasm",
       "brand": "",
       "notes": [
         "amber smell",
-        "aroma of wine",
-        "leather smell",
+        "coconut aroma",
         "patchouli smell",
-        "smell of beeswax",
-        "smell of musk",
-        "smell of rose",
-        "smell of rum",
-        "tobacco smell"
+        "pineapple smell",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of tiaré"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q139265288"
+      "source_id": "Q139989992",
+      "source_url": "http://www.wikidata.org/entity/Q139989992",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139991158",
+      "name": "Flirty Alice",
+      "brand": "",
+      "notes": [
+        "aroma of green tea",
+        "scent of bergamot",
+        "scent of vanilla",
+        "smell of rose",
+        "woody smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139991158",
+      "source_url": "http://www.wikidata.org/entity/Q139991158",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139989391",
+      "name": "Jardin d'Amalfi",
+      "brand": "",
+      "notes": [
+        "pink pepper smell",
+        "smell of apples",
+        "smell of cedarwood",
+        "smell of jasmine",
+        "smell of lemon",
+        "smell of rose",
+        "smell of tangerine",
+        "smell of vetiver",
+        "smell of white musk"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139989391",
+      "source_url": "http://www.wikidata.org/entity/Q139989391",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139990627",
+      "name": "Naughty Alice",
+      "brand": "",
+      "notes": [
+        "scent of ylang-ylang",
+        "smell of musk",
+        "smell of rose",
+        "smell of violets"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139990627",
+      "source_url": "http://www.wikidata.org/entity/Q139990627",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139991116",
+      "name": "Cheeky Alice",
+      "brand": "",
+      "notes": [
+        "lily-of-the-valley scent",
+        "peony scent",
+        "smell of musk",
+        "smell of rose",
+        "woody smell"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139991116",
+      "source_url": "http://www.wikidata.org/entity/Q139991116",
+      "retrieved_date": "2026-10-17"
+    },
+    {
+      "id": "wd:Q139990185",
+      "name": "Let It Rock",
+      "brand": "",
+      "notes": [
+        "amber smell",
+        "mandarin orange smell",
+        "patchouli smell",
+        "scent of bergamot",
+        "smell of freesia",
+        "smell of jasmine"
+      ],
+      "source": "wikidata",
+      "source_id": "Q139990185",
+      "source_url": "http://www.wikidata.org/entity/Q139990185",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140003429",
@@ -1621,7 +1936,9 @@
         "water lily"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140003429"
+      "source_id": "Q140003429",
+      "source_url": "http://www.wikidata.org/entity/Q140003429",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140001990",
@@ -1638,7 +1955,9 @@
         "smell of white musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140001990"
+      "source_id": "Q140001990",
+      "source_url": "http://www.wikidata.org/entity/Q140001990",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140002309",
@@ -1657,7 +1976,9 @@
         "smell of violets"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140002309"
+      "source_id": "Q140002309",
+      "source_url": "http://www.wikidata.org/entity/Q140002309",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140003880",
@@ -1683,7 +2004,9 @@
         "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140003880"
+      "source_id": "Q140003880",
+      "source_url": "http://www.wikidata.org/entity/Q140003880",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140014562",
@@ -1697,7 +2020,9 @@
         "smell of musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140014562"
+      "source_id": "Q140014562",
+      "source_url": "http://www.wikidata.org/entity/Q140014562",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140018525",
@@ -1726,7 +2051,9 @@
         "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140018525"
+      "source_id": "Q140018525",
+      "source_url": "http://www.wikidata.org/entity/Q140018525",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140003040",
@@ -1747,7 +2074,9 @@
         "smell of rose"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140003040"
+      "source_id": "Q140003040",
+      "source_url": "http://www.wikidata.org/entity/Q140003040",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q139992070",
@@ -1764,22 +2093,9 @@
         "smell of white musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q139992070"
-    },
-    {
-      "id": "wd:Q139991574",
-      "name": "Sunny Alice",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "pink pepper smell",
-        "sandalwood scent",
-        "scent of vanilla",
-        "smell of jasminum sambac",
-        "smell of sea"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139991574"
+      "source_id": "Q139992070",
+      "source_url": "http://www.wikidata.org/entity/Q139992070",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140003843",
@@ -1797,7 +2113,9 @@
         "smell of suede"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140003843"
+      "source_id": "Q140003843",
+      "source_url": "http://www.wikidata.org/entity/Q140003843",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140013590",
@@ -1815,7 +2133,9 @@
         "woody smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140013590"
+      "source_id": "Q140013590",
+      "source_url": "http://www.wikidata.org/entity/Q140013590",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140012833",
@@ -1828,7 +2148,9 @@
         "smell of labdanum"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140012833"
+      "source_id": "Q140012833",
+      "source_url": "http://www.wikidata.org/entity/Q140012833",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078599",
@@ -1849,7 +2171,9 @@
         "smell of thyme"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078599"
+      "source_id": "Q140078599",
+      "source_url": "http://www.wikidata.org/entity/Q140078599",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078884",
@@ -1864,7 +2188,9 @@
         "smell of raspberry"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078884"
+      "source_id": "Q140078884",
+      "source_url": "http://www.wikidata.org/entity/Q140078884",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140075144",
@@ -1878,7 +2204,9 @@
         "smell of rice"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140075144"
+      "source_id": "Q140075144",
+      "source_url": "http://www.wikidata.org/entity/Q140075144",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078650",
@@ -1893,7 +2221,9 @@
         "smell of jasmine"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078650"
+      "source_id": "Q140078650",
+      "source_url": "http://www.wikidata.org/entity/Q140078650",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078747",
@@ -1907,7 +2237,9 @@
         "smell of jasmine"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078747"
+      "source_id": "Q140078747",
+      "source_url": "http://www.wikidata.org/entity/Q140078747",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078855",
@@ -1921,7 +2253,9 @@
         "tuberose scent"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078855"
+      "source_id": "Q140078855",
+      "source_url": "http://www.wikidata.org/entity/Q140078855",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078914",
@@ -1936,7 +2270,9 @@
         "smell of orris root"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078914"
+      "source_id": "Q140078914",
+      "source_url": "http://www.wikidata.org/entity/Q140078914",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140077185",
@@ -1949,7 +2285,9 @@
         "sugar smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140077185"
+      "source_id": "Q140077185",
+      "source_url": "http://www.wikidata.org/entity/Q140077185",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078574",
@@ -1964,7 +2302,9 @@
         "smell of white flowers"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078574"
+      "source_id": "Q140078574",
+      "source_url": "http://www.wikidata.org/entity/Q140078574",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078826",
@@ -1979,7 +2319,9 @@
         "smell of pear"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078826"
+      "source_id": "Q140078826",
+      "source_url": "http://www.wikidata.org/entity/Q140078826",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q140078802",
@@ -1992,373 +2334,9 @@
         "smell of musk"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q140078802"
-    },
-    {
-      "id": "wd:Q139990264",
-      "name": "Boudoir",
-      "brand": "",
-      "notes": [
-        "carnation smell",
-        "coriander smell",
-        "orange blossom scent",
-        "patchouli smell",
-        "sandalwood scent",
-        "scent of bergamot",
-        "scent of hyacinth flowers",
-        "scent of vanilla",
-        "smell of aldehydes",
-        "smell of cardamom",
-        "smell of cinnamon",
-        "smell of jasmine",
-        "smell of narcissus flowers",
-        "smell of orris root",
-        "smell of rose",
-        "tobacco smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139990264"
-    },
-    {
-      "id": "wd:Q139990105",
-      "name": "Angel Elixir",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "orange blossom scent",
-        "pink pepper smell",
-        "sandalwood scent",
-        "scent of vanilla",
-        "scent of ylang-ylang",
-        "smell of jasmine"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139990105"
-    },
-    {
-      "id": "wd:Q139990340",
-      "name": "Anglomania",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "aroma of green tea",
-        "coriander smell",
-        "leather smell",
-        "nutmeg smell",
-        "scent of vanilla",
-        "smell of cardamom",
-        "smell of rose",
-        "smell of violets"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139990340"
-    },
-    {
-      "id": "wd:Q139980849",
-      "name": "Angel Muse",
-      "brand": "",
-      "notes": [
-        "caramel smell",
-        "mandarin orange smell",
-        "passionfruit smell",
-        "smell of akigalawood",
-        "smell of chocolate",
-        "smell of lemon",
-        "smell of vetiver"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139980849"
-    },
-    {
-      "id": "wd:Q139980194",
-      "name": "Angel Nova",
-      "brand": "",
-      "notes": [
-        "smell of akigalawood",
-        "smell of benzoin",
-        "smell of lychee",
-        "smell of raspberry",
-        "smell of rose"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139980194"
-    },
-    {
-      "id": "wd:Q139980332",
-      "name": "Angel Nova",
-      "brand": "",
-      "notes": [
-        "scent of bergamot",
-        "smell of lychee",
-        "smell of magnolia flowers",
-        "smell of musk",
-        "smell of rose",
-        "smell of virginia cedarwood"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139980332"
-    },
-    {
-      "id": "wd:Q139980728",
-      "name": "Angel Muse",
-      "brand": "",
-      "notes": [
-        "patchouli smell",
-        "pink pepper smell",
-        "smell of grapefruit",
-        "smell of vetiver"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139980728"
-    },
-    {
-      "id": "wd:Q139989992",
-      "name": "Angel Fantasm",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "coconut aroma",
-        "patchouli smell",
-        "pineapple smell",
-        "scent of bergamot",
-        "scent of vanilla",
-        "smell of tiaré"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139989992"
-    },
-    {
-      "id": "wd:Q139991158",
-      "name": "Flirty Alice",
-      "brand": "",
-      "notes": [
-        "aroma of green tea",
-        "scent of bergamot",
-        "scent of vanilla",
-        "smell of rose",
-        "woody smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139991158"
-    },
-    {
-      "id": "wd:Q139989391",
-      "name": "Jardin d'Amalfi",
-      "brand": "",
-      "notes": [
-        "pink pepper smell",
-        "smell of apples",
-        "smell of cedarwood",
-        "smell of jasmine",
-        "smell of lemon",
-        "smell of rose",
-        "smell of tangerine",
-        "smell of vetiver",
-        "smell of white musk"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139989391"
-    },
-    {
-      "id": "wd:Q139990627",
-      "name": "Naughty Alice",
-      "brand": "",
-      "notes": [
-        "scent of ylang-ylang",
-        "smell of musk",
-        "smell of rose",
-        "smell of violets"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139990627"
-    },
-    {
-      "id": "wd:Q139991116",
-      "name": "Cheeky Alice",
-      "brand": "",
-      "notes": [
-        "lily-of-the-valley scent",
-        "peony scent",
-        "smell of musk",
-        "smell of rose",
-        "woody smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139991116"
-    },
-    {
-      "id": "wd:Q139990185",
-      "name": "Let It Rock",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "mandarin orange smell",
-        "patchouli smell",
-        "scent of bergamot",
-        "smell of freesia",
-        "smell of jasmine"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q139990185"
-    },
-    {
-      "id": "wd:Q137183849",
-      "name": "Bianco Latte",
-      "brand": "",
-      "notes": [
-        "caramel",
-        "coumarin",
-        "honey",
-        "vanilla",
-        "white musk"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137183849"
-    },
-    {
-      "id": "wd:Q137213178",
-      "name": "Tonka Cola",
-      "brand": "",
-      "notes": [
-        "black cherry",
-        "cola smell",
-        "labdanum",
-        "nutmeg smell",
-        "orange blossom scent",
-        "patchouli smell",
-        "scent of vanilla",
-        "sicilian lemon",
-        "smell of benzoin",
-        "smell of cinnamon",
-        "tonka bean aroma"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137213178"
-    },
-    {
-      "id": "wd:Q137386796",
-      "name": "God Bless Cola",
-      "brand": "",
-      "notes": [
-        "caramel smell",
-        "cola smell",
-        "gourmand accord",
-        "peanut smell",
-        "scent of vanilla",
-        "smell of butter",
-        "smell of popcorn",
-        "sweet smell",
-        "woody smell"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137386796"
-    },
-    {
-      "id": "wd:Q137183811",
-      "name": "Counterplay",
-      "brand": "",
-      "notes": [
-        "aroma of osmanthus",
-        "banana scent",
-        "guava scent",
-        "orange blossom scent",
-        "patchouli smell",
-        "pink pepper smell",
-        "sandalwood scent",
-        "scent of ylang-ylang",
-        "smell of melon"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137183811"
-    },
-    {
-      "id": "wd:Q137527355",
-      "name": "Zelen",
-      "brand": "",
-      "notes": [
-        "pink pepper smell",
-        "scent of bergamot",
-        "smell of beeswax",
-        "smell of cardamom",
-        "smell of haitian vetiver",
-        "smell of lime",
-        "smell of mysore sandalwood",
-        "smell of virginia cedarwood",
-        "smell of yuzu"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137527355"
-    },
-    {
-      "id": "wd:Q137184064",
-      "name": "1969",
-      "brand": "",
-      "notes": [
-        "patchouli smell",
-        "smell of cardamom",
-        "smell of cloves",
-        "smell of coffee",
-        "smell of dark chocolate",
-        "smell of musk",
-        "smell of peach fruit",
-        "smell of rose",
-        "smell of white flowers"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137184064"
-    },
-    {
-      "id": "wd:Q137337051",
-      "name": "BOSS ALIVE",
-      "brand": "",
-      "notes": [
-        "blackcurrant smell",
-        "cedar wood (generic)",
-        "smell of apples",
-        "smell of jasminum sambac"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137337051"
-    },
-    {
-      "id": "wd:Q137361933",
-      "name": "Cuir InfraRouge",
-      "brand": "",
-      "notes": [
-        "aroma of osmanthus",
-        "leather smell",
-        "patchouli smell",
-        "scent of bergamot",
-        "scent of vanilla",
-        "smell of cedarwood",
-        "smell of cinnamon",
-        "smell of orris root",
-        "smell of oud",
-        "smell of raspberry"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137361933"
-    },
-    {
-      "id": "wd:Q137454537",
-      "name": "Patchouli Sublime",
-      "brand": "",
-      "notes": [
-        "amber smell",
-        "coriander smell",
-        "fragrance of geranium",
-        "patchouli smell",
-        "smell of cloves",
-        "smell of incense",
-        "smell of lavender",
-        "smell of musk",
-        "smell of peppermint",
-        "smell of rose",
-        "tobacco smell",
-        "tonka bean aroma"
-      ],
-      "source": "wikidata",
-      "source_id": "wd:Q137454537"
+      "source_id": "Q140078802",
+      "source_url": "http://www.wikidata.org/entity/Q140078802",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141714299",
@@ -2378,7 +2356,9 @@
         "smell of tangelo"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141714299"
+      "source_id": "Q141714299",
+      "source_url": "http://www.wikidata.org/entity/Q141714299",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141751434",
@@ -2392,7 +2372,9 @@
         "tobacco smell"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141751434"
+      "source_id": "Q141751434",
+      "source_url": "http://www.wikidata.org/entity/Q141751434",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q106626237",
@@ -2412,7 +2394,9 @@
         "smell of petitgrain"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q106626237"
+      "source_id": "Q106626237",
+      "source_url": "http://www.wikidata.org/entity/Q106626237",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q106761672",
@@ -2427,7 +2411,9 @@
         "smell of vetiver"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q106761672"
+      "source_id": "Q106761672",
+      "source_url": "http://www.wikidata.org/entity/Q106761672",
+      "retrieved_date": "2026-10-17"
     },
     {
       "id": "wd:Q141641341",
@@ -2441,68 +2427,50 @@
         "smell of petitgrain"
       ],
       "source": "wikidata",
-      "source_id": "wd:Q141641341"
+      "source_id": "Q141641341",
+      "source_url": "http://www.wikidata.org/entity/Q141641341",
+      "retrieved_date": "2026-10-17"
     }
   ],
   "all_notes": [
     "abelmoschus moschatus",
     "abies balsamea",
     "acacia dealbata",
-    "aldehydes",
     "algal smell",
     "almond scent",
-    "amaryllis",
     "amber",
     "amber smell",
     "ambergris scent",
     "anise fragrance",
-    "apple",
     "aroma of angelica root",
     "aroma of green tea",
     "aroma of osmanthus",
     "aroma of wine",
     "artemesia fragrance note",
     "australian sandalwood scent",
-    "bamboo",
     "banana scent",
-    "bellflower",
-    "benzoin",
-    "bergamot",
-    "bitter almond",
     "black cherry",
-    "black currant",
     "black tea",
     "blackcurrant leaf smell",
     "blackcurrant smell",
     "blueberry scent",
     "calabrian bergamot smell",
-    "calone",
     "camphorwood",
     "candied rose smell",
     "caramel",
     "caramel smell",
-    "cardamom",
     "carnation smell",
-    "cashmere wood",
-    "cassia",
-    "cedar",
     "cedar wood (generic)",
     "chinese osmanthus scent",
-    "chocolate",
     "citrus sinensis",
     "citrus smell",
-    "civet",
     "civet aroma",
     "cocoa scent",
-    "coconut",
     "coconut aroma",
-    "coffee",
     "cognac",
     "cola smell",
-    "coriander",
     "coriander smell",
     "coriandreae",
-    "cotton candy",
     "coumarin",
     "cyclamen fragrance",
     "cytisus scoparius",
@@ -2511,97 +2479,58 @@
     "eucalyptus scent",
     "fig smell",
     "fir balsam scent",
-    "flint",
     "fragrance of geranium",
     "frangipani fragrance",
-    "freesia",
     "fruity aroma",
-    "geranium",
     "gourmand accord",
-    "grapefruit",
     "grapefruit blossom scent",
     "green notes",
-    "green tea",
     "guava scent",
     "heliotrope fragrance",
     "honey",
     "honeysuckle scent",
-    "incense",
-    "iris",
-    "jasmine",
     "juniperus virginiana",
     "koji pear note",
     "labdanum",
     "lavandula",
-    "lavender",
-    "leather",
     "leather smell",
-    "lemon",
     "lichen perfume note",
-    "licorice",
-    "lily",
-    "lily of the valley",
     "lily-of-the-valley scent",
-    "lime",
     "lotus fragrance",
     "madagascar vanilla scent",
-    "mandarin",
-    "mandarin orange",
     "mandarin orange smell",
     "mango smell",
     "maple syrup smell",
     "marjoram",
     "matricaria chamomilla",
-    "melon",
     "methyl benzodioxepinone",
     "mimosa aroma",
     "mineral smell",
-    "mint",
     "moss perfume note",
     "mushroom smell",
     "musk",
-    "neroli",
-    "nutmeg",
     "nutmeg smell",
     "oak fragrance",
-    "oak moss",
-    "opoponax",
-    "orange",
-    "orange blossom",
     "orange blossom scent",
-    "orchid",
     "orchid fragrance",
-    "osmanthus",
-    "papaya",
     "passionfruit smell",
-    "patchouli",
     "patchouli smell",
     "peanut smell",
-    "pear",
-    "pelargonium",
     "pelargonium scent",
     "peony scent",
-    "pepper",
     "pepper smell",
-    "persimmon",
     "petrichor",
-    "pineapple",
     "pineapple smell",
-    "pink pepper",
     "pink pepper smell",
     "pistachio scent",
     "plum smell",
-    "praline",
     "q136646107",
     "q156047",
     "red currant scent",
     "rhubarb smell",
     "rosa × centifolia",
-    "rose",
-    "rosemary",
     "saffron smell",
     "salvia rosmarinus",
-    "sandalwood",
     "sandalwood scent",
     "scent of aquaflora",
     "scent of bergamot",
@@ -2765,25 +2694,18 @@
     "strawberry scent",
     "sugar smell",
     "sweet smell",
-    "tea",
     "tea scent",
-    "tobacco",
     "tobacco smell",
-    "tonka bean",
     "tonka bean aroma",
     "tuberose scent",
     "valeriana officinalis",
     "vanilla",
-    "vetiver",
-    "violet",
     "violet leaf fragrance",
     "water lily",
     "white musk",
-    "white rose",
     "white tea fragrance",
     "white vanilla scent",
     "woody smell",
-    "ylang ylang",
     "zanthoxylum armatum"
   ]
 }
