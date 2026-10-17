@@ -13,6 +13,7 @@ const PerfumePage = lazy(() => import('./pages/PerfumePage'));
 // destination, never the landing page. Split so nobody pays for it by accident.
 const BuilderPage = lazy(() => import('./pages/BuilderPage'));
 const CoffeePage = lazy(() => import('./pages/CoffeePage'));
+const NoteMatchPage = lazy(() => import('./pages/NoteMatchPage'));
 
 /**
  * One route per surface. The wheel slug is a param (/wheel/accord) so every
@@ -60,6 +61,14 @@ export default function App() {
             element={
               <Suspense fallback={<Loading />}>
                 <BuilderPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/note-match"
+            element={
+              <Suspense fallback={<Loading />}>
+                <NoteMatchPage />
               </Suspense>
             }
           />

@@ -11,6 +11,7 @@
     "bake:totals": "python3 scripts/pipeline/note_totals.py",
     "bake:perfumes": "python3 scripts/pipeline/perfume_index.py",
     "bake:accords": "python3 scripts/pipeline/accord_wheel.py",
+    "bake:note-match": "python3 scripts/build_note_match_seed.py && python3 scripts/compute_note_matches.py && python3 scripts/build_note_match_index.py",
     "build": "vite build",
     "preview": "vite preview",
     "fetch:fragella": "python3 scripts/pipeline/fragella.py",

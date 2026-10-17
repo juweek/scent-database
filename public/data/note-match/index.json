@@ -1,0 +1,1169 @@
+{
+  "source": "note_match_index",
+  "created_at": "2026-10-17T13:10:15.161316Z",
+  "total_perfumes": 129,
+  "perfumes_with_matches": 55,
+  "index": [
+    {
+      "id": "wd:Q137184064",
+      "name": "1969",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "1969 "
+    },
+    {
+      "id": "wd:Q139992070",
+      "name": "Acqua Fiorentina",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "acqua fiorentina "
+    },
+    {
+      "id": "wd:Q140078574",
+      "name": "Alien Eau de Toilette",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "alien eau de toilette "
+    },
+    {
+      "id": "wd:Q140084520",
+      "name": "Alien Eau Extraordinaire",
+      "brand": "",
+      "note_count": 16,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien eau extraordinaire "
+    },
+    {
+      "id": "wd:Q140078914",
+      "name": "Alien Essence Absolue",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien essence absolue "
+    },
+    {
+      "id": "wd:Q140078855",
+      "name": "Alien Extraintense",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "alien extraintense "
+    },
+    {
+      "id": "wd:Q140084447",
+      "name": "Alien Fusion",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "alien fusion "
+    },
+    {
+      "id": "wd:Q140078650",
+      "name": "Alien Goddess",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "alien goddess "
+    },
+    {
+      "id": "wd:Q140078747",
+      "name": "Alien Goddess Intense",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "alien goddess intense "
+    },
+    {
+      "id": "wd:Q140078802",
+      "name": "Alien Goddess Supra Florale",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "alien goddess supra florale "
+    },
+    {
+      "id": "wd:Q140078826",
+      "name": "Alien Hypersense",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien hypersense "
+    },
+    {
+      "id": "wd:Q140078599",
+      "name": "Alien Man",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien man "
+    },
+    {
+      "id": "wd:Q140084488",
+      "name": "Alien Man Fusion",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "alien man fusion "
+    },
+    {
+      "id": "wd:Q140080065",
+      "name": "Alien Man Mirage",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien man mirage "
+    },
+    {
+      "id": "wd:Q140079365",
+      "name": "Alien Mirage",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien mirage "
+    },
+    {
+      "id": "wd:Q140083800",
+      "name": "Alien Musc Mysterieux",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "alien musc mysterieux "
+    },
+    {
+      "id": "wd:Q140078884",
+      "name": "Alien Pulp",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "alien pulp "
+    },
+    {
+      "id": "wd:Q2849335",
+      "name": "Angel",
+      "brand": "",
+      "note_count": 17,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "angel "
+    },
+    {
+      "id": "wd:Q139990105",
+      "name": "Angel Elixir",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "angel elixir "
+    },
+    {
+      "id": "wd:Q139989992",
+      "name": "Angel Fantasm",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "angel fantasm "
+    },
+    {
+      "id": "wd:Q139980849",
+      "name": "Angel Muse",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "angel muse "
+    },
+    {
+      "id": "wd:Q139980728",
+      "name": "Angel Muse",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "angel muse "
+    },
+    {
+      "id": "wd:Q139980194",
+      "name": "Angel Nova",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "angel nova "
+    },
+    {
+      "id": "wd:Q139980332",
+      "name": "Angel Nova",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "angel nova "
+    },
+    {
+      "id": "wd:Q139990340",
+      "name": "Anglomania",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "anglomania "
+    },
+    {
+      "id": "wd:Q137971189",
+      "name": "Autumn 25",
+      "brand": "",
+      "note_count": 21,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "autumn 25 "
+    },
+    {
+      "id": "wd:Q24886336",
+      "name": "Aventus",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "aventus "
+    },
+    {
+      "id": "wd:Q141099119",
+      "name": "Banana Rush",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "banana rush "
+    },
+    {
+      "id": "wd:Q138313741",
+      "name": "Because I'm Free",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "because i'm free "
+    },
+    {
+      "id": "wd:Q137183849",
+      "name": "Bianco Latte",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "bianco latte "
+    },
+    {
+      "id": "wd:Q139903229",
+      "name": "Bijou Zafran",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "bijou zafran "
+    },
+    {
+      "id": "wd:Q138754545",
+      "name": "Black Flower Mexican Vanilla",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "black flower mexican vanilla "
+    },
+    {
+      "id": "wd:Q140825999",
+      "name": "Blessed Baraka",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "blessed baraka "
+    },
+    {
+      "id": "wd:Q140077185",
+      "name": "Blueberry Jam",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "blueberry jam "
+    },
+    {
+      "id": "wd:Q137337051",
+      "name": "BOSS ALIVE",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "boss alive "
+    },
+    {
+      "id": "wd:Q139990264",
+      "name": "Boudoir",
+      "brand": "",
+      "note_count": 16,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "boudoir "
+    },
+    {
+      "id": "wd:Q140002309",
+      "name": "Boudoir Sin Garden",
+      "brand": "",
+      "note_count": 10,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "boudoir sin garden "
+    },
+    {
+      "id": "wd:Q3646092",
+      "name": "Brut",
+      "brand": "",
+      "note_count": 14,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "brut "
+    },
+    {
+      "id": "wd:Q141442739",
+      "name": "Byronic Hero",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "byronic hero "
+    },
+    {
+      "id": "wd:Q3274544",
+      "name": "Chanel No. 19",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "chanel no. 19 "
+    },
+    {
+      "id": "wd:Q139991116",
+      "name": "Cheeky Alice",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 3,
+      "search_text": "cheeky alice "
+    },
+    {
+      "id": "wd:Q3648777",
+      "name": "CK One",
+      "brand": "",
+      "note_count": 14,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "ck one "
+    },
+    {
+      "id": "wd:Q3689944",
+      "name": "Cool Water",
+      "brand": "",
+      "note_count": 16,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "cool water "
+    },
+    {
+      "id": "wd:Q106626237",
+      "name": "Cordon Vert",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "cordon vert "
+    },
+    {
+      "id": "wd:Q137183811",
+      "name": "Counterplay",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "counterplay "
+    },
+    {
+      "id": "wd:Q140266694",
+      "name": "Crystal Noir EDT",
+      "brand": "",
+      "note_count": 16,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "crystal noir edt "
+    },
+    {
+      "id": "wd:Q137361933",
+      "name": "Cuir InfraRouge",
+      "brand": "",
+      "note_count": 10,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "cuir infrarouge "
+    },
+    {
+      "id": "wd:Q110263664",
+      "name": "Daisy",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "daisy "
+    },
+    {
+      "id": "wd:Q138795798",
+      "name": "Deep Viola",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "deep viola "
+    },
+    {
+      "id": "wd:Q132801819",
+      "name": "Dewberry",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "dewberry "
+    },
+    {
+      "id": "wd:Q17105080",
+      "name": "Dune",
+      "brand": "",
+      "note_count": 15,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "dune "
+    },
+    {
+      "id": "wd:Q136645269",
+      "name": "Earthworm",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "earthworm "
+    },
+    {
+      "id": "wd:Q3733683",
+      "name": "Eternity",
+      "brand": "",
+      "note_count": 16,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "eternity "
+    },
+    {
+      "id": "wd:Q140013590",
+      "name": "Eternity Aqua",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "eternity aqua "
+    },
+    {
+      "id": "wd:Q140014562",
+      "name": "Eternity Aqua for Men",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "eternity aqua for men "
+    },
+    {
+      "id": "wd:Q140012833",
+      "name": "Eternity Flame For Men",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "eternity flame for men "
+    },
+    {
+      "id": "wd:Q140003880",
+      "name": "Eternity for Men",
+      "brand": "",
+      "note_count": 17,
+      "has_matches": true,
+      "match_count": 5,
+      "search_text": "eternity for men "
+    },
+    {
+      "id": "wd:Q140003843",
+      "name": "Eternity for Men",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "eternity for men "
+    },
+    {
+      "id": "wd:Q140003429",
+      "name": "Eternity Moment",
+      "brand": "",
+      "note_count": 10,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "eternity moment "
+    },
+    {
+      "id": "wd:Q139991158",
+      "name": "Flirty Alice",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "flirty alice "
+    },
+    {
+      "id": "wd:Q141099579",
+      "name": "Future Memories",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "future memories "
+    },
+    {
+      "id": "wd:Q137825310",
+      "name": "Ganymede",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "ganymede "
+    },
+    {
+      "id": "wd:Q132735959",
+      "name": "Giorgio Beverly Hills",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "giorgio beverly hills "
+    },
+    {
+      "id": "wd:Q137386796",
+      "name": "God Bless Cola",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "god bless cola "
+    },
+    {
+      "id": "wd:Q140406909",
+      "name": "Gold Juice",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "gold juice "
+    },
+    {
+      "id": "wd:Q140237028",
+      "name": "Ha Long Bay",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "ha long bay "
+    },
+    {
+      "id": "wd:Q136646423",
+      "name": "Happy",
+      "brand": "",
+      "note_count": 14,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "happy "
+    },
+    {
+      "id": "wd:Q140075144",
+      "name": "Horchata de Vanille",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "horchata de vanille "
+    },
+    {
+      "id": "wd:Q136646856",
+      "name": "Hugo",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "hugo "
+    },
+    {
+      "id": "wd:Q139989391",
+      "name": "Jardin d'Amalfi",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "jardin d'amalfi "
+    },
+    {
+      "id": "wd:Q139250750",
+      "name": "Jasmin Gyokuro",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "jasmin gyokuro "
+    },
+    {
+      "id": "wd:Q140499690",
+      "name": "Khamrah",
+      "brand": "",
+      "note_count": 13,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "khamrah "
+    },
+    {
+      "id": "wd:Q17126301",
+      "name": "L'eau d'Issey",
+      "brand": "",
+      "note_count": 14,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "l'eau d'issey "
+    },
+    {
+      "id": "wd:Q3211555",
+      "name": "La Petite Robe Noire",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "la petite robe noire "
+    },
+    {
+      "id": "wd:Q106761672",
+      "name": "Lampblack",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "lampblack "
+    },
+    {
+      "id": "wd:Q96387097",
+      "name": "Le Mâle",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "le mâle "
+    },
+    {
+      "id": "wd:Q141641341",
+      "name": "Lemon",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "lemon "
+    },
+    {
+      "id": "wd:Q139990185",
+      "name": "Let It Rock",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "let it rock "
+    },
+    {
+      "id": "wd:Q141714299",
+      "name": "Levant",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "levant "
+    },
+    {
+      "id": "wd:Q140003040",
+      "name": "Libertine",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "libertine "
+    },
+    {
+      "id": "wd:Q141467134",
+      "name": "Memory Motel",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "memory motel "
+    },
+    {
+      "id": "wd:Q140001990",
+      "name": "Mon Boudoir",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "mon boudoir "
+    },
+    {
+      "id": "wd:Q139990627",
+      "name": "Naughty Alice",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "naughty alice "
+    },
+    {
+      "id": "wd:Q3880627",
+      "name": "Obsession",
+      "brand": "",
+      "note_count": 20,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "obsession "
+    },
+    {
+      "id": "wd:Q140018525",
+      "name": "Obsession for Men",
+      "brand": "",
+      "note_count": 20,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "obsession for men "
+    },
+    {
+      "id": "wd:Q140298435",
+      "name": "Odéon",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "odéon "
+    },
+    {
+      "id": "wd:Q138766540",
+      "name": "Opulent Dubai",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "opulent dubai "
+    },
+    {
+      "id": "wd:Q136649128",
+      "name": "Original Musk",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "original musk "
+    },
+    {
+      "id": "wd:Q137454537",
+      "name": "Patchouli Sublime",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "patchouli sublime "
+    },
+    {
+      "id": "wd:Q141098533",
+      "name": "Pear Inc.",
+      "brand": "",
+      "note_count": 4,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "pear inc. "
+    },
+    {
+      "id": "wd:Q138867078",
+      "name": "Pear Jam",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "pear jam "
+    },
+    {
+      "id": "wd:Q141641013",
+      "name": "Pineapple",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "pineapple "
+    },
+    {
+      "id": "wd:Q3393810",
+      "name": "Poison",
+      "brand": "",
+      "note_count": 19,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "poison "
+    },
+    {
+      "id": "wd:Q140101602",
+      "name": "Poison Girl",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "poison girl "
+    },
+    {
+      "id": "wd:Q140453489",
+      "name": "Printemps",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "printemps "
+    },
+    {
+      "id": "wd:Q136649304",
+      "name": "Red Door",
+      "brand": "",
+      "note_count": 18,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "red door "
+    },
+    {
+      "id": "wd:Q7337010",
+      "name": "Rive Gauche",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "rive gauche "
+    },
+    {
+      "id": "wd:Q104876384",
+      "name": "Santal 33",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "santal 33 "
+    },
+    {
+      "id": "wd:Q141751434",
+      "name": "Shroom Cola",
+      "brand": "",
+      "note_count": 5,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "shroom cola "
+    },
+    {
+      "id": "wd:Q138297662",
+      "name": "Solar Canopy",
+      "brand": "",
+      "note_count": 10,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "solar canopy "
+    },
+    {
+      "id": "wd:Q139901743",
+      "name": "Spring 26",
+      "brand": "",
+      "note_count": 18,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "spring 26 "
+    },
+    {
+      "id": "wd:Q139991574",
+      "name": "Sunny Alice",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "sunny alice "
+    },
+    {
+      "id": "wd:Q139265288",
+      "name": "Take Me to the River",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "take me to the river "
+    },
+    {
+      "id": "wd:Q21233661",
+      "name": "Terre d'Hermès",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "terre d'hermès "
+    },
+    {
+      "id": "wd:Q138605631",
+      "name": "Tobacco Honey",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "tobacco honey "
+    },
+    {
+      "id": "wd:Q141467058",
+      "name": "Tobacco Vanille",
+      "brand": "",
+      "note_count": 6,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "tobacco vanille "
+    },
+    {
+      "id": "wd:Q137182953",
+      "name": "Tom Ford for Men",
+      "brand": "",
+      "note_count": 17,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "tom ford for men "
+    },
+    {
+      "id": "wd:Q137213178",
+      "name": "Tonka Cola",
+      "brand": "",
+      "note_count": 11,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "tonka cola "
+    },
+    {
+      "id": "wd:Q3541314",
+      "name": "Trésor",
+      "brand": "",
+      "note_count": 12,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "trésor "
+    },
+    {
+      "id": "wd:Q140611048",
+      "name": "Vanilla Embers",
+      "brand": "",
+      "note_count": 7,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "vanilla embers "
+    },
+    {
+      "id": "wd:Q138773649",
+      "name": "Virtus",
+      "brand": "",
+      "note_count": 19,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "virtus "
+    },
+    {
+      "id": "wd:Q137912111",
+      "name": "Winter 26",
+      "brand": "",
+      "note_count": 21,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "winter 26 "
+    },
+    {
+      "id": "wd:Q138576966",
+      "name": "Wūlóng Chá X",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "wūlóng chá x "
+    },
+    {
+      "id": "wd:Q17560895",
+      "name": "Ysatis",
+      "brand": "",
+      "note_count": 25,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "ysatis "
+    },
+    {
+      "id": "wd:Q141490815",
+      "name": "Zamira",
+      "brand": "",
+      "note_count": 15,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "zamira "
+    },
+    {
+      "id": "wd:Q137527355",
+      "name": "Zelen",
+      "brand": "",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "zelen "
+    },
+    {
+      "id": "wd:Q138034992",
+      "name": "Zephyr",
+      "brand": "",
+      "note_count": 8,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "zephyr "
+    },
+    {
+      "id": "seed-008",
+      "name": "CK One",
+      "brand": "Calvin Klein",
+      "note_count": 16,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "ck one calvin klein"
+    },
+    {
+      "id": "seed-001",
+      "name": "Chanel No. 5",
+      "brand": "Chanel",
+      "note_count": 12,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "chanel no. 5 chanel"
+    },
+    {
+      "id": "seed-007",
+      "name": "Cool Water",
+      "brand": "Davidoff",
+      "note_count": 13,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "cool water davidoff"
+    },
+    {
+      "id": "seed-003",
+      "name": "Diorissimo",
+      "brand": "Dior",
+      "note_count": 8,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "diorissimo dior"
+    },
+    {
+      "id": "seed-005",
+      "name": "Light Blue",
+      "brand": "Dolce & Gabbana",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "light blue dolce & gabbana"
+    },
+    {
+      "id": "seed-004",
+      "name": "Acqua di Gio",
+      "brand": "Giorgio Armani",
+      "note_count": 15,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "acqua di gio giorgio armani"
+    },
+    {
+      "id": "seed-002",
+      "name": "Shalimar",
+      "brand": "Guerlain",
+      "note_count": 12,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "shalimar guerlain"
+    },
+    {
+      "id": "seed-011",
+      "name": "Terre d'Hermes",
+      "brand": "Hermes",
+      "note_count": 9,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "terre d'hermes hermes"
+    },
+    {
+      "id": "seed-012",
+      "name": "La Vie Est Belle",
+      "brand": "Lancome",
+      "note_count": 9,
+      "has_matches": true,
+      "match_count": 2,
+      "search_text": "la vie est belle lancome"
+    },
+    {
+      "id": "seed-006",
+      "name": "Angel",
+      "brand": "Thierry Mugler",
+      "note_count": 14,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "angel thierry mugler"
+    },
+    {
+      "id": "seed-009",
+      "name": "Flowerbomb",
+      "brand": "Viktor & Rolf",
+      "note_count": 10,
+      "has_matches": false,
+      "match_count": 0,
+      "search_text": "flowerbomb viktor & rolf"
+    },
+    {
+      "id": "seed-010",
+      "name": "Black Opium",
+      "brand": "Yves Saint Laurent",
+      "note_count": 11,
+      "has_matches": true,
+      "match_count": 1,
+      "search_text": "black opium yves saint laurent"
+    }
+  ]
+}

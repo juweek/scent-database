@@ -1,0 +1,1438 @@
+{
+  "source": "note_match_computed",
+  "computed_at": "2026-10-17T13:09:57.492852Z",
+  "description": "Precomputed note-based similarity matches using IDF-weighted cosine similarity",
+  "method": {
+    "algorithm": "cosine_similarity",
+    "weighting": "IDF",
+    "min_notes": 4,
+    "min_match": 40,
+    "max_neighbors": 20
+  },
+  "perfume_count": 129,
+  "note_count": 340,
+  "matches": {
+    "seed-001": [
+      {
+        "id": "seed-002",
+        "name": "Shalimar",
+        "brand": "Guerlain",
+        "similarity": 0.4,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "iris",
+          "jasmine",
+          "patchouli",
+          "rose",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 12
+      },
+      {
+        "id": "seed-003",
+        "name": "Diorissimo",
+        "brand": "Dior",
+        "similarity": 0.397,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "jasmine",
+          "lily of the valley",
+          "sandalwood",
+          "ylang ylang"
+        ],
+        "shared_count": 4,
+        "total_notes": 8
+      }
+    ],
+    "seed-002": [
+      {
+        "id": "seed-012",
+        "name": "La Vie Est Belle",
+        "brand": "Lancome",
+        "similarity": 0.457,
+        "match_percentage": 46,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "iris",
+          "jasmine",
+          "patchouli",
+          "tonka bean",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 9
+      },
+      {
+        "id": "seed-001",
+        "name": "Chanel No. 5",
+        "brand": "Chanel",
+        "similarity": 0.4,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "iris",
+          "jasmine",
+          "patchouli",
+          "rose",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 12
+      }
+    ],
+    "seed-003": [
+      {
+        "id": "seed-001",
+        "name": "Chanel No. 5",
+        "brand": "Chanel",
+        "similarity": 0.397,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "jasmine",
+          "lily of the valley",
+          "sandalwood",
+          "ylang ylang"
+        ],
+        "shared_count": 4,
+        "total_notes": 12
+      }
+    ],
+    "seed-004": [],
+    "seed-005": [],
+    "seed-006": [],
+    "seed-007": [],
+    "seed-008": [],
+    "seed-009": [],
+    "seed-010": [
+      {
+        "id": "seed-012",
+        "name": "La Vie Est Belle",
+        "brand": "Lancome",
+        "similarity": 0.478,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "jasmine",
+          "orange blossom",
+          "patchouli",
+          "pear",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 9
+      }
+    ],
+    "seed-011": [],
+    "seed-012": [
+      {
+        "id": "seed-010",
+        "name": "Black Opium",
+        "brand": "Yves Saint Laurent",
+        "similarity": 0.478,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "jasmine",
+          "orange blossom",
+          "patchouli",
+          "pear",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 11
+      },
+      {
+        "id": "seed-002",
+        "name": "Shalimar",
+        "brand": "Guerlain",
+        "similarity": 0.457,
+        "match_percentage": 46,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "iris",
+          "jasmine",
+          "patchouli",
+          "tonka bean",
+          "vanilla"
+        ],
+        "shared_count": 5,
+        "total_notes": 12
+      }
+    ],
+    "wd:Q140298435": [],
+    "wd:Q140084520": [],
+    "wd:Q140266694": [
+      {
+        "id": "wd:Q140084447",
+        "name": "Alien Fusion",
+        "brand": "",
+        "similarity": 0.418,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "orange blossom scent",
+          "scent of vanilla",
+          "smell of ginger",
+          "tuberose scent"
+        ],
+        "shared_count": 5,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q140101602": [],
+    "wd:Q140453489": [],
+    "wd:Q140083800": [],
+    "wd:Q140084447": [
+      {
+        "id": "wd:Q140084488",
+        "name": "Alien Man Fusion",
+        "brand": "",
+        "similarity": 0.432,
+        "match_percentage": 43,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of cinnamon",
+          "smell of ginger"
+        ],
+        "shared_count": 2,
+        "total_notes": 5
+      },
+      {
+        "id": "wd:Q140266694",
+        "name": "Crystal Noir EDT",
+        "brand": "",
+        "similarity": 0.418,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "orange blossom scent",
+          "scent of vanilla",
+          "smell of ginger",
+          "tuberose scent"
+        ],
+        "shared_count": 5,
+        "total_notes": 16
+      }
+    ],
+    "wd:Q140080065": [],
+    "wd:Q140079365": [],
+    "wd:Q140084488": [
+      {
+        "id": "wd:Q137361933",
+        "name": "Cuir InfraRouge",
+        "brand": "",
+        "similarity": 0.457,
+        "match_percentage": 46,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "aroma of osmanthus",
+          "leather smell",
+          "smell of cinnamon"
+        ],
+        "shared_count": 3,
+        "total_notes": 10
+      },
+      {
+        "id": "wd:Q140084447",
+        "name": "Alien Fusion",
+        "brand": "",
+        "similarity": 0.432,
+        "match_percentage": 43,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of cinnamon",
+          "smell of ginger"
+        ],
+        "shared_count": 2,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q140237028": [],
+    "wd:Q140406909": [],
+    "wd:Q141442739": [],
+    "wd:Q141099579": [],
+    "wd:Q141467058": [],
+    "wd:Q141490815": [
+      {
+        "id": "wd:Q137825310",
+        "name": "Ganymede",
+        "brand": "",
+        "similarity": 0.397,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "mandarin orange smell",
+          "patchouli smell",
+          "saffron smell",
+          "smell of akigalawood",
+          "smell of musk",
+          "violet leaf fragrance"
+        ],
+        "shared_count": 6,
+        "total_notes": 11
+      }
+    ],
+    "wd:Q140611048": [],
+    "wd:Q140825999": [
+      {
+        "id": "wd:Q140078574",
+        "name": "Alien Eau de Toilette",
+        "brand": "",
+        "similarity": 0.508,
+        "match_percentage": 51,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "smell of white flowers"
+        ],
+        "shared_count": 2,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q141641013": [],
+    "wd:Q141099119": [],
+    "wd:Q140499690": [],
+    "wd:Q141467134": [
+      {
+        "id": "wd:Q138795798",
+        "name": "Deep Viola",
+        "brand": "",
+        "similarity": 0.47,
+        "match_percentage": 47,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "leather smell",
+          "scent of bergamot",
+          "scent of vanilla",
+          "smell of frankincense",
+          "smell of iris"
+        ],
+        "shared_count": 5,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q141098533": [],
+    "wd:Q7337010": [],
+    "wd:Q96387097": [],
+    "wd:Q21233661": [
+      {
+        "id": "wd:Q106761672",
+        "name": "Lampblack",
+        "brand": "",
+        "similarity": 0.503,
+        "match_percentage": 50,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of benzoin",
+          "smell of grapefruit",
+          "smell of orange",
+          "smell of vetiver"
+        ],
+        "shared_count": 4,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q17105080": [],
+    "wd:Q17126301": [],
+    "wd:Q24886336": [],
+    "wd:Q17560895": [],
+    "wd:Q104876384": [],
+    "wd:Q3393810": [],
+    "wd:Q3648777": [
+      {
+        "id": "wd:Q139990340",
+        "name": "Anglomania",
+        "brand": "",
+        "similarity": 0.416,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "aroma of green tea",
+          "nutmeg smell",
+          "smell of cardamom",
+          "smell of violets"
+        ],
+        "shared_count": 4,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q3646092": [
+      {
+        "id": "wd:Q140003880",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.447,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of lemon",
+          "smell of vetiver"
+        ],
+        "shared_count": 8,
+        "total_notes": 17
+      }
+    ],
+    "wd:Q3211555": [],
+    "wd:Q3541314": [],
+    "wd:Q2849335": [],
+    "wd:Q3274544": [
+      {
+        "id": "wd:Q139990264",
+        "name": "Boudoir",
+        "brand": "",
+        "similarity": 0.439,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of bergamot",
+          "scent of hyacinth flowers",
+          "smell of narcissus flowers",
+          "smell of orris root",
+          "smell of rose"
+        ],
+        "shared_count": 5,
+        "total_notes": 16
+      }
+    ],
+    "wd:Q3689944": [],
+    "wd:Q3880627": [
+      {
+        "id": "wd:Q140003880",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.435,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "coriander smell",
+          "mandarin orange smell",
+          "orange blossom scent",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lemon",
+          "smell of musk",
+          "smell of vetiver"
+        ],
+        "shared_count": 11,
+        "total_notes": 17
+      }
+    ],
+    "wd:Q3733683": [
+      {
+        "id": "wd:Q139990185",
+        "name": "Let It Rock",
+        "brand": "",
+        "similarity": 0.419,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "mandarin orange smell",
+          "patchouli smell",
+          "smell of freesia",
+          "smell of jasmine"
+        ],
+        "shared_count": 5,
+        "total_notes": 6
+      },
+      {
+        "id": "wd:Q140003880",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.398,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "lily-of-the-valley scent",
+          "mandarin orange smell",
+          "sandalwood scent",
+          "smell of jasmine",
+          "smell of lilies",
+          "smell of musk",
+          "smell of sage"
+        ],
+        "shared_count": 8,
+        "total_notes": 17
+      }
+    ],
+    "wd:Q132801819": [],
+    "wd:Q136649304": [
+      {
+        "id": "wd:Q136646423",
+        "name": "Happy",
+        "brand": "",
+        "similarity": 0.424,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber",
+          "lily-of-the-valley scent",
+          "musk",
+          "orchid fragrance",
+          "plum smell",
+          "smell of freesia"
+        ],
+        "shared_count": 6,
+        "total_notes": 14
+      }
+    ],
+    "wd:Q136646856": [
+      {
+        "id": "wd:Q140003843",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.418,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "smell of apples",
+          "smell of lavender",
+          "smell of sage"
+        ],
+        "shared_count": 4,
+        "total_notes": 9
+      },
+      {
+        "id": "wd:Q140003880",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.405,
+        "match_percentage": 41,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of sage"
+        ],
+        "shared_count": 5,
+        "total_notes": 17
+      }
+    ],
+    "wd:Q132735959": [],
+    "wd:Q136645269": [],
+    "wd:Q136646423": [
+      {
+        "id": "wd:Q136649304",
+        "name": "Red Door",
+        "brand": "",
+        "similarity": 0.424,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber",
+          "lily-of-the-valley scent",
+          "musk",
+          "orchid fragrance",
+          "plum smell",
+          "smell of freesia"
+        ],
+        "shared_count": 6,
+        "total_notes": 18
+      }
+    ],
+    "wd:Q136649128": [],
+    "wd:Q137182953": [],
+    "wd:Q110263664": [],
+    "wd:Q138605631": [],
+    "wd:Q138754545": [],
+    "wd:Q138034992": [],
+    "wd:Q137912111": [],
+    "wd:Q137971189": [
+      {
+        "id": "wd:Q139901743",
+        "name": "Spring 26",
+        "brand": "",
+        "similarity": 0.452,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "camphorwood",
+          "cognac",
+          "matricaria chamomilla",
+          "scent of bergamot",
+          "smell of ginger",
+          "smell of lemon",
+          "smell of neroli",
+          "smell of petitgrain",
+          "tuberose scent"
+        ],
+        "shared_count": 9,
+        "total_notes": 18
+      }
+    ],
+    "wd:Q137825310": [
+      {
+        "id": "wd:Q141490815",
+        "name": "Zamira",
+        "brand": "",
+        "similarity": 0.397,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "mandarin orange smell",
+          "patchouli smell",
+          "saffron smell",
+          "smell of akigalawood",
+          "smell of musk",
+          "violet leaf fragrance"
+        ],
+        "shared_count": 6,
+        "total_notes": 15
+      }
+    ],
+    "wd:Q138297662": [
+      {
+        "id": "wd:Q139980332",
+        "name": "Angel Nova",
+        "brand": "",
+        "similarity": 0.399,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of bergamot",
+          "smell of lychee",
+          "smell of magnolia flowers"
+        ],
+        "shared_count": 3,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q138313741": [
+      {
+        "id": "wd:Q140078855",
+        "name": "Alien Extraintense",
+        "brand": "",
+        "similarity": 0.48,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of vanilla",
+          "smell of jasmine",
+          "smell of petitgrain",
+          "tuberose scent"
+        ],
+        "shared_count": 4,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q138576966": [],
+    "wd:Q138766540": [],
+    "wd:Q138795798": [
+      {
+        "id": "wd:Q141467134",
+        "name": "Memory Motel",
+        "brand": "",
+        "similarity": 0.47,
+        "match_percentage": 47,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "leather smell",
+          "scent of bergamot",
+          "scent of vanilla",
+          "smell of frankincense",
+          "smell of iris"
+        ],
+        "shared_count": 5,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q138867078": [],
+    "wd:Q139903229": [],
+    "wd:Q139250750": [],
+    "wd:Q139901743": [
+      {
+        "id": "wd:Q137971189",
+        "name": "Autumn 25",
+        "brand": "",
+        "similarity": 0.452,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "camphorwood",
+          "cognac",
+          "matricaria chamomilla",
+          "scent of bergamot",
+          "smell of ginger",
+          "smell of lemon",
+          "smell of neroli",
+          "smell of petitgrain",
+          "tuberose scent"
+        ],
+        "shared_count": 9,
+        "total_notes": 21
+      }
+    ],
+    "wd:Q138773649": [],
+    "wd:Q139265288": [],
+    "wd:Q140003429": [
+      {
+        "id": "wd:Q140078884",
+        "name": "Alien Pulp",
+        "brand": "",
+        "similarity": 0.396,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of cashmeran",
+          "smell of jasmine",
+          "smell of musk",
+          "smell of raspberry"
+        ],
+        "shared_count": 4,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q140001990": [],
+    "wd:Q140002309": [],
+    "wd:Q140003880": [
+      {
+        "id": "wd:Q3646092",
+        "name": "Brut",
+        "brand": "",
+        "similarity": 0.447,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of lemon",
+          "smell of vetiver"
+        ],
+        "shared_count": 8,
+        "total_notes": 14
+      },
+      {
+        "id": "wd:Q3880627",
+        "name": "Obsession",
+        "brand": "",
+        "similarity": 0.435,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "coriander smell",
+          "mandarin orange smell",
+          "orange blossom scent",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lemon",
+          "smell of musk",
+          "smell of vetiver"
+        ],
+        "shared_count": 11,
+        "total_notes": 20
+      },
+      {
+        "id": "wd:Q136646856",
+        "name": "Hugo",
+        "brand": "",
+        "similarity": 0.405,
+        "match_percentage": 41,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "smell of basil",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of sage"
+        ],
+        "shared_count": 5,
+        "total_notes": 11
+      },
+      {
+        "id": "wd:Q140018525",
+        "name": "Obsession for Men",
+        "brand": "",
+        "similarity": 0.401,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "coriander smell",
+          "mandarin orange smell",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of musk",
+          "smell of sage",
+          "smell of vetiver"
+        ],
+        "shared_count": 10,
+        "total_notes": 20
+      },
+      {
+        "id": "wd:Q3733683",
+        "name": "Eternity",
+        "brand": "",
+        "similarity": 0.398,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "lily-of-the-valley scent",
+          "mandarin orange smell",
+          "sandalwood scent",
+          "smell of jasmine",
+          "smell of lilies",
+          "smell of musk",
+          "smell of sage"
+        ],
+        "shared_count": 8,
+        "total_notes": 16
+      }
+    ],
+    "wd:Q140014562": [],
+    "wd:Q140018525": [
+      {
+        "id": "wd:Q140003880",
+        "name": "Eternity for Men",
+        "brand": "",
+        "similarity": 0.401,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "coriander smell",
+          "mandarin orange smell",
+          "sandalwood scent",
+          "scent of bergamot",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of musk",
+          "smell of sage",
+          "smell of vetiver"
+        ],
+        "shared_count": 10,
+        "total_notes": 17
+      },
+      {
+        "id": "wd:Q106626237",
+        "name": "Cordon Vert",
+        "brand": "",
+        "similarity": 0.396,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "carnation smell",
+          "mandarin orange smell",
+          "patchouli smell",
+          "scent of bergamot",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of lime"
+        ],
+        "shared_count": 7,
+        "total_notes": 11
+      }
+    ],
+    "wd:Q140003040": [
+      {
+        "id": "wd:Q140012833",
+        "name": "Eternity Flame For Men",
+        "brand": "",
+        "similarity": 0.482,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "pineapple smell",
+          "smell of labdanum"
+        ],
+        "shared_count": 3,
+        "total_notes": 4
+      }
+    ],
+    "wd:Q139992070": [
+      {
+        "id": "wd:Q139989391",
+        "name": "Jardin d'Amalfi",
+        "brand": "",
+        "similarity": 0.55,
+        "match_percentage": 55,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of apples",
+          "smell of cedarwood",
+          "smell of lemon",
+          "smell of rose",
+          "smell of white musk"
+        ],
+        "shared_count": 5,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q139991574": [
+      {
+        "id": "wd:Q139990105",
+        "name": "Angel Elixir",
+        "brand": "",
+        "similarity": 0.423,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "pink pepper smell",
+          "sandalwood scent",
+          "scent of vanilla"
+        ],
+        "shared_count": 4,
+        "total_notes": 7
+      },
+      {
+        "id": "wd:Q140078802",
+        "name": "Alien Goddess Supra Florale",
+        "brand": "",
+        "similarity": 0.414,
+        "match_percentage": 41,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "smell of jasminum sambac"
+        ],
+        "shared_count": 2,
+        "total_notes": 4
+      }
+    ],
+    "wd:Q140003843": [
+      {
+        "id": "wd:Q136646856",
+        "name": "Hugo",
+        "brand": "",
+        "similarity": 0.418,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "fragrance of geranium",
+          "smell of apples",
+          "smell of lavender",
+          "smell of sage"
+        ],
+        "shared_count": 4,
+        "total_notes": 11
+      }
+    ],
+    "wd:Q140013590": [
+      {
+        "id": "wd:Q139991116",
+        "name": "Cheeky Alice",
+        "brand": "",
+        "similarity": 0.471,
+        "match_percentage": 47,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "peony scent",
+          "smell of musk",
+          "woody smell"
+        ],
+        "shared_count": 3,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q140012833": [
+      {
+        "id": "wd:Q140003040",
+        "name": "Libertine",
+        "brand": "",
+        "similarity": 0.482,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "pineapple smell",
+          "smell of labdanum"
+        ],
+        "shared_count": 3,
+        "total_notes": 12
+      }
+    ],
+    "wd:Q140078599": [],
+    "wd:Q140078884": [
+      {
+        "id": "wd:Q140003429",
+        "name": "Eternity Moment",
+        "brand": "",
+        "similarity": 0.396,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of cashmeran",
+          "smell of jasmine",
+          "smell of musk",
+          "smell of raspberry"
+        ],
+        "shared_count": 4,
+        "total_notes": 10
+      }
+    ],
+    "wd:Q140075144": [],
+    "wd:Q140078650": [
+      {
+        "id": "wd:Q140078747",
+        "name": "Alien Goddess Intense",
+        "brand": "",
+        "similarity": 0.582,
+        "match_percentage": 58,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla",
+          "smell of jasmine"
+        ],
+        "shared_count": 4,
+        "total_notes": 5
+      },
+      {
+        "id": "wd:Q139989992",
+        "name": "Angel Fantasm",
+        "brand": "",
+        "similarity": 0.398,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla"
+        ],
+        "shared_count": 3,
+        "total_notes": 7
+      }
+    ],
+    "wd:Q140078747": [
+      {
+        "id": "wd:Q140078650",
+        "name": "Alien Goddess",
+        "brand": "",
+        "similarity": 0.582,
+        "match_percentage": 58,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla",
+          "smell of jasmine"
+        ],
+        "shared_count": 4,
+        "total_notes": 6
+      },
+      {
+        "id": "wd:Q139989992",
+        "name": "Angel Fantasm",
+        "brand": "",
+        "similarity": 0.48,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla"
+        ],
+        "shared_count": 3,
+        "total_notes": 7
+      }
+    ],
+    "wd:Q140078855": [
+      {
+        "id": "wd:Q138313741",
+        "name": "Because I'm Free",
+        "brand": "",
+        "similarity": 0.48,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of vanilla",
+          "smell of jasmine",
+          "smell of petitgrain",
+          "tuberose scent"
+        ],
+        "shared_count": 4,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q140078914": [],
+    "wd:Q140077185": [],
+    "wd:Q140078574": [
+      {
+        "id": "wd:Q140825999",
+        "name": "Blessed Baraka",
+        "brand": "",
+        "similarity": 0.508,
+        "match_percentage": 51,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "smell of white flowers"
+        ],
+        "shared_count": 2,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q140078826": [],
+    "wd:Q140078802": [
+      {
+        "id": "wd:Q139991574",
+        "name": "Sunny Alice",
+        "brand": "",
+        "similarity": 0.414,
+        "match_percentage": 41,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "smell of jasminum sambac"
+        ],
+        "shared_count": 2,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q139990264": [
+      {
+        "id": "wd:Q3274544",
+        "name": "Chanel No. 19",
+        "brand": "",
+        "similarity": 0.439,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of bergamot",
+          "scent of hyacinth flowers",
+          "smell of narcissus flowers",
+          "smell of orris root",
+          "smell of rose"
+        ],
+        "shared_count": 5,
+        "total_notes": 8
+      }
+    ],
+    "wd:Q139990105": [
+      {
+        "id": "wd:Q137183811",
+        "name": "Counterplay",
+        "brand": "",
+        "similarity": 0.524,
+        "match_percentage": 52,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "orange blossom scent",
+          "pink pepper smell",
+          "sandalwood scent",
+          "scent of ylang-ylang"
+        ],
+        "shared_count": 4,
+        "total_notes": 9
+      },
+      {
+        "id": "wd:Q139991574",
+        "name": "Sunny Alice",
+        "brand": "",
+        "similarity": 0.423,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "pink pepper smell",
+          "sandalwood scent",
+          "scent of vanilla"
+        ],
+        "shared_count": 4,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q139990340": [
+      {
+        "id": "wd:Q3648777",
+        "name": "CK One",
+        "brand": "",
+        "similarity": 0.416,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "aroma of green tea",
+          "nutmeg smell",
+          "smell of cardamom",
+          "smell of violets"
+        ],
+        "shared_count": 4,
+        "total_notes": 14
+      }
+    ],
+    "wd:Q139980849": [],
+    "wd:Q139980194": [],
+    "wd:Q139980332": [
+      {
+        "id": "wd:Q138297662",
+        "name": "Solar Canopy",
+        "brand": "",
+        "similarity": 0.399,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "scent of bergamot",
+          "smell of lychee",
+          "smell of magnolia flowers"
+        ],
+        "shared_count": 3,
+        "total_notes": 10
+      }
+    ],
+    "wd:Q139980728": [],
+    "wd:Q139989992": [
+      {
+        "id": "wd:Q140078747",
+        "name": "Alien Goddess Intense",
+        "brand": "",
+        "similarity": 0.48,
+        "match_percentage": 48,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla"
+        ],
+        "shared_count": 3,
+        "total_notes": 5
+      },
+      {
+        "id": "wd:Q140078650",
+        "name": "Alien Goddess",
+        "brand": "",
+        "similarity": 0.398,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "coconut aroma",
+          "scent of bergamot",
+          "scent of vanilla"
+        ],
+        "shared_count": 3,
+        "total_notes": 6
+      }
+    ],
+    "wd:Q139991158": [
+      {
+        "id": "wd:Q139991116",
+        "name": "Cheeky Alice",
+        "brand": "",
+        "similarity": 0.443,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of rose",
+          "woody smell"
+        ],
+        "shared_count": 2,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q139989391": [
+      {
+        "id": "wd:Q139992070",
+        "name": "Acqua Fiorentina",
+        "brand": "",
+        "similarity": 0.55,
+        "match_percentage": 55,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of apples",
+          "smell of cedarwood",
+          "smell of lemon",
+          "smell of rose",
+          "smell of white musk"
+        ],
+        "shared_count": 5,
+        "total_notes": 8
+      }
+    ],
+    "wd:Q139990627": [],
+    "wd:Q139991116": [
+      {
+        "id": "wd:Q140013590",
+        "name": "Eternity Aqua",
+        "brand": "",
+        "similarity": 0.471,
+        "match_percentage": 47,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "peony scent",
+          "smell of musk",
+          "woody smell"
+        ],
+        "shared_count": 3,
+        "total_notes": 9
+      },
+      {
+        "id": "wd:Q141714299",
+        "name": "Levant",
+        "brand": "",
+        "similarity": 0.446,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "lily-of-the-valley scent",
+          "peony scent",
+          "smell of musk"
+        ],
+        "shared_count": 3,
+        "total_notes": 11
+      },
+      {
+        "id": "wd:Q139991158",
+        "name": "Flirty Alice",
+        "brand": "",
+        "similarity": 0.443,
+        "match_percentage": 44,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of rose",
+          "woody smell"
+        ],
+        "shared_count": 2,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q139990185": [
+      {
+        "id": "wd:Q3733683",
+        "name": "Eternity",
+        "brand": "",
+        "similarity": 0.419,
+        "match_percentage": 42,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "amber smell",
+          "mandarin orange smell",
+          "patchouli smell",
+          "smell of freesia",
+          "smell of jasmine"
+        ],
+        "shared_count": 5,
+        "total_notes": 16
+      }
+    ],
+    "wd:Q137183849": [],
+    "wd:Q137213178": [],
+    "wd:Q137386796": [],
+    "wd:Q137183811": [
+      {
+        "id": "wd:Q139990105",
+        "name": "Angel Elixir",
+        "brand": "",
+        "similarity": 0.524,
+        "match_percentage": 52,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "orange blossom scent",
+          "pink pepper smell",
+          "sandalwood scent",
+          "scent of ylang-ylang"
+        ],
+        "shared_count": 4,
+        "total_notes": 7
+      }
+    ],
+    "wd:Q137527355": [],
+    "wd:Q137184064": [],
+    "wd:Q137337051": [],
+    "wd:Q137361933": [
+      {
+        "id": "wd:Q140084488",
+        "name": "Alien Man Fusion",
+        "brand": "",
+        "similarity": 0.457,
+        "match_percentage": 46,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "aroma of osmanthus",
+          "leather smell",
+          "smell of cinnamon"
+        ],
+        "shared_count": 3,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q137454537": [],
+    "wd:Q141714299": [
+      {
+        "id": "wd:Q139991116",
+        "name": "Cheeky Alice",
+        "brand": "",
+        "similarity": 0.446,
+        "match_percentage": 45,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "lily-of-the-valley scent",
+          "peony scent",
+          "smell of musk"
+        ],
+        "shared_count": 3,
+        "total_notes": 5
+      }
+    ],
+    "wd:Q141751434": [],
+    "wd:Q106626237": [
+      {
+        "id": "wd:Q140018525",
+        "name": "Obsession for Men",
+        "brand": "",
+        "similarity": 0.396,
+        "match_percentage": 40,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "carnation smell",
+          "mandarin orange smell",
+          "patchouli smell",
+          "scent of bergamot",
+          "smell of jasmine",
+          "smell of lavender",
+          "smell of lime"
+        ],
+        "shared_count": 7,
+        "total_notes": 20
+      }
+    ],
+    "wd:Q106761672": [
+      {
+        "id": "wd:Q21233661",
+        "name": "Terre d'Hermès",
+        "brand": "",
+        "similarity": 0.503,
+        "match_percentage": 50,
+        "match_band": "some_overlap",
+        "shared_notes": [
+          "smell of benzoin",
+          "smell of grapefruit",
+          "smell of orange",
+          "smell of vetiver"
+        ],
+        "shared_count": 4,
+        "total_notes": 9
+      }
+    ],
+    "wd:Q141641341": []
+  }
+}
