@@ -107,7 +107,10 @@ a {
   gap: 28px;
 }
 
-.siteNav nav a {
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--muted);
   text-decoration: none;
   font-family: var(--mono);
@@ -117,8 +120,24 @@ a {
   transition: color 160ms ease;
 }
 
-.siteNav nav a:hover {
+.navLink:hover {
   color: var(--ink);
+}
+
+.navLinkActive {
+  color: var(--ink);
+}
+
+.navBadge {
+  display: inline-block;
+  padding: 2px 6px;
+  background: rgba(246, 197, 58, 0.15);
+  border: 1px solid rgba(246, 197, 58, 0.3);
+  border-radius: 3px;
+  color: rgba(246, 197, 58, 0.95);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
 }
 
 /* Support menu: the only nav item, so it carries its own weight as a pill

@@ -423,6 +423,97 @@
   font-size: 0.825rem;
 }
 
+/* Chord Diagram */
+.noteMatchChordToggle {
+  margin-top: 1rem;
+  padding: 0.625rem 1rem;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 160ms ease;
+  width: 100%;
+}
+
+.noteMatchChordToggle:hover {
+  border-color: var(--ink);
+  background: var(--ground-raised);
+}
+
+.noteMatchChordContainer {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--ground);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.noteMatchChordLoading {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem;
+  font-size: 0.875rem;
+}
+
+.noteChord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.noteChordSvg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+.noteChordLabel {
+  fill: var(--ink);
+  font-size: 10px;
+  font-family: var(--sans);
+  pointer-events: none;
+}
+
+.noteChordReadoutMain {
+  fill: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--sans);
+}
+
+.noteChordReadoutCount {
+  fill: var(--muted);
+  font-size: 11px;
+  font-family: var(--sans);
+}
+
+.noteChordCaption {
+  text-align: center;
+  color: var(--quiet);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0;
+}
+
+.noteChordEmpty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--muted);
+}
+
+.noteChordEmpty p {
+  margin: 0 0 0.5rem;
+}
+
+.noteChordEmptyDetail {
+  color: var(--quiet);
+  font-size: 0.875rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .noteMatchPage {

@@ -1,6 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { Loading, ErrorState } from '../components/Status';
 import './note-match.css';
+
+// Lazy-load the chord diagram component
+const NoteMatchChord = lazy(() => import('./NoteMatchChord'));
 
 /**
  * Note Match: find similar perfumes by comparing their listed notes.
@@ -16,6 +19,7 @@ export default function NoteMatchPage() {
   const [selectedId, setSelectedId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searching, setSearching] = useState(false);
+  const [expandedMatchId, setExpandedMatchId] = useState(null);
 
   // Load data
   useEffect(() => {
@@ -106,7 +110,18 @@ export default function NoteMatchPage() {
     setSelectedId(null);
     setSearching(false);
     setSearchQuery('');
+    setExpandedMatchId(null);
   };
+  
+  const toggleMatchExpand = (matchId) => {
+    setExpandedMatchId(prev => prev === matchId ? null : matchId);
+  };
+  
+  // Get the expanded match perfume data
+  const expandedMatchPerfume = useMemo(() => {
+    if (!expandedMatchId || !seed) return null;
+    return seed.fragrances.find(f => f.id === expandedMatchId);
+  }, [expandedMatchId, seed]);
 
   return (
     <div className="noteMatchPage">
@@ -271,6 +286,27 @@ export default function NoteMatchPage() {
                         ))}
                       </div>
                     </div>
+                    
+                    {/* Chord diagram toggle */}
+                    <button 
+                      className="noteMatchChordToggle"
+                      onClick={() => toggleMatchExpand(match.id)}
+                      aria-expanded={expandedMatchId === match.id}
+                    >
+                      {expandedMatchId === match.id ? 'Hide' : 'Show'} note associations
+                    </button>
+                    
+                    {/* Lazy-loaded chord diagram */}
+                    {expandedMatchId === match.id && (
+                      <div className="noteMatchChordContainer">
+                        <Suspense fallback={<div className="noteMatchChordLoading">Loading chord diagram...</div>}>
+                          <NoteMatchChord 
+                            perfume={expandedMatchPerfume}
+                            allPerfumes={seed.fragrances}
+                          />
+                        </Suspense>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
