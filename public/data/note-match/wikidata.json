@@ -1,0 +1,9 @@
+{
+  "source": "wikidata",
+  "source_url": "https://query.wikidata.org/",
+  "license": "CC0 1.0 Universal",
+  "fetched_at": "2026-10-17T13:08:32.872947Z",
+  "query": "SELECT ?item ?itemLabel ?brandLabel ?notes WHERE {\n  ?item wdt:P31 wd:Q131746;  # instance of: perfume\n        wdt:P5872 ?notes.     # has characteristic: perfume notes\n  OPTIONAL { ?item wdt:P1056 ?brand. }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 500",
+  "count": 0,
+  "fragrances": []
+}

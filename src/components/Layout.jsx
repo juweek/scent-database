@@ -87,6 +87,9 @@ function SupportMenu({ dataHref }) {
  */
 export default function Layout({ children }) {
   const coffeeDraft = useLocation().pathname === '/coffee';
+  const location = useLocation();
+  const isNoteMatch = location.pathname === '/note-match';
+  
   return (
     <div className="wrap">
       <header className="siteNav">
@@ -94,6 +97,14 @@ export default function Layout({ children }) {
           gourmet<span>data</span>
         </Link>
         <nav aria-label="Site navigation">
+          <Link 
+            to="/note-match" 
+            className={`navLink ${isNoteMatch ? 'navLinkActive' : ''}`}
+            aria-current={isNoteMatch ? 'page' : undefined}
+          >
+            Note Match
+            <span className="navBadge">New</span>
+          </Link>
           <SupportMenu
             dataHref={coffeeDraft ? 'https://github.com/datascopeanalytics/coffee-blog' : undefined}
           />
