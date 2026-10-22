@@ -7,28 +7,18 @@ body:has(.coffeePage) > .pageProse,
 body:has(.coffeePage) > .siteFooter {
   display: none;
 }
-.coffeeEyebrow,
 .coffeeLabel {
   font: 10px var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.13em;
   color: #aaa296;
 }
-.coffeeEyebrow {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: #d7b887;
-}
-.coffeeEyebrow span {
-  color: #8b857e;
-}
 .coffeeIntro h1 {
   font:
     normal clamp(56px, 7vw, 96px)/1.1 Georgia,
     serif;
   letter-spacing: -0.06em;
-  margin: 26px 0 18px;
+  margin: 0 0 18px;
 }
 .coffeeIntro h1 em {
   color: #d7b887;
@@ -162,6 +152,11 @@ body:has(.coffeePage) > .siteFooter {
     serif;
   letter-spacing: -0.025em;
   margin: 12px 0;
+}
+/* The heading now leads both blocks — no kicker above it to clear. */
+.coffeeConnections > h2:first-child,
+.coffeeSectionHeading h2 {
+  margin-top: 0;
 }
 .coffeeConnections > p {
   font-size: 13px;
@@ -303,10 +298,6 @@ body:has(.coffeePage) > .siteFooter {
 @media (max-width: 540px) {
   .coffeePage {
     padding-top: 15px;
-  }
-  .coffeeEyebrow {
-    font-size: 8px;
-    letter-spacing: 0.08em;
   }
   .coffeeIntro > p {
     font-size: 15px;

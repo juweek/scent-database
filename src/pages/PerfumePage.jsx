@@ -426,7 +426,6 @@ function Featured({ meta, onPick }) {
   if (!meta?.featured) return null;
   return (
     <section className="featured">
-      <p className="fieldLabel">Start somewhere</p>
       <ul className="featuredGrid">
         {meta.featured.map(([id, name, brand, year]) => (
           <li key={id}>
@@ -489,7 +488,7 @@ function PerfumeSearch({ onPick }) {
 
   return (
     <div>
-      <label className="fieldLabel" htmlFor="perfume-search">
+      <label className="srOnly" htmlFor="perfume-search">
         Search a perfume
       </label>
       <div className="search" ref={boxRef}>
