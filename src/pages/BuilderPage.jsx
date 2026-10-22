@@ -342,7 +342,7 @@ function NotePicker({ index, selected, onAdd }) {
 
   return (
     <div className="builderPicker">
-      <label className="fieldLabel" htmlFor="builder-note">
+      <label className="srOnly" htmlFor="builder-note">
         Add a note
       </label>
       <div className="search" ref={boxRef}>

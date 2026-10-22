@@ -91,7 +91,9 @@ export function Search({ label, placeholder, items, value, onChange }) {
 
   return (
     <div>
-      <label className="fieldLabel" htmlFor={inputId}>
+      {/* Screen-reader only: the placeholder already says what the box is for,
+          and a visible caps line above it was a kicker, not a label. */}
+      <label className="srOnly" htmlFor={inputId}>
         {label}
       </label>
       <div className="search" ref={boxRef}>

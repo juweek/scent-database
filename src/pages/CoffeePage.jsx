@@ -103,9 +103,6 @@ export default function CoffeePage() {
   return (
     <main className="coffeePage">
       <header className="coffeeIntro">
-        <div className="coffeeEyebrow">
-          THE TASTE ATLAS <span>COFFEE · WORKING DRAFT</span>
-        </div>
         <h1>
           Coffee <em>chords.</em>
         </h1>
@@ -253,9 +250,6 @@ export default function CoffeePage() {
           </p>
         </section>
         <aside className="coffeeConnections">
-          <span className="coffeeLabel">
-            {note ? `Connections with ${note}` : 'Start with a connection'}
-          </span>
           <h2>{mode === 'common' ? 'Often together.' : 'Beyond the usual.'}</h2>
           <p>
             {mode === 'common'
@@ -290,7 +284,6 @@ export default function CoffeePage() {
       <section className="coffeeExamples" aria-live="polite">
         <div className="coffeeSectionHeading">
           <div>
-            <span className="coffeeLabel">The reviews behind the connection</span>
             <h2>{active ? `${active.source} + ${active.target}` : 'Choose a connection'}</h2>
           </div>
           <p>{active && `${examples.length} reviews · ${active.lift.toFixed(1)}× expected`}</p>

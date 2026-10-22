@@ -124,7 +124,6 @@ function Offers() {
 
   return (
     <>
-      <p className="eyebrow">While you are here</p>
       <h2 className="modalHeading">Ways to smell what you are reading about</h2>
       <p className="modalDisclosure">{site.interstitial.disclosure}</p>
       <ul className="offerList">

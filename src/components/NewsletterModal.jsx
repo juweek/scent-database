@@ -38,7 +38,6 @@ export default function NewsletterModal() {
 
   return (
     <Modal label="Subscribe by email" onClose={() => setOpen(false)}>
-      <p className="eyebrow">Scent chords</p>
       <h2 className="modalHeading">{site.newsletter.heading}</h2>
       <p className="modalBlurb">{site.newsletter.blurb}</p>
       <div className="substackFrame">
